@@ -1,0 +1,51 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+	xmlns:local="clr-namespace:Rapid.Utilities"
+	mc:Ignorable="d"
+	x:Class="Rapid.TabEntities.MyPartProgram"
+	x:Name="UserControl"
+	d:DesignWidth="600" d:DesignHeight="600">
+	<ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3">
+	<Grid x:Name="ContainerGrid">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="0.409*"/>
+		<RowDefinition Height="Auto" MinHeight="100"/>
+		<RowDefinition Height="0.234*" MinHeight="100"/>
+		<RowDefinition Height="0.234*" MinHeight="100"/>
+	</Grid.RowDefinitions>
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="364"/>
+		<ColumnDefinition MinWidth="200"/>
+	</Grid.ColumnDefinitions>
+	
+	<TextBlock TextWrapping="Wrap" Text="Report Styles" Width="110.667" FontWeight="Bold" Height="23.334" Grid.Row="2" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,15,0,0"/>
+	<TextBlock Height="23.334" TextWrapping="Wrap" Text="Reports" Width="61" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Grid.Row="3" FontSize="16"/>
+	<TextBlock x:Name="TitlesTxtBlock" Height="18.5" TextWrapping="Wrap" Text="Titles" Width="63" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,7.425,0,0" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontSize="16"/>
+	<Border x:Name="PPOpenGlWinBorder" BorderBrush="Black" BorderThickness="2" Margin="5,5,5,8" Grid.Column="1" Grid.RowSpan="2" Visibility="Hidden"/>
+	<Button x:Name="btnNewReport" Content="New" Height="40" Margin="130,3,0,0" VerticalAlignment="Top" FontWeight="Bold" Style="{DynamicResource ScrToolbar_NormalButton1}" Background="{DynamicResource ButtonBackcolor}" Click="btnNewReport_Click" Grid.Row="3" HorizontalAlignment="Left" Width="40"/>
+	<DataGrid x:Name="dgvTitles" IsReadOnly="True" CanUserResizeColumns="False" RowHeaderWidth="0" RowHeight="28" AlternatingRowBackground="#FFC4E5FF" CanUserResizeRows="False" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" Background="#4C000000" RowBackground="#FF9CB2E0" Foreground="Black" HeadersVisibility="Column" GridLinesVisibility="None" SelectionMode="Single" CanUserReorderColumns="False" FontWeight="Bold" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="5,28,5,5" BorderBrush="Black" Grid.RowSpan="2"/>
+	<ListBox x:Name="lstReportStyles" Margin="5,45,5,5" Grid.Row="2" BorderBrush="Black" Background="#4C000000" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+	<DataGrid x:Name="dgvProgramSteps" IsReadOnly="True" CanUserResizeColumns="False" RowHeaderWidth="0" RowHeight="28" AlternatingRowBackground="#FFC2E2FB" CanUserResizeRows="False" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" Background="#4C000000" RowBackground="#FFA4D6FD" Foreground="Black" HeadersVisibility="Column" GridLinesVisibility="None" SelectionMode="Single" CanUserReorderColumns="False" FontWeight="Bold" VerticalContentAlignment="Center" Margin="5,45,5,8" Grid.Column="1" FontSize="10.667" Grid.RowSpan="2" VerticalScrollBarVisibility="Visible" MaxHeight="320"/>
+	
+	<DataGrid x:Name="dgvPrograms" RowHeaderWidth="0" AlternatingRowBackground="{DynamicResource AlternatingRowBackground_DG}" CanUserResizeRows="False" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" Background="#4C000000" RowBackground="{DynamicResource RowBackground_DG}" Foreground="Black" HeadersVisibility="Column" GridLinesVisibility="None" FontWeight="Bold" VerticalContentAlignment="Center" Margin="5,45,5,8" Grid.RowSpan="2" VerticalScrollBarVisibility="Visible" BorderBrush="Blue" RowHeight="36" IsReadOnly="True" SelectionMode="Extended" AllowDrop="True" MaxHeight="320"/>
+	<!--<DataGrid x:Name="dgvPrograms" HeadersVisibility="Column" Margin="5,32,5,8" Grid.RowSpan="2" RowHeight="36" IsReadOnly="True"/>-->
+            <ListBox x:Name="lstReports" Grid.Row="3" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="#4C000000" VerticalContentAlignment="Bottom" Margin="5,45,5,5" BorderBrush="Black" />
+            <Canvas x:Name="cnvNewReport" Margin="5,0" Background="{DynamicResource ChildWindowBackColor}" Grid.Row="3" Visibility="Hidden">
+		<Button x:Name="btnOK" Content="OK" Height="26.871" Canvas.Left="204" Canvas.Top="75.463" Width="64" Style="{DynamicResource SimpleNormalButton}" Background="{DynamicResource ButtonBackcolor}" Click="btnOKCancel_Click"/>
+		<Button x:Name="btnCancel" Content="Cancel" Height="26.871" Canvas.Left="276" Canvas.Top="75.463" Width="55.833" Style="{DynamicResource SimpleNormalButton}" Background="{DynamicResource ButtonBackcolor}" Click="btnOKCancel_Click"/>
+		<TextBlock Height="19.129" TextWrapping="Wrap" Text="Enter new report name :" Width="312" FontWeight="Bold" Canvas.Left="9" Canvas.Top="2"/>
+		<TextBox x:Name="txtReportPath" TextWrapping="Wrap" Text="&#xa;" Height="28" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Location" BorderBrush="{DynamicResource HeaderShading}" Background="{DynamicResource TextBoxBGBrush}" IsEnabled="False" Canvas.Left="6.25" Canvas.Top="18.129" Width="299.75"/>
+		<TextBox  x:Name="txtNewReport" TextWrapping="Wrap" FontWeight="Bold" Style="{DynamicResource Tagged_Double_TextBox}" BorderBrush="{DynamicResource HeaderShading}" Background="{DynamicResource TextBoxBGBrush}" CaretBrush="Black" Tag="Name" ToolTip=".xls" Height="28" VerticalAlignment="Top" Canvas.Left="27.833" Canvas.Top="45.128" Width="318.5"/>
+	</Canvas>
+	<TextBlock HorizontalAlignment="Left" Height="23.667" Margin="5,20,0,0" TextWrapping="Wrap" Text="Programs" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+	<TextBox Height="23.667" Margin="140,20,5,0" VerticalAlignment="Top" FontSize="16" x:Name="SearchTxtbx" VerticalContentAlignment="Center"/>
+	<TextBlock Grid.Column="1" Height="23.667" Margin="5,20,76.666,0" TextWrapping="Wrap" Text="Program Steps" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+	<Button x:Name="btnNewReportStyle" Content="New" Height="40" VerticalAlignment="Top" FontWeight="Bold" Style="{DynamicResource ScrToolbar_NormalButton1}" Background="{DynamicResource ButtonBackcolor}" Grid.Row="2" HorizontalAlignment="Left" Width="40" Margin="130,3,0,0"/>
+	<TextBlock x:Name="CurrentLoadedProgLbl" HorizontalAlignment="Left" Height="23.667" Margin="5,0,10,0" TextWrapping="Wrap" Text="Current" VerticalAlignment="Top" FontSize="16" Foreground="#FFFF6969" Visibility="Hidden"/>
+	</Grid>
+	</ScrollViewer>
+</Grid>

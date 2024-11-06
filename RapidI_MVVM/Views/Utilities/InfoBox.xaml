@@ -1,0 +1,13 @@
+﻿<Grid x:Name="MainGrid" x:Class="Rapid.Utilities.InfoBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="288">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="*"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+	<TextBlock  x:Name="txtStatus" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" Text="Textblock" FontSize="13.333"/>
+	<TextBox  x:Name="txtValue" Margin="0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+</Grid>

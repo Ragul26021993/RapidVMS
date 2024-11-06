@@ -1,0 +1,202 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Rapid.Utilities"
+        xmlns:Ctrls="clr-namespace:RapidI.Help" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Rapid_Converters="clr-namespace:Rapid.Converters" mc:Ignorable="d" x:Class="RapidI.Help.RapidiHelpWin"
+        Title="RapidiHelpWin" Width="1240" Height="760" Background="{DynamicResource RowBackground_DG}" FontSize="18.667"
+		>
+    <Window.Resources>
+        <Rapid_Converters:ReverseBoolToVisibilityConvertor x:Key="ReverseBoolToVisibilityConvertor"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <DockPanel x:Name="MainContainerDckPnl">
+        <Grid x:Name="TreeViewGrid" DockPanel.Dock="Left" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView BorderThickness="0" BorderBrush="{x:Null}" IsTextSearchEnabled="True" ItemsSource="{Binding}" Margin="0,0,2,0" Background="{x:Null}">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Branches}">
+                        <TextBlock x:Name="Links" Margin="30,15,0,0"><Hyperlink CommandParameter="{Binding}" Click="TreeEntity_Click" Tag="{Binding TopicName}"><InlineUIContainer>
+        						<TextBlock  Text="{Binding TopicDisplayName}"/>
+        					</InlineUIContainer></Hyperlink></TextBlock>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+            <!--<GridSplitter Margin="0,0" Width="2"/>-->
+        </Grid>
+        <Grid x:Name="DisplayableHelpContent" Margin="0">
+            <GroupBox x:Name="DetailsGrpBx" Grid.Column="2" Visibility="Visible">
+                <Grid x:Name="MainHelpContent" Margin="10,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="0.8*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="WindowTitleTxtblk" Text="Rapid-I Help" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="29.333" FontWeight="Bold"/>
+
+                    <StackPanel x:Name="IconStkPnl" Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock x:Name="BtnTxtblk" Text="{Binding TopicDisplayName}"  Margin="0" FontSize="21.333"  FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Border Width="45" Height="45" Margin="20,0,0,0" BorderBrush="Black" BorderThickness="1">
+                            <Image x:Name="BtnIcon" Width="40" Height="40" Source="{Binding ButtonImage}"/>
+                        </Border>
+                        <CheckBox x:Name="EditModeBtn" Width="50" Content="@" FontFamily="Webdings" Margin="0,22.5" Template="{DynamicResource ButtonControlTemplate1}" IsChecked="{Binding EditMode, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
+						<Button Content="Update"  Grid.Column="5" Width="70" Height="40" Margin="10,0,10,0" DataContext="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="UpdateBtn_Click" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditModeBtn}"/>
+						<Button Content="Export"  Grid.Column="5" Width="70" Height="40" Margin="10,0,10,0" DataContext="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ExportBtn_Click" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditModeBtn}"/>
+						<Button Content="Import"  Grid.Column="5" Width="70" Height="40" Margin="10,0,10,0" DataContext="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ImportBtn_Click" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditModeBtn}"/>
+                    </StackPanel>
+
+                    <Border x:Name="DescriptionBrdr" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
+                        <DockPanel x:Name="DesctiptionDckPnk" Background="White">
+                            <TextBlock x:Name="DescriptionTextBlock" DataContext="{Binding}" Text="{Binding TopicDescription}" TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0" Visibility="{Binding IsChecked, Converter={StaticResource ReverseBoolToVisibilityConvertor},ElementName=EditModeBtn}"/>
+                            <TextBox x:Name="DescriptionEditTB" TextWrapping="Wrap" MinWidth="150" DataContext="{Binding}" Text="{Binding TopicDescription}" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditModeBtn}" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <Border x:Name="HelpContentBrdr" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Margin="0,20,0,0" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <Grid x:Name="ProcedureGrd" Grid.Row="1" Grid.Column="0" DataContext="{Binding}">
+                            <DataGrid x:Name="HelpDG" Background="White" ItemsSource="{Binding Procedureitems}" AutoGenerateColumns="False" CanUserAddRows="{Binding IsChecked, ElementName=EditModeBtn}" CanUserDeleteRows="{Binding IsChecked, ElementName=EditModeBtn}" ScrollViewer.CanContentScroll="False" RowBackground="{DynamicResource RowBackground_DG}" AlternatingRowBackground="{DynamicResource AlternatingRowBackground_DG}"> 	
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter Property="HorizontalAlignment" Value="stretch"/>
+                                        <Setter Property="FontFamily" Value="Segoe UI"/>
+                                        <Setter Property="Height" Value="30"/>
+                                        <Setter Property="FontSize" Value="18"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Setter Property="Height" Value="Auto"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                <Setter Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                	                                    
+									<DataGridTextColumn x:Name="DoThisCol"  Header="Do This" Width="0.35*" Visibility="Visible" Binding="{Binding ProcedureText}">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                                <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left"/>
+                                                <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                        <DataGridTextColumn.EditingElementStyle>
+                                            <Style TargetType="{x:Type TextBox}">
+                                                <Setter Property="TextWrapping" Value="Wrap"/>
+												<Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+												<Setter Property="AcceptsReturn" Value="True"/>
+                                            </Style>
+                                        </DataGridTextColumn.EditingElementStyle>
+                                    </DataGridTextColumn>
+									
+                                    <DataGridTemplateColumn x:Name="ScreenCol" Header="ScreenShot" Width="0.35*" IsReadOnly="False">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding ProcedureImage, UpdateSourceTrigger=PropertyChanged}" MaxHeight="300"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+									
+                                    <DataGridTemplateColumn x:Name="ThingsToConsiderCol" Header="Things To Consider" Width="0.3*" Visibility="Visible">                                    	
+										<DataGridTemplateColumn.CellTemplate>											
+											<DataTemplate>												
+												<ListBox ItemsSource="{Binding ProcedureCommentList}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="{DynamicResource RowBackground_DG}" Foreground="{Binding}" Margin="0,0,0,10" BorderBrush="{x:Null}" BorderThickness="0">
+													<ListBox.ItemTemplate>
+														<DataTemplate>
+															<Grid Width="{Binding ActualWidth, ElementName=ThingsToConsiderCol}" Margin="0,5,15,0">
+																<Grid.ColumnDefinitions>
+																	<ColumnDefinition Width="20"/>
+																	<ColumnDefinition />
+																</Grid.ColumnDefinitions>
+																<TextBlock VerticalAlignment="Top" Margin="0,5,0,0" Grid.Column="0">
+																	<Ellipse Fill="Black" Width="16" Height="16"/>
+																</TextBlock>
+																<TextBlock Text="{Binding}" TextWrapping="Wrap" Grid.Column="1"/>
+															</Grid>
+														</DataTemplate>
+													</ListBox.ItemTemplate>
+												</ListBox>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+										<DataGridTemplateColumn.CellEditingTemplate>
+											<DataTemplate>
+												<TextBox Text="{Binding ProcedureComment}" TextWrapping="Wrap" AcceptsReturn="True"/>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellEditingTemplate>						
+                                    </DataGridTemplateColumn>
+									
+                                    <DataGridTemplateColumn x:Name="UploadImageCol"  Header="" Width="50" IsReadOnly="False">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="Upload" Width="{Binding}" Height="{Binding}" IsEnabled="True" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditModeBtn}" CommandParameter="{Binding}" Click="OnUploadBtnClicked" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="CaptureImageGrpBx" Grid.Column="2" Visibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="CaptureImageBtn" Height="40" Content="Capture Image" Margin="5,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CaptureImageBtnClick"/>
+                    <Button x:Name="ClosePopupBtn" Height="40" Content="Close" Margin="187,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CloseCapturingImageUI"/>
+                    <Button x:Name="CropBtn" Height="40" Content="Crop" Margin="371,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="120" Click="CropImageBtnClick"/>
+                    <Button x:Name="UploadImageBtn" Content="Upload External Image" Margin="0,19.75,287.23,21.75" HorizontalAlignment="Right" Width="197" Click="UploadImageBtn_Click" VerticalContentAlignment="Center"/>
+                    <StackPanel HorizontalAlignment="Right" Margin="0,0,10,0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="Magnification" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.963,0.644"/>
+                        <Slider x:Name="MagValSlider" TickPlacement="BottomRight" Width="150" Height="24.83" Margin="0,2,0,0" IsSnapToTickEnabled="True" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Background="#00003174" Value="1" Minimum="1" ValueChanged="MAGSlider_ValueChanged" TickFrequency="0.1"/>
+                        <TextBlock Text="{Binding Value, ElementName=MagValSlider}" x:Name="HeighTbx" Margin="0,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.094,0.564" />
+                    </StackPanel>
+                    <GroupBox Grid.Row="1">
+                        <ScrollViewer  Margin="5" x:Name="ImageHolderScrlVwr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Visibility="Visible" BorderBrush="Black" BorderThickness="1">
+                            <Ctrls:FormsHostPanel x:Name="ImageHost"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding ActualWidth, ElementName=ImageHolderScrlVwr}" Height="{Binding ActualHeight, ElementName=ImageHolderScrlVwr}"/>
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="DisplayNonLeafNodeGrpBx" Grid.Column="2" Visibility="Hidden">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="43.54"/>
+                        <RowDefinition Height="16.46"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Foreground="#FF5C63A5" FontWeight="Bold" Grid.Column="1" Grid.Row="0" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,13.54" d:LayoutOverrides="GridBox" ><Run Text="Find An Answer Quickly"/></TextBlock>
+                    <Border CornerRadius="5,0,0,5" BorderBrush="Gray" BorderThickness="0"  Margin="30,0,13,3.54" HorizontalAlignment="Stretch" MinHeight="40" Background="#FF555555">
+                        <TextBlock TextWrapping="Wrap" Visibility="Visible" Grid.Column="1" Grid.Row="1" Text="{Binding TopicDisplayName}" x:Name="Heading" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="21.333" Foreground="#FFCCCCCC" Margin="14,0,0,0" FontWeight="Bold"/>
+                    </Border>
+                    <ListBox ItemsSource="{Binding Branches}" BorderThickness="0" Grid.Row="2" Margin="30,15,0,15" d:LayoutOverrides="GridBox" Visibility="Visible">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock x:Name="Links" Margin="30,15,0,0"><Hyperlink CommandParameter="{Binding}" Click="NonLeafeNodeLinkBtn_click" Tag="{Binding TopicName}"><InlineUIContainer>
+        									<TextBlock  Text="{Binding TopicDisplayName}" />
+        								</InlineUIContainer></Hyperlink></TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>

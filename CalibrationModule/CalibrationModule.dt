@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT0S" SolutionTotalViewTime="PT7M48.2910548S" SolutionTotalDebugTime="PT0S">
+  <FileVersion>
+    <Major>1</Major>
+    <Minor>0</Minor>
+  </FileVersion>
+  <SessionTimeList />
+  <LastSessionTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT7.9960176S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\friend classes\module for contants values\ConstantValues.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:38:48.8548043+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.2363115S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\ControlProp.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:49.4500046+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT21.5584078S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\friend classes\create control classes\CreateControl.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:29.9814936+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5M48.5065791S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\DB.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:50.6888298+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14.936898S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\public class\Get_List_of_Controls.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:38:56.8668296+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M14.4322401S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\IDatabaseInterac.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:46.8141326+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+  </LastSessionTimeList>
+  <TotalTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT7.9960176S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\friend classes\module for contants values\ConstantValues.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:38:48.8548043+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.2363115S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\ControlProp.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:49.4500046+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT21.5584078S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\friend classes\create control classes\CreateControl.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:29.9814936+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5M48.1342038S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\DB.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:50.6888298+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14.936898S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\public class\Get_List_of_Controls.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:38:56.8668296+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M14.4322401S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\IDatabaseInterac.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:46.8141326+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+  </TotalTimeList>
+  <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT14.936898S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\public class\Get_List_of_Controls.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:38:56.8668296+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7.9960176S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\friend classes\module for contants values\ConstantValues.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:38:48.8548043+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5M48.1481853S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\DB.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:50.6888298+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.2363115S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\ControlProp.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:49.4500046+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M14.4322401S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\Friend Classes\Database Classes\IDatabaseInterac.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:46.8141326+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT21.5584078S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>e:\tflw\rapid-i 5.0\database reader\calibrationmodule\friend classes\create control classes\CreateControl.vb</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>E:\TFLW\Rapid-I 5.0\Database Reader\CalibrationModule\CalibrationModule.vbproj</ProjectName>
+      <CreatedDate>2017-03-21T12:35:29.9814936+05:30</CreatedDate>
+      <ViewedBy>narayanan</ViewedBy>
+    </DevTrackerDataItem>
+  </HistoryTimeList>
+</DevTrackerData>

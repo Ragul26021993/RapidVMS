@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Rapid.Utilities.NumericUpDown"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Rapid.AttachedProperties"
+             mc:Ignorable="d" x:Name="_UpDown" d:DesignWidth="68.5" d:DesignHeight="29.793">
+	<UserControl.Resources>
+		<Style x:Key="RepeatButtonStyle1" BasedOn="{StaticResource BaseButtonStyle}" TargetType="{x:Type RepeatButton}">
+			<Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
+		</Style>
+		<Storyboard x:Key="Activated"/>
+		<Storyboard x:Key="InActivated">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Block.TextAlignment)" Storyboard.TargetName="_valueBox">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static TextAlignment.Right}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.FontSize)" Storyboard.TargetName="_valueBox">
+				<EasingDoubleKeyFrame KeyTime="0" Value="{Binding FontSize, ElementName=_UpDown}"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Style x:Key="RepeatButtonStyle2" TargetType="{x:Type RepeatButton}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type RepeatButton}">
+						<Path Stretch="Fill" StrokeLineJoin="Round" Fill="#FFFFFFFF" Data="F1 M 18.3807,38L 28.3807,38L 23.3807,42L 18.3807,38 Z " Height="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Stroke="White"/>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsKeyboardFocused" Value="true"/>
+							<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="#ADADAD"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter">
+			<BeginStoryboard Storyboard="{StaticResource Activated}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave">
+			<BeginStoryboard x:Name="InActivated_BeginStoryboard" Storyboard="{StaticResource InActivated}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+    <Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.5*"/>
+			<RowDefinition Height="0.5*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" MinWidth="12"/>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="16"/>
+		</Grid.ColumnDefinitions>
+		<Border BorderBrush="Black" BorderThickness="1,1,0,1" Grid.RowSpan="2" CornerRadius="5,0,0,5" Background="{Binding BorderBrush, ElementName=_UpDown}">
+			<Viewbox Margin="2">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding Tag, ElementName=_UpDown}" FontFamily="Arial Rounded MT Bold" Foreground="{DynamicResource BorderBrush_Title}" FontSize="12" />
+                <!--FontSize="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=FontSize}"  />-->
+			</Viewbox>
+		</Border>
+		<Border x:Name="border1" Grid.RowSpan="2" BorderBrush="Black" Grid.Column="1" BorderThickness="0,1" Background="{DynamicResource TextBoxBGBrush}">
+			<TextBox x:Name="_valueBox"
+				local:AttachedTextBoxBehaviour.Mask="{Binding Mask, ElementName=_UpDown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+				local:AttachedTextBoxBehaviour.MaximumValue="{Binding Maximum, ElementName=_UpDown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+				local:AttachedTextBoxBehaviour.MinimumValue="{Binding Minimum, ElementName=_UpDown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+				Text="{Binding Value, ElementName=_UpDown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="0" BorderBrush="{x:Null}" FontFamily="{Binding FontFamily, ElementName=_UpDown}" FontSize="{Binding FontSize, ElementName=_UpDown}" Foreground="{Binding Foreground, ElementName=_UpDown}" BorderThickness="0" Background="{x:Null}" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" TextAlignment="Right"/>
+		</Border>
+		<Border BorderBrush="Black" BorderThickness="0,1,1,1" Grid.Column="2" Grid.RowSpan="2" CornerRadius="0,5,5,0" Background="{Binding BorderBrush, ElementName=_UpDown}"/>
+		<RepeatButton x:Name="_btnUp" FontFamily="Webdings" Content="5" Grid.Row="0" Click="HandleClick" Padding="0" Grid.IsSharedSizeScope="True" VerticalContentAlignment="Center" FontSize="8" FontWeight="Bold" Style="{DynamicResource NUD_UpButtonTemplate}" Grid.Column="2" Margin="0,1,1,0" />
+		<RepeatButton x:Name="_btnDown" FontFamily="Webdings" Content="6" Grid.RowSpan="1" Click="HandleClick" Padding="0" Grid.IsSharedSizeScope="True" VerticalContentAlignment="Center" FontSize="8" FontWeight="Bold" Style="{DynamicResource NUD_DownBtnTemplate}" Grid.Column="2" Grid.Row="1" Margin="0,0,1,1"/>
+	</Grid>
+</UserControl>

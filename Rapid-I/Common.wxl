@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="ProductName_x86">Rapid_I (32bit)</String>
+	<String Id="ProductName_x64">Rapid_I (64bit)</String>
+	
+	<String Id="Company">Customised Technologies (P) Ltd.</String>
+	<String Id="Description">This is description</String>
+	<String Id="Comments">This is comments</String>
+	<String Id="Keywords">This is keywords</String>
+	<String Id="DowngradeErrorMessage">A newer version of Rapid-I is already installed.</String>
+</WixLocalization>

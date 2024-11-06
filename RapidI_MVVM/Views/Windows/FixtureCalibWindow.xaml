@@ -1,0 +1,34 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="Rapid.Windows.FixtureCalibWindow"
+	x:Name="FixtureCalibrationWindow"
+	Title="Fixture Calibration"
+	Width="400" Height="200" WindowStyle="ToolWindow">
+
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="79*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="126*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="Choose a Fixture" VerticalAlignment="Center" HorizontalAlignment="Right" Height="16" Width="88" Margin="0,0,8,0"/>
+        <ComboBox x:Name="FixtureListCBx" Height="24" VerticalAlignment="Center" Width="236" HorizontalAlignment="Left" Grid.ColumnSpan="1" Grid.Column="1" Margin="0,0,0,0"/>
+        <Button x:Name="CalibrateAndGoFwdBtn" Content="Calibrate One" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource SimpleNormalButton}" Grid.Row="2" HorizontalAlignment="Center" Height="51" Width="160" Visibility="Hidden"/>
+        <Border x:Name="bdRecordingStarted" CornerRadius="5" Background="{DynamicResource SnapGreenStyle}" Opacity="0.6" Grid.Row="1" Width="160" Height="50" Visibility="Hidden"/>
+        <Border x:Name="CalibProgressBdr2" CornerRadius="5" Background="{DynamicResource SnapGreenStyle}" Opacity="0.6" Grid.Row="1" BorderThickness="1" Grid.Column="1" Visibility="Hidden"/>
+        <Button x:Name="BtnFinishRecording" Content="Finish Recording" Background="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource SimpleNormalButton}" Grid.Row="2" Grid.Column="1" Margin="4"/>
+        <Button x:Name="BtnStartRecording"  Click="StartCalibrationBtn_Click" Content="Start Recording" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Style="{DynamicResource ScrollToolbar_NormalButton2}" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1"/>
+        <Button x:Name="StartCalibrationBtn" Content="Auto Calibrate" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="160" BorderBrush="{x:Null}" Background="{x:Null}" Style="{DynamicResource SimpleNormalButton}" Grid.Row="3" Grid.Column="1"/>
+        <Border x:Name="CalibProgressBdr3" Margin="0,38,13,34" CornerRadius="5" Background="{DynamicResource SnapGreenStyle}" Opacity="0.6" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="40" Height="40" BorderBrush="Black" BorderThickness="1" Visibility="Hidden"/>
+        <Button x:Name="TakeReferenceLineBtn" Content="Take Reference Line" Height="50" Margin="44,32,48,30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="1" Visibility="Hidden"/>
+        <Border x:Name="CalibProgressBdr4" Margin="0,20,0,19" CornerRadius="5" Background="{DynamicResource SnapGreenStyle}" Opacity="0.6" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="40" Height="40" Visibility="Hidden"/>
+        <Button x:Name="ReOrientFixtureBtn" Content="Re-Orient Fixture" Height="50" Margin="46,14,46,15" VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="2" Grid.Column="1" Visibility="Hidden"/>
+    </Grid>
+</Window>

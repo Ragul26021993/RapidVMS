@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define RapidI_MVVM_TargetDir=$(var.RapidI_MVVM.TargetDir)?>
+	<?define LicensingModule_TargetDir=$(var.LicensingModule.TargetDir)?>
+	<?define CalibrationModule_TargetDir=$(var.CalibrationModule.TargetDir)?>
+	<?define RapidWrapper_TargetDir=$(var.RapidWrapper.TargetDir)?>
+	<?define RCam3_TargetDir=$(var.RCam3.TargetDir)?>
+	<?define ErrHandlerApp_TargetDir=$(var.ErrHandlerApp.TargetDir)?>
+	<Product Id="*" Name="Setup_RapidI" Language="1033" Version="1.0.0.0" Manufacturer="Customised Technologies (P) Ltd." UpgradeCode="3669cd61-ff02-48a1-8ae2-62356eca8d96">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate 
+			EmbedCab="yes"/>
+
+		<Feature Id="ProductFeature" Title="Setup_RapidI" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="ProgramFilesFolder_files" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Setup_RapidI" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+	  <ComponentGroup Id="ProgramFilesFolder_files" Directory="ProgramFilesFolder">
+	    <Component Id="Rapid_I.exe" Guid="2bebaab0-7c7d-468e-97b4-5c8c036f8c35">
+	      <File Id="Rapid_I.exe" Name="Rapid-I.exe" Source="$(var.RapidI_MVVM_TargetDir)Rapid-I.exe" />
+	    </Component>
+	    <Component Id="Rapid_I.exe.config" Guid="dfd02874-792d-4c3f-a499-1fc65d16f374">
+	      <File Id="Rapid_I.exe.config" Name="Rapid-I.exe.config" Source="$(var.RapidI_MVVM_TargetDir)Rapid-I.exe.config" />
+	    </Component>
+	    <Component Id="Microsoft.Expression.Interactions.dll" Guid="1df64f7d-bd1f-494c-b4f5-3865238f7589">
+	      <File Id="Microsoft.Expression.Interactions.dll" Name="Microsoft.Expression.Interactions.dll" Source="$(var.RapidI_MVVM_TargetDir)Microsoft.Expression.Interactions.dll" />
+	    </Component>
+	    <Component Id="System.Windows.Interactivity.dll" Guid="98f52143-ca91-4bc0-b2ec-6c3e60197759">
+	      <File Id="System.Windows.Interactivity.dll" Name="System.Windows.Interactivity.dll" Source="$(var.RapidI_MVVM_TargetDir)System.Windows.Interactivity.dll" />
+	    </Component>
+	    <Component Id="Microsoft.Expression.Drawing.dll" Guid="4fb3fb2f-8daa-41a0-8d1f-5a0640c64ab0">
+	      <File Id="Microsoft.Expression.Drawing.dll" Name="Microsoft.Expression.Drawing.dll" Source="$(var.RapidI_MVVM_TargetDir)Microsoft.Expression.Drawing.dll" />
+	    </Component>
+	    <Component Id="LicensingModuleDLL.dll" Guid="44c315e1-7fdc-4364-926b-75d4d031ef54">
+	      <File Id="LicensingModuleDLL.dll" Name="LicensingModuleDLL.dll" Source="$(var.LicensingModule_TargetDir)LicensingModuleDLL.dll" />
+	    </Component>
+	    <Component Id="CalibrationModule.dll" Guid="b521b590-5d89-486b-a0ed-4a1488d2e676">
+	      <File Id="CalibrationModule.dll" Name="CalibrationModule.dll" Source="$(var.CalibrationModule_TargetDir)CalibrationModule.dll" />
+	    </Component>
+	    <Component Id="RapidWrapper.dll" Guid="f13a1a18-a409-4d88-be11-152995d49a5c">
+	      <File Id="RapidWrapper.dll" Name="RapidWrapper.dll" Source="$(var.RapidWrapper_TargetDir)RapidWrapper.dll" />
+	    </Component>
+	    <Component Id="System.Management.dll" Guid="d59f06d5-3123-4a6e-957b-673463e890d7">
+	      <File Id="System.Management.dll" Name="System.Management.dll" Source="$(var.RapidI_MVVM_TargetDir)System.Management.dll" />
+	    </Component>
+	    <Component Id="rrm.dll" Guid="33fa8fbb-9fc6-4949-a266-fd2df6468f56">
+	      <File Id="rrm.dll" Name="rrm.dll" Source="$(var.RapidI_MVVM_TargetDir)rrm.dll" />
+	    </Component>
+	    <Component Id="RCam3.dll" Guid="463b5316-ce2e-4892-b941-b5410ddb081f">
+	      <File Id="RCam3.dll" Name="RCam3.dll" Source="$(var.RCam3_TargetDir)RCam3.dll" />
+	    </Component>
+	    <Component Id="ErrHandlerApp.dll" Guid="029f629f-ffcc-454e-bae3-2cdef5f6e71d">
+	      <File Id="ErrHandlerApp.dll" Name="ErrHandlerApp.dll" Source="$(var.ErrHandlerApp_TargetDir)ErrHandlerApp.dll" />
+	    </Component>
+	    <Component Id="NPOI.dll" Guid="bd98ec75-7703-4cf0-a2e0-719a2da16e24">
+	      <File Id="NPOI.dll" Name="NPOI.dll" Source="$(var.RapidI_MVVM_TargetDir)NPOI.dll" />
+	    </Component>
+	    <Component Id="ICSharpCode.SharpZipLib.dll" Guid="3a84ddf7-dade-4135-9abd-3b8df262fdf7">
+	      <File Id="ICSharpCode.SharpZipLib.dll" Name="ICSharpCode.SharpZipLib.dll" Source="$(var.RapidI_MVVM_TargetDir)ICSharpCode.SharpZipLib.dll" />
+	    </Component>
+	    <Component Id="BouncyCastle.Crypto.dll" Guid="fee89fc0-fbda-43a5-8d63-98f1663cc599">
+	      <File Id="BouncyCastle.Crypto.dll" Name="BouncyCastle.Crypto.dll" Source="$(var.RapidI_MVVM_TargetDir)BouncyCastle.Crypto.dll" />
+	    </Component>
+	  </ComponentGroup>
+	</Fragment>
+</Wix>

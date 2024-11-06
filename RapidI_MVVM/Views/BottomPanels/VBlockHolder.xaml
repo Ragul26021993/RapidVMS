@@ -1,0 +1,83 @@
+﻿<Grid x:Class="Rapid.Panels.VBlockHolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties"
+             mc:Ignorable="d" 
+             d:DesignHeight="270" d:DesignWidth="400">
+	<Grid.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Grid.Resources>
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}" Margin="-1,0,1,0">
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="0.2*"/>  	
+			<RowDefinition Height="0.2*"/>
+			<RowDefinition Height="0.2*"/>
+			<RowDefinition Height="0.45*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.30*"/>
+			<ColumnDefinition Width="0.23*"/>
+			<ColumnDefinition Width="0.62*"/>
+		</Grid.ColumnDefinitions>
+		<GroupBox Grid.Row="3" Header="Go to" Margin="0"  HorizontalAlignment="Right" Width="200" Grid.Column="2" d:LayoutOverrides="GridBox">
+			<Grid x:Name="GoToBtnsGrid">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Button  x:Name="XZeroBtn" Content="X0" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Grid.Row="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40"/>
+				<Button  x:Name="YPlusBtn" Content="Y+" HorizontalAlignment="Center" Width="40" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="30" VerticalAlignment="Center" Grid.Column="1"/>
+				<Button  x:Name="YZeroBtn" Content="Y0" HorizontalAlignment="Center" Width="40" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Grid.Row="1" Height="30" VerticalAlignment="Center" Grid.Column="1"/>
+				<Button  x:Name="YMinusBtn" Content="Y-" HorizontalAlignment="Center" Width="40" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Grid.Row="2" Height="30" VerticalAlignment="Center" Grid.Column="1"/>
+				<Button  x:Name="ZPlusBtn" Content="Z+" HorizontalAlignment="Center" Width="40" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="30" VerticalAlignment="Center" Grid.Column="2"/>
+				<Button  x:Name="ZZeroBtn" Content="Z0" HorizontalAlignment="Center" Width="40" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="30" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+				<Button  x:Name="ZMinusBtn" Content="Z-" HorizontalAlignment="Center" Width="40" Style="{DynamicResource SimpleNormalButton}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="30" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2"/>
+			</Grid>
+		</GroupBox>
+		<TextBlock Text="Holder Type" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0" />
+		<TextBlock x:Name="DiaEntryLbl" Text="Shank Dia" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0" />
+		<TextBlock Text="Shank Length" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0" />
+		<StackPanel Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+			<RadioButton Tag="V Block" x:Name="VBlockCaliberationRBtn" Grid.Column="1" Content="V Block" Style="{DynamicResource ScrollToolbar_RadioButton2}" Background="{DynamicResource ButtonBackcolor}" Width="40" Margin="5,0,0,0" Height="40" IsChecked="True"/>
+			<RadioButton Tag="Holder" x:Name="HolderCalibrationRBtn" Grid.Column="1" Content="Holder" Style="{DynamicResource ScrollToolbar_RadioButton2}" Background="{DynamicResource ButtonBackcolor}" Width="40" Margin="5,0,0,0" Height="40"/>
+		</StackPanel>
+		
+		<TextBox x:Name="DiaValTxtBx" Grid.Row="1" Grid.Column="1" Height="30" Margin="5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Text="10"/>
+		<TextBox x:Name="ShankLenTxtBbx" Grid.Row="2" Grid.Column="1" Height="30" Margin="5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Text="0" VerticalAlignment="Center"/>
+		<Button Tag="Holder" HorizontalContentAlignment="Center" x:Name="AddToolAxisBtn"   VerticalContentAlignment="Center" Grid.Column="2" Content="Add tool Axis" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" HorizontalAlignment="Left" Margin="0" Height="40" VerticalAlignment="Center" Grid.Row="1"/>
+		<StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+			<Button Tag="Holder" HorizontalContentAlignment="Center" x:Name="UpperLnBtn"   VerticalContentAlignment="Center" Grid.Column="2" Content="Choose Upper Edge" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" HorizontalAlignment="Left" Margin="0" Height="40" VerticalAlignment="Center" Grid.Row="1"/>
+			<Button Tag="Holder" HorizontalContentAlignment="Center" x:Name="PauseContinueBtn"   VerticalContentAlignment="Center" Grid.Column="2" Content="Pause" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" HorizontalAlignment="Left" Margin="5,0,0,0" Height="40" VerticalAlignment="Center" Grid.Row="1"/>
+			<Button Tag="Holder" HorizontalContentAlignment="Center" x:Name="DoFocusBtn"   VerticalContentAlignment="Center" Grid.Column="2" Content="Do Focus" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" HorizontalAlignment="Left" Margin="5,0,0,0" Height="40" VerticalAlignment="Center" Grid.Row="1"/>
+			<Button Tag="Holder" HorizontalContentAlignment="Center" x:Name="ResetAllBtn"   VerticalContentAlignment="Center" Grid.Column="2" Content="Reset" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" HorizontalAlignment="Left" Margin="5,0,0,0" Height="40" VerticalAlignment="Center" Grid.Row="1"/>			
+		</StackPanel>
+		
+		<Grid x:Name="Progressgrd" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Width="99" Height="30">
+			<Border x:Name="CalibDonebdr" Margin="0" CornerRadius="5" Background="{DynamicResource SnapGreenStyle}" Opacity="0.6" Visibility="Hidden"/>
+			<TextBlock x:Name="AlignmanestatusTxtbx" Text="Alignment Done" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		</Grid>
+		
+		<Grid Grid.Column="2" Width="150" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.RowSpan="2" Visibility="{Binding IsChecked, ElementName=HolderCalibrationRBtn, Converter={StaticResource BooleanToVisibilityConverter}}">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Text="Cylinder Dia" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,2,0" />
+			<TextBlock Text="Centre Offset" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,2,0" HorizontalAlignment="Right" />
+			<TextBox x:Name="FixtureCyDiaTxtBx" Grid.Column="1" Height="30" Text="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="2,0,0,0"/>
+			<TextBox x:Name="CyOverlapTxtBx" Grid.Row="1" Grid.Column="1" Height="30" Text="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="2,0,0,0"/>
+		</Grid>
+	</Grid>
+</Grid>

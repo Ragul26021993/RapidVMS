@@ -1,0 +1,21 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="MainGrid"
+	mc:Ignorable="d"
+	x:Class="Rapid.Utilities.ScrollableShapeList"
+	d:DesignWidth="27" d:DesignHeight="634" >
+	<Grid.RowDefinitions>
+		<RowDefinition Height="20"/>
+		<RowDefinition/>
+		<RowDefinition Height="20"/>
+	</Grid.RowDefinitions>
+	
+	
+	<ScrollViewer x:Name="scrMain" Margin="0" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+		<StackPanel x:Name="stShapes" Orientation="Vertical" Margin="0" />
+</ScrollViewer>
+	<RepeatButton x:Name="_btnUp" Content="5" d:LayoutOverrides="Width, Height" Style="{DynamicResource NormalRepeatButton}" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Webdings" FontSize="18.667" Click="_btnUp_Click"/>
+	<RepeatButton x:Name="_btnDown" Content="6" Grid.Row="2" d:LayoutOverrides="Width, Height" Style="{DynamicResource NormalRepeatButton}" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Webdings" FontSize="18.667" Click="_btnDown_Click"/>
+</Grid>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="Rapid.Views.Windows.OnlineSystemController"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rapid.Views.Windows"
+        mc:Ignorable="d"
+        Title="Control_Centre" Height="800" Width="400" ShowInTaskbar="False" ResizeMode="NoResize" Background="{x:Null}" WindowStyle="None" AllowsTransparency="True" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Margin="0" Header="Control Centre" Grid.RowSpan="2" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="Arial Rounded MT Bold" FontSize="18.667" BorderBrush="{DynamicResource DroBackColor}" 
+                  Foreground="{DynamicResource ContainerBorderBrush}" Background="{DynamicResource PanelBackground}">
+            <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="960">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="67*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="69*"/>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="400"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140*"/>
+                    <ColumnDefinition Width="300*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Component" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI" FontSize="14" FontWeight="Bold" Margin="0,24,3,23" Height="20" Width="77"/>
+                <ComboBox x:Name="cbComponentsList" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="40" IsEditable="False" Margin="4,0,8,0" FontFamily="Segoe UI" FontSize="14" FontWeight="Normal"/>
+                <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160*"/>
+                        <ColumnDefinition Width="160*"/>
+                        <ColumnDefinition Width="120*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="BtnStartOperations" Content="Start" Click="BtnStartOperations_Click" Background="PaleGreen" FontFamily="Segoe UI" FontWeight="Bold" FontSize="32" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="16"/>
+                    <Button x:Name="BtnStopOperations" Content="Stop" Click="BtnStopOperations_Click" Grid.Column="1" Background="Tomato" FontFamily="Segoe UI" FontWeight="Bold" FontSize="32" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="16"/>
+                    <Button x:Name="BtnAdminControls" Content="Admin" Click="BtnAdminControls_Click" Grid.Column="2"  FontFamily="Segoe UI" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="16" Height="40"/>
+                </Grid>
+                <TextBlock Text="Status:" FontSize="24" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="Total:"  Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,4,0" Height="22" Width="52"/>
+                <TextBlock Text="Pass:"  Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,4,0" Height="22" Width="50"/>
+                <TextBlock Text="Fail:"  Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,4,0" Height="22" Width="38"/>
+                <TextBlock x:Name="txtTotal" Text="0" TextAlignment="Right" Padding="4,0,4,0" Background="Blue" Foreground="White" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" FontFamily="Segoe UI" FontSize="40" FontWeight="Bold" Height="52"/>
+                <TextBlock x:Name="txtPass" Text="0" TextAlignment="Right" Padding="4,0,4,0" Background="PaleGreen" Foreground="Black" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" FontFamily="Segoe UI" FontSize="40" FontWeight="Bold" Height="52"/>
+                <TextBlock x:Name="txtFail" Text="0" TextAlignment="Right" Padding="4,0,4,0" Background="Orange" Foreground="Black" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" FontFamily="Segoe UI" FontSize="40" FontWeight="Bold" Height="52"/>
+                <local:DrillChecker Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DrillCheckerButtonStateChanged="DrillChecker_DrillCheckerButtonStateChanged" FontFamily="Segoe UI" />
+                <TextBlock Text="Speed:" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12, 21,0,0"/>
+                <TextBox x:Name="txtSpeed" Text="{Binding Path=Speed}" Grid.Row="6" TextChanged="txtSpeed_TextChanged" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="80,20,0,0" Width="48" TextAlignment="Right" Padding="0,0,4,0"  />
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnClose" Content="X" HorizontalAlignment="Right" Width="28" Click="btnClose_Click" Style="{DynamicResource UpperButtonStyle}" BorderBrush="{DynamicResource CloseButtonBrush_Border}" Foreground="White" 
+                    FontSize="12" Padding="0" VerticalContentAlignment="Center" ToolTip="Close" Background="{DynamicResource CloseButtonBrush_BG}" FontFamily="a_FuturaRoundDemi" Height="28" RenderTransformOrigin="0.571,0.286" 
+                    VerticalAlignment="Top" Margin="0,2,12,0" Tag="Close" Grid.Column="1"/>
+    </Grid>
+</Window>

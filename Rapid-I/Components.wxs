@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define ExcelModule_TargetDir=$(var.ExcelModule.TargetDir)?>
+	<?define RCam3_TargetDir=$(var.RCam3.TargetDir)?>
+	<?define ErrHandlerApp_TargetDir=$(var.ErrHandlerApp.TargetDir)?>
+	<?define RapidWrapper_TargetDir=$(var.RapidWrapper.TargetDir)?>
+	<?define LicensingModule_TargetDir=$(var.LicensingModule.TargetDir)?>
+	<?define RapidI_MVVM_TargetDir=$(var.RapidI_MVVM.TargetDir)?>
+	<?define CalibrationModule_TargetDir=$(var.CalibrationModule.TargetDir)?>
+	<?define RapidMath3D_TargetDir=$(var.RapidMath3D.TargetDir)?>
+	<?define MainDLL_TargetDir=$(var.MainDLL.TargetDir)?>
+	<?define RapidGraphics_TargetDir=$(var.RapidGraphics.TargetDir)?>
+	<?define RBF_TargetDir=$(var.RBF.TargetDir)?>
+	<?define EdgeDetectionClassSingleChannel_TargetDir=$(var.EdgeDetectionClassSingleChannel.TargetDir)?>
+	<?define RapidMath2D_TargetDir=$(var.RapidMath2D.TargetDir)?>
+	<?define HardwareCommunication_TargetDir=$(var.HardwareCommunication.TargetDir)?>
+	<?define GridModule_TargetDir=$(var.GridModule.TargetDir)?>
+	
+	<Fragment>
+	  <ComponentGroup Id="INSTALLFOLDER_files" Directory="INSTALLFOLDER">
+	    <Component Id="rrm.dll" Guid="bdecbe83-f316-40ee-8b4e-b148e037cbee">
+	      <File Id="rrm.dll" Name="rrm.dll" Source="$(var.ExcelModule_TargetDir)rrm.dll" />
+	    </Component>
+	    <Component Id="RCam3.dll" Guid="a356fc2b-f4ad-4698-8f03-20ffa4fa259f">
+	      <File Id="RCam3.dll" Name="RCam3.dll" Source="$(var.RCam3_TargetDir)RCam3.dll" />
+	    </Component>
+	    <Component Id="ErrHandlerApp.dll" Guid="1979863e-c2cb-48b0-943e-1d8e0aa6f181">
+	      <File Id="ErrHandlerApp.dll" Name="ErrHandlerApp.dll" Source="$(var.ErrHandlerApp_TargetDir)ErrHandlerApp.dll" />
+	    </Component>
+	    <Component Id="RapidWrapper.dll" Guid="c4ee7d81-c63c-41cb-9d80-981779bc0a82">
+	      <File Id="RapidWrapper.dll" Name="RapidWrapper.dll" Source="$(var.RapidWrapper_TargetDir)RapidWrapper.dll" />
+	    </Component>
+	    <Component Id="LicensingModuleDLL.dll" Guid="49298e52-d3d7-424a-93b8-568ab3ed961d">
+	      <File Id="LicensingModuleDLL.dll" Name="LicensingModuleDLL.dll" Source="$(var.LicensingModule_TargetDir)LicensingModuleDLL.dll" />
+	    </Component>
+	    <Component Id="Rapid_I.exe.config" Guid="40a77129-1980-4a8b-b288-6cb363278320">
+	      <File Id="Rapid_I.exe.config" Name="Rapid-I.exe.config" Source="$(var.RapidI_MVVM_TargetDir)Rapid-I.exe.config" />
+	    </Component>
+	    <Component Id="CalibrationModule.dll" Guid="5a504ae8-6445-4596-baa0-cdd81338a145">
+	      <File Id="CalibrationModule.dll" Name="CalibrationModule.dll" Source="$(var.CalibrationModule_TargetDir)CalibrationModule.dll" />
+	    </Component>
+	    <Component Id="RapidMath3D.dll" Guid="f072e738-2f7c-432d-8458-4295cebe969f">
+	      <File Id="RapidMath3D.dll" Name="RapidMath3D.dll" Source="$(var.RapidMath3D_TargetDir)RapidMath3D.dll" />
+	    </Component>
+	    <Component Id="MainDLL.dll" Guid="dc16a14a-5d23-4d19-9a75-736c544caf30">
+	      <File Id="MainDLL.dll" Name="MainDLL.dll" Source="$(var.MainDLL_TargetDir)MainDLL.dll" />
+	    </Component>
+	    <Component Id="Rapid_I.exe" Guid="0880b7a3-2566-4947-953a-659cdcd47ccd">
+	      <File Id="Rapid_I.exe" Name="Rapid-I.exe" Source="$(var.RapidI_MVVM_TargetDir)Rapid-I.exe" />
+	    </Component>
+	    <Component Id="RapidGraphics.dll" Guid="231c7a44-8e9f-4c6c-be14-36288b023ba3">
+	      <File Id="RapidGraphics.dll" Name="RapidGraphics.dll" Source="$(var.RapidGraphics_TargetDir)RapidGraphics.dll" />
+	    </Component>
+	    <Component Id="RBF.dll" Guid="511157d1-c798-491f-9019-d2ee86e57181">
+	      <File Id="RBF.dll" Name="RBF.dll" Source="$(var.RBF_TargetDir)RBF.dll" />
+	    </Component>
+	    <Component Id="EdgeDetectionClassSingleChannel.dll" Guid="fdd77fdf-5ee6-4d2f-853f-e2fb5d34bb07">
+	      <File Id="EdgeDetectionClassSingleChannel.dll" Name="EdgeDetectionClassSingleChannel.dll" Source="$(var.EdgeDetectionClassSingleChannel_TargetDir)EdgeDetectionClassSingleChannel.dll" />
+	    </Component>
+	    <Component Id="RapidMath2D.dll" Guid="289f1a42-6e92-4670-93ce-14aa116a0504">
+	      <File Id="RapidMath2D.dll" Name="RapidMath2D.dll" Source="$(var.RapidMath2D_TargetDir)RapidMath2D.dll" />
+	    </Component>
+	    <Component Id="HardwareCommunication.dll" Guid="b6473bb6-fdeb-4e87-a4cf-5327a400bf6b">
+	      <File Id="HardwareCommunication.dll" Name="HardwareCommunication.dll" Source="$(var.HardwareCommunication_TargetDir)HardwareCommunication.dll" />
+	    </Component>
+	    <Component Id="GridModule.dll" Guid="2dd4b859-f294-4193-87ef-4e438f1ded46">
+	      <File Id="GridModule.dll" Name="GridModule.dll" Source="$(var.GridModule_TargetDir)GridModule.dll" />
+	    </Component>
+		  <Component Id="glut32.dll" Guid="20C7B432-1078-492F-B38E-DD0331886974">
+			  <File Id="glut32.dll" Name="glut32.dll" Source="$(var.TargetDir)glut32.dll" />
+		  </Component>
+		  <Component Id="glut64.dll" Guid="BCF0B60B-5315-4BD0-95BC-C50518531F82">
+			  <File Id="glut64.dll" Name="glut62.dll" Source="$(var.TargetDir)glut64.dll" />
+		  </Component>
+		  <Component Id="ICSharpCode.SharpZipLib.dll" Guid="D990DCE0-1016-49D9-935B-57C2F5B0DE7F">
+			  <File Id="ICSharpCode.SharpZipLib.dll" Name="ICSharpCode.SharpZipLib.dll" Source="$(var.TargetDir)ICSharpCode.SharpZipLib.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Expression.Controls.dll" Guid="9A51D1AB-0B8A-458C-9D63-4C83A0E58502">
+			  <File Id="Microsoft.Expression.Controls.dll" Name="Microsoft.Expression.Controls.dll" Source="$(var.TargetDir)Microsoft.Expression.Controls.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Expression.Drawing.dll" Guid="9457A79E-53BA-438A-B67C-72B6B89A522C">
+			  <File Id="Microsoft.Expression.Drawing.dll" Name="Microsoft.Expression.Drawing.dll" Source="$(var.TargetDir)Microsoft.Expression.Drawing.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Expression.Effects.dll" Guid="31C7E75B-BF95-455F-87EE-76634EF1544D">
+			  <File Id="Microsoft.Expression.Effects.dll" Name="Microsoft.Expression.Effects.dll" Source="$(var.TargetDir)Microsoft.Expression.Effects.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Expression.Interactions.dll" Guid="D44D81BC-1361-4E4E-86C2-775C48FA15ED">
+			  <File Id="Microsoft.Expression.Interactions.dll" Name="Microsoft.Expression.Interactions.dll" Source="$(var.TargetDir)Microsoft.Expression.Interactions.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Expression.Prototyping.Interactivity.dll" Guid="4E179508-8D54-4B76-8E43-2699AAB02765">
+			  <File Id="Microsoft.Expression.Prototyping.Interactivity.dll" Name="Microsoft.Expression.Prototyping.Interactivity.dll" Source="$(var.TargetDir)Microsoft.Expression.Prototyping.Interactivity.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Expression.Prototyping.SketchControls.dll" Guid="B6E89290-444F-4517-BB58-5CFADEE7EA74">
+			  <File Id="Microsoft.Expression.Prototyping.SketchControls.dll" Name="Microsoft.Expression.Prototyping.SketchControls.dll" Source="$(var.TargetDir)Microsoft.Expression.Prototyping.SketchControls.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Office.Interop.Excel.dll" Guid="3279FB19-331C-4C96-AC08-AA0B9AE13B89">
+			  <File Id="Microsoft.Office.Interop.Excel.dll" Name="Microsoft.Office.Interop.Excel.dll" Source="$(var.TargetDir)Microsoft.Office.Interop.Excel.dll" />
+		  </Component>
+		  <Component Id="Microsoft.SDK.Expression.Blend.dll" Guid="B36DCF1F-4CE0-460D-92FD-C721B1E40F0F">
+			  <File Id="Microsoft.SDK.Expression.Blend.dll" Name="Microsoft.SDK.Expression.Blend.dll" Source="$(var.TargetDir)Microsoft.SDK.Expression.Blend.dll" />
+		  </Component>
+		  <Component Id="Microsoft.Xaml.Behaviors.dll" Guid="57153CCE-2F8E-4F52-ABCB-68737E5E9E33">
+			  <File Id="Microsoft.Xaml.Behaviors.dll" Name="Microsoft.Xaml.Behaviors.dll" Source="$(var.TargetDir)Microsoft.Xaml.Behaviors.dll" />
+		  </Component>
+		  <Component Id="NPOI.dll" Guid="EAC1F4AD-2DF5-498E-95F9-450B006A5D8E">
+			  <File Id="NPOI.dll" Name="NPOI.dll" Source="$(var.TargetDir)NPOI.dll" />
+		  </Component>
+		  <Component Id="NPOI.OOXML.dll" Guid="0B5FF77D-6FDA-4A9E-9607-293307E59B10">
+			  <File Id="NPOI.OOXML.dll" Name="NPOI.OOXML.dll" Source="$(var.TargetDir)NPOI.OOXML.dll" />
+		  </Component>
+		  <Component Id="NPOI.OpenXml4Net.dll" Guid="0D00DB54-5D92-4DE1-A0D1-361402C0D041">
+			  <File Id="NPOI.OpenXml4Net.dll" Name="NPOI.OpenXml4Net.dll" Source="$(var.TargetDir)NPOI.OpenXml4Net.dll" />
+		  </Component>
+		  <Component Id="NPOI.OpenXmlFormats.dll" Guid="A9A9A0C9-411A-4679-8E9E-82B10A333CEE">
+			  <File Id="NPOI.OpenXmlFormats.dll" Name="NPOI.OpenXmlFormats.dll" Source="$(var.TargetDir)NPOI.OpenXmlFormats.dll" />
+		  </Component>
+		  <Component Id="System.Management.dll" Guid="19C2470C-28FE-49E3-9AEE-BC874017B3A2">
+			  <File Id="System.Management.dll" Name="System.Management.dll" Source="$(var.TargetDir)System.Management.dll" />
+		  </Component>
+		  <Component Id="System.Windows.Interactivity.dll" Guid="0D627806-B3AB-4A64-B167-9C5B5A14D05C">
+			  <File Id="System.Windows.Interactivity.dll" Name="System.Windows.Interactivity.dll" Source="$(var.TargetDir)System.Windows.Interactivity.dll" />
+		  </Component>
+	    
+	  </ComponentGroup>
+
+		<ComponentGroup Id="DatasComponents" Directory="MyAppDataFolder1">
+			<Component Id="column_wisewithlandscape.xls" Guid="40899339-DB72-4FDE-827F-FD994AF4FD6A">
+				<File Id="column_wisewithlandscape.xls" Name="column_wisewithlandscape.xls" Source="$(var.TargetDir)column_wisewithlandscape.xls" />
+				<RemoveFolder Id='MyAppDataFolder1' On='uninstall' />
+			</Component>
+			<Component Id="Column_WiseWithPortrait.xls" Guid="EAAD08F7-3D44-4D27-B003-6B58DA4B32A0">
+				<File Id="Column_WiseWithPortrait.xls" Name="Column_WiseWithPortrait.xls" Source="$(var.TargetDir)Column_WiseWithPortrait.xls" />
+			</Component>
+			<Component Id="DelphiTVSTemplate.xls" Guid="D1D8E21F-8FD0-495B-8BAF-662E782458BC">
+				<File Id="DelphiTVSTemplate.xls" Name="DelphiTVSTemplate.xls" Source="$(var.TargetDir)DelphiTVSTemplate.xls" />
+			</Component>
+			<Component Id="HobCheckerTemplate.xls" Guid="64FEBA8F-4591-4D33-B1DA-1CEC5F70F539">
+				<File Id="HobCheckerTemplate.xls" Name="HobCheckerTemplate.xls" Source="$(var.TargetDir)HobCheckerTemplate.xls" />
+			</Component>
+			<Component Id="Row_WiseWithLandscape.xls" Guid="7C74D642-A59B-4319-8B04-F77EA661CA70">
+				<File Id="Row_WiseWithLandscape.xls" Name="Row_WiseWithLandscape.xls" Source="$(var.TargetDir)Row_WiseWithLandscape.xls" />
+			</Component>
+			<Component Id="Row_WiseWithPortrait.xls" Guid="A48807DD-C681-4977-A8D5-11DE3B4A9671">
+				<File Id="Row_WiseWithPortrait.xls" Name="Row_WiseWithPortrait.xls" Source="$(var.TargetDir)Row_WiseWithPortrait.xls" />
+			</Component>
+			<Component Id="Row_WiseWithPortrait_TT.xls" Guid="09D5E960-E4E8-47B2-B4C2-85C51DFDE168">
+				<File Id="Row_WiseWithPortrait_TT.xls" Name="Row_WiseWithPortrait-TT.xls" Source="$(var.TargetDir)Row_WiseWithPortrait-TT.xls" />
+			</Component>
+			<Component Id="LCValues.csv" Guid="D610FA72-7BDD-416B-841F-ECB3BE6CCE60">
+				<File Id="LCValues.csv" Name="LCValues.csv" Source="$(var.TargetDir)LCValues.csv" />
+				
+			</Component>
+			<Component Id="ProbeInspection.csv" Guid="55344851-2A78-4CDA-9D32-A6DAC91D3272">
+				<File Id="ProbeInspection.csv" Name="ProbeInspection.csv" Source="$(var.TargetDir)ProbeInspection.csv" />
+				
+			</Component>
+			<Component Id="ExcelDoc.mdb" Guid="991237B4-65CE-4A4C-A763-FEF7846A3AD6">
+				<File Id="ExcelDoc.mdb" Name="ExcelDoc.mdb" Source="$(var.TargetDir)ExcelDoc.mdb" />
+				
+			</Component>
+			<Component Id="HobParameters.mdb" Guid="1FFAD0BD-DEC3-46F6-A415-41BBC29DEEC7">
+				<File Id="HobParameters.mdb" Name="HobParameters.mdb" Source="$(var.TargetDir)HobParameters.mdb" />
+				
+			</Component>
+			<Component Id="RapidSettings.mdb" Guid="0B478AD3-8928-4F26-9C5D-EE81BA5D640A">
+				<File Id="RapidSettings.mdb" Name="RapidSettings.mdb" Source="$(var.TargetDir)RapidSettings.mdb" />
+				
+			</Component>
+			<Component Id="EntryHeader.dxf" Guid="7864FC6C-A20D-4D80-A8DB-978A03DE7155">
+				<File Id="EntryHeader.dxf" Name="EntryHeader.dxf" Source="$(var.TargetDir)EntryHeader.dxf" />
+				
+			</Component>
+			<Component Id="ExitHeader.dxf" Guid="6B65CBFE-1755-4ED0-8099-598B3535BF77">
+				<File Id="ExitHeader.dxf" Name="ExitHeader.dxf" Source="$(var.TargetDir)ExitHeader.dxf" />
+				
+			</Component>
+			<Component Id="RapidLogFile.txt" Guid="7512AC63-15CE-479F-B8A5-4B70C478B69F">
+				<File Id="RapidLogFile.txt" Name="RapidLogFile.txt" Source="$(var.TargetDir)RapidLogFile.txt" />
+				
+			</Component>
+		</ComponentGroup>
+
+		<ComponentGroup Id="DatasComponents1" Directory="MyAppDataFolder9">
+			<Component Id="column_wisewithlandscape1.xls" Guid="3A3EC3B4-FA9C-4E89-AD25-2385A649D41E">
+				<File Id="column_wisewithlandscape1.xls" Name="column_wisewithlandscape.xls" Source="$(var.TargetDir)column_wisewithlandscape.xls" />
+				
+			</Component>
+			<Component Id="Column_WiseWithPortrait1.xls" Guid="0FF0B478-C543-4F7D-B3B9-26928B3C993F">
+				<File Id="Column_WiseWithPortrait1.xls" Name="Column_WiseWithPortrait.xls" Source="$(var.TargetDir)Column_WiseWithPortrait.xls" />
+				
+			</Component>
+			<Component Id="Row_WiseWithLandscape1.xls" Guid="ADDEA9AB-5DA4-479C-B5BB-3C6C2D614C57">
+				<File Id="Row_WiseWithLandscape1.xls" Name="Row_WiseWithLandscape.xls" Source="$(var.TargetDir)Row_WiseWithLandscape.xls" />
+				
+			</Component>
+			<Component Id="Row_WiseWithPortrait1.xls" Guid="DBBCD1A4-9C0A-4A81-863A-0C931EDDFF97">
+				<File Id="Row_WiseWithPortrait1.xls" Name="Row_WiseWithPortrait.xls" Source="$(var.TargetDir)Row_WiseWithPortrait.xls" />
+				
+			</Component>
+		</ComponentGroup>
+
+		<ComponentGroup Id="DatasComponents2" Directory="MyAppDataFolder2">
+			<Component Id="Image" Guid="97FD63BD-B3FB-4332-A0FC-7A45F947EF3C">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents3" Directory="MyAppDataFolder3">
+			<Component Id="Images" Guid="4EC35090-27DC-4B11-BD5E-E72528CC269B">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents4" Directory="MyAppDataFolder4">
+			<Component Id="Log" Guid="6E33F583-DA79-4526-A532-F9F37A1F6EB2">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		
+		<ComponentGroup Id="DatasComponents41" Directory="MyAppDataFolder41">
+			<Component Id="CommandSend" Guid="3CF7BD5A-71B3-45F8-8532-9C2C48835386">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents42" Directory="MyAppDataFolder42">
+			<Component Id="ErrorLog" Guid="29486C5A-B73E-4447-B11E-A2BD26FEF8B5">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents421" Directory="MyAppDataFolder421">
+			<Component Id="LogFile" Guid="5473126C-637A-4016-B63B-6B157B4667E7">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents422" Directory="MyAppDataFolder422">
+			<Component Id="ScreenShot" Guid="9B9CD7B9-BC68-4D34-8EA0-22BE0D7BC4C6">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents43" Directory="MyAppDataFolder43">
+			<Component Id="ModuleInit" Guid="0051D3C9-8639-42FE-848C-A70A4EDAE86A">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents44" Directory="MyAppDataFolder44">
+			<Component Id="PointsLog" Guid="CFD3A61D-4EBA-4A21-8E44-AD0D86C6CBBE">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents45" Directory="MyAppDataFolder45">
+			<Component Id="ProgramsLog" Guid="B0176AC8-9A3F-421F-9E8D-44A9A9447317">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents46" Directory="MyAppDataFolder46">
+			<Component Id="UserLog" Guid="223D4AA8-8A48-4932-A349-3D2F001CBA29">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents5" Directory="MyAppDataFolder5">
+			<Component Id="Programs" Guid="93509436-2BBD-4497-88EE-6D9C951D5CB6">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents6" Directory="MyAppDataFolder6">
+			<Component Id="Reports" Guid="89F2B7EE-B3E0-4254-B262-FC01DEC0DA39">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents7" Directory="MyAppDataFolder7">
+			<Component Id="Saved_Parameters" Guid="A74E367A-1DD6-407C-9F18-19BDB45274A5">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents8" Directory="MyAppDataFolder8">
+			<Component Id="Shape_Points" Guid="68E99920-F717-4EAB-B47C-3BEA92A264EF">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="DatasComponents10" Directory="MyAppDataFolder10">
+			<Component Id="Templates" Guid="EDE71332-32F4-4E4D-9A27-F31076952DC8">
+				<CreateFolder/>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+	
+</Wix>

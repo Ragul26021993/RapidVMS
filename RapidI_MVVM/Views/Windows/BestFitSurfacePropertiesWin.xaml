@@ -1,0 +1,30 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	xmlns:Textprop="clr-namespace:Rapid.AttachedProperties"
+	xmlns:Util="clr-namespace:Rapid.Utilities"
+	x:Class="Rapid.Windows.BestFitSurfacePropertiesWin"
+	x:Name="Window"
+	Title="BestFitSurfacePropertiesWin"
+	Width="341.833" SizeToContent="Height" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="200">
+	<Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">
+		<Grid x:Name="LayoutRoot">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition Height="48.334"/>
+			</Grid.RowDefinitions>
+			<Button x:Name="btnOK" Content="OK" Grid.Row="2" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Template="{DynamicResource Shiny_SpButton2}" Width="75" Height="30" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,60,0" />
+			<Button x:Name="btnApply" Content="Apply" Grid.Row="3" Margin="60,0,0,0" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnApply_Click" Template="{DynamicResource Shiny_SpButton2}" Width="75" Height="30" HorizontalAlignment="Left" />
+            <TextBlock Height="18" HorizontalAlignment="Left" Margin="5,5,0,5" x:Name="txtHeading" Text="Please optimise the values as required:" VerticalAlignment="Center" FontWeight="Bold" FontSize="10.667" Grid.ColumnSpan="2" />
+			<TextBlock Margin="0,25,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Points Factor" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+			<TextBox x:Name="PtsFactorTxtBx" Margin="4,20,0,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"/>
+			<CheckBox x:Name="BFSurfaceAroundXYPlnChkBx" Grid.ColumnSpan="2" Content="Best Fit Surface Around XY Plane" Height="19" Margin="75,75,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+	</Border>
+</Window>

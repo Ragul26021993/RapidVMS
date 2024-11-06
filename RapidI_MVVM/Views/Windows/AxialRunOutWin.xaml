@@ -1,0 +1,24 @@
+﻿<Window x:Class="Rapid.Windows.AxialRunOutWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AxialRunOutWin" Height="200" Width="300"
+		xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties">
+    <Grid Background="{DynamicResource PanelBackground}">
+        <Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.6*"/>
+			<ColumnDefinition Width="0.4*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Text="Enter the No. of Flutes" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBox x:Name="NoOfFlutesTb" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Text="{Binding Path=FluteValue, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+		<TextBlock Text="Axial Radius" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Grid.Row="1"/>
+        <TextBox x:Name="RadiusTb" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="Decimal" Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Text="{Binding Path=AxialRadius, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+		<Button x:Name="btnOK" Content="OK" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Grid.Column="1"/>
+		<Button x:Name="btnCancel" Content="Cancel" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnCancel_Click"/>
+			
+    </Grid>
+</Window>

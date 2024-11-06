@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Rapid.Windows.GenericProb"
+        Title="GenericProb"
+		xmlns:AttachedProp="clr-namespace:Rapid.AttachedProperties" 
+		MinWidth="300" MaxWidth="700" MaxHeight="500" Width="400" Height="300" ResizeMode="NoResize">
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}" DataContext="{Binding Path=PTypeColl,RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="ProbeType" Width="120" Height="35" HorizontalAlignment="Left" Margin="8,2,0,219" Grid.Row="1" ItemsSource="{Binding}" DisplayMemberPath="ProbtypeName" SelectedValuePath="ProbeDetails" SelectedItem="" IsSynchronizedWithCurrentItem="True" IsEditable="True" Visibility="Collapsed"/>
+        <Button x:Name="AddBtn" Click="AddBtn_Click" Width="70" Height="30" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Add" Margin="0,4,0,0" Visibility="Collapsed"/>       
+        <Button x:Name="UpdateBtn" Content="Update" Click="UpdateBtn_Click" Margin="161,4,10,0" Width="50" Height="30" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.68,0.2" HorizontalAlignment="Right" Visibility="Collapsed"/>
+        <DataGrid x:Name="ProbDetailsDG" Margin="4,42,4,4" FontSize="12" ItemsSource="{Binding SelectedValue , ElementName=ProbeType}" IsSynchronizedWithCurrentItem="True" VerticalGridLinesBrush="White" HeadersVisibility="Column" Background="#4C000000" RowBackground="{DynamicResource RowBackground_DG}" RowHeight="30" VerticalContentAlignment="Bottom"  AlternatingRowBackground="{DynamicResource AlternatingRowBackground_DG}" BorderBrush="Blue" AutoGenerateColumns="False" Grid.Row="1" SelectionChanged="ProbDetailsDG_SelectionChanged" d:LayoutOverrides="GridBox">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="OrientationCol" Binding="{Binding Path=Orientation}" Header="Orientation" Width="190" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="RadiusCol" Binding="{Binding Path=Radius, Mode=TwoWay}" Header="Radius" Width="85" IsReadOnly="false" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="OffesetXCol" Binding="{Binding Path=OffsetX , Mode=TwoWay}" Header="Offeset X" Width="85" IsReadOnly="true" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="OffesetYCol" Binding="{Binding Path=OffsetY, Mode=TwoWay}" Header="Offeset Y" Width="85" IsReadOnly="true" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="OffesetZCol" Binding="{Binding Path=OffsetZ, Mode=TwoWay}" Header="Offeset Z" Width="85" IsReadOnly="true" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="CommentCol" Binding="{Binding Path=Comment, Mode=TwoWay}" Header="Comment" Width="190" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="ID" Binding="{Binding Path=ID, Mode=TwoWay}" Header="Comment" Width="190" IsReadOnly="true" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

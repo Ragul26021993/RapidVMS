@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CalibrationModule.ControlProperties">
+    <Position X="4.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABgAAAAAAAAQAAAAhAgABAkAAAQFgAAAQAAAAAAEBAA=</HashCode>
+      <FileName>ControlProp.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationModule.DB">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQBAAAAAAEACAAAAACAgAAAAAAAAAKEAAAAAAAA=</HashCode>
+      <FileName>DB.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CalibrationModule.Get_List_of_Controls">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAACAAAA=</HashCode>
+      <FileName>Get_List_of_Controls.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationModule.CreateControl">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAEAAAACAAAAQAAAAAJIIAAAAEAAAAAAAA=</HashCode>
+      <FileName>CreateControl.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationModule.GetControl">
+    <Position X="2.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAEAAAACAAAAQAAAAABIIAAAAGAAAAAAAA=</HashCode>
+      <FileName>GetControl.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CalibrationModule.IDatabaseInterac">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQBAAAAAAEAAAAAAACAAAAAAAAAAAIEAAAAAAAA=</HashCode>
+      <FileName>IDatabaseInterac.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Module Name="CalibrationModule.Constants">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Constants.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

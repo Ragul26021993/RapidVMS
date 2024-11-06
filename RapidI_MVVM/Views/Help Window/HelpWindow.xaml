@@ -1,0 +1,288 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:debug="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        xmlns:local="clr-namespace:RapidI.Help" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:Convertor="clr-namespace:Rapid.Converters" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="RapidI.Help.HelpWindow" 
+        WindowStartupLocation="CenterScreen"
+        Title="Help and Support" Width="1024" Height="760" mc:Ignorable="d" Background="White" x:Name="RapidIHelp" AllowDrop="True">
+    <Window.Resources>
+        <Convertor:ReverseBoolToVisibilityConvertor x:Key="ReverseBoolToVisibilityConvertor"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter1"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <Style x:Key="myListboxStyle">
+            <Style.Resources>
+                <!-- Background of selected item when focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="SteelBlue" />
+                <!-- Background of selected item when not focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="SteelBlue" />
+            </Style.Resources>
+        </Style>
+        <Style x:Key="GroupBoxStyle1" TargetType="{x:Type GroupBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupBox}">
+                        <Grid>
+                            <Rectangle Fill="#7F686666" RadiusY="1" RadiusX="1" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <TextBlock TextWrapping="Wrap" Text="No Video Found" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="ShowHide"/>
+    </Window.Triggers>
+    <DockPanel x:Name="DisplayHelpContainer" LastChildFill="True">
+        <Grid x:Name="TreeViewGrid" DockPanel.Dock="Left" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter1}, ElementName=ShowHide}" Background="#FFC0CCFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView BorderThickness="0" BorderBrush="{x:Null}" IsTextSearchEnabled="True" ItemsSource="{Binding}" Margin="0,0,2,0" Background="{x:Null}">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Branches}">
+                        <TextBlock x:Name="Links" Margin="30,15,0,0"><Hyperlink CommandParameter="{Binding}" Click="TreeEntity_Click" Tag="{Binding TopicName}"><InlineUIContainer>
+        							<TextBlock  Text="{Binding TopicDisplayName}"/>
+        						</InlineUIContainer></Hyperlink></TextBlock>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+            <GridSplitter Margin="0,0" Width="2"/>
+        </Grid>
+        <Grid x:Name="CenterHelpDisplayContent">
+            <GroupBox x:Name="DetailsGrpBx" Grid.Column="2" DataContext="{Binding ButtonEntity}" BorderThickness="0" BorderBrush="{x:Null}" Padding="0" Visibility="Visible">
+                <Grid x:Name="SubCat" Margin="7,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="0.8*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="TopicNameAndIcon" Orientation="Horizontal" Height="90" Margin="45,0,0,0" Grid.Row="0" >
+                        <Grid x:Name="Header" Width="{Binding ActualWidth, ElementName=TopicNameAndIcon}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="0.08*"/>
+                                <ColumnDefinition Width="0.12*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label FontWeight="Bold" Content="Name:" MinWidth="45" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13.333"/>
+                            <Label MinWidth="45"  Content="{Binding TopicDisplayName}" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <Label FontWeight="Bold" Content="Number Of Clicks:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13.333"/>
+                            <Label FontWeight="Bold" Grid.Row="1" Grid.Column="1" DataContext="{Binding}" Content="{Binding Clicks}"  HorizontalAlignment="Left" Visibility="{Binding IsChecked, Converter={StaticResource ReverseBoolToVisibilityConvertor}, ElementName=EditMode}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <TextBox x:Name="Click"  Grid.Column="1" Height="23" MinWidth="45" DataContext="{Binding}" Text="{Binding Clicks}"  Background="Transparent" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditMode}" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF545454" Grid.Row="1"/>
+                            <Label FontWeight="Bold" Content="Icon:" MinWidth="45" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13.333"/>
+                            <StackPanel Grid.Row="1" Grid.Column="4" Width="40" Height="40" Margin="10,0,0,0" HorizontalAlignment="Left" Background="#FF9BD7FF">
+                                <Image Source="{Binding ButtonImage}" Width="40" Height="40"  HorizontalAlignment="Left" />								
+                            </StackPanel>
+							<Button Content="Open New"  Grid.Column="4" Width="70" Margin="93.516,2.5,0,2.5" DataContext="{Binding}" HorizontalAlignment="Left" Grid.Row="1" Click="Button_Click"  Visibility="{Binding IsAdmminMode, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
+                            <CheckBox x:Name="EditMode" Grid.Column="4" Content="Edit" Height="40" Width="40" Background="#FFC0CCFF" VerticalAlignment="Center" Visibility="{Binding IsAdmminMode, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" HorizontalAlignment="Center" />
+                            <Button Content="Update"  Grid.Column="5" Width="70" Height="40" Margin="10,0,10,0" Click="UpdateBtn_Click" DataContext="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center"   Visibility="{Binding IsAdmminMode, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
+                            <CheckBox x:Name="ViewTutorialChbk" Grid.Row="1" Grid.Column="5" Height="40" Margin="10,0,10,0" Content="View Tutorial" Visibility="{Binding HasTutorials, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        </Grid>
+                    </StackPanel>
+                    <GroupBox  Grid.Row="2" x:Name="DesctiptionGrpBox" DataContext="{Binding}" Header="Description" FontSize="11" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="True" VerticalAlignment="Top" Height="82">
+                        <Grid>
+                            <TextBlock x:Name="LblDescription" TextWrapping="Wrap" DataContext="{Binding}" Text="{Binding TopicDescription}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                            <TextBox x:Name="DescriptionEditTB" TextWrapping="Wrap" MinWidth="150" DataContext="{Binding}" Text="{Binding TopicDescription}" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditMode}" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Grid>
+                    </GroupBox>
+                    <Grid x:Name="CenterPanel" MinHeight="500" Grid.Row="3" Visibility="visible">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="Col_procedure"/>
+                            <ColumnDefinition x:Name="Col_SpecialNotes"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="50*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="40*" />
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="Procedure" Grid.Row="1" Grid.Column="0">
+                            <DataGrid IsSynchronizedWithCurrentItem="True" x:Name="ProbDetailsDG" ItemsSource="{Binding Procedureitems}" Margin="1" FontSize="12" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF0074F5" HeadersVisibility="Column" Background="#19555555" VerticalContentAlignment="Bottom"  BorderBrush="Blue" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Visible" CanUserAddRows="{Binding IsChecked, ElementName=EditMode}" CanUserDeleteRows="{Binding IsChecked, ElementName=EditMode}" IsEnabled="{Binding IsChecked, ElementName=EditMode}">
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="Background" Value="#FF555555"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="HorizontalAlignment" Value="stretch"/>
+                                        <Setter Property="FontFamily" Value="Times New Roman"/>
+                                        <Setter Property="Height" Value="30"/>
+                                        <Setter Property="Padding" Value="5,5,5,5"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Setter Property="Height" Value="Auto"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                <Setter Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+
+                                <DataGrid.CellStyle>
+                                    <Style TargetType="{x:Type DataGridCell}">
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                    </Style>
+                                </DataGrid.CellStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="StepsCol" Binding="{Binding ProcedureStepNumber}"  Header="STEPS" Width="0.3*" Visibility="Visible">
+                                        <DataGridTextColumn.EditingElementStyle>
+                                            <Style TargetType="{x:Type TextBox}">
+                                                <Setter Property="IsReadOnly" Value="True"/>
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding EditModeProp, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                                                        <Setter Property="IsReadOnly" Value="false"/>
+                                                        <Setter Property="Background" Value="White"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGridTextColumn.EditingElementStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="ProcedureCol" Binding="{Binding ProcedureText, Mode=TwoWay}" Header="PROCEDURE" Width="0.7*" Visibility="Visible" IsReadOnly="False">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                        <DataGridTextColumn.EditingElementStyle>
+                                            <Style TargetType="{x:Type TextBox}">
+                                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                            </Style>
+                                        </DataGridTextColumn.EditingElementStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Grid x:Name="SpecialNotes" Grid.Row="1" Grid.Column="1">
+                            <DataGrid IsSynchronizedWithCurrentItem="True" x:Name="SpecialNotesDG" ItemsSource="{Binding SpecialNotesitems}" Margin="1" FontSize="12" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF0074F5" HeadersVisibility="Column" Background="#19555555" VerticalContentAlignment="Bottom"  BorderBrush="Blue" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" CanUserAddRows="{Binding IsChecked, ElementName=EditMode}" CanUserDeleteRows="{Binding IsChecked, ElementName=EditMode}" Visibility="Visible" IsEnabled="{Binding IsChecked, ElementName=EditMode}">
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="Background" Value="#FF555555"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="HorizontalAlignment" Value="stretch"/>
+                                        <Setter Property="FontFamily" Value="Times New Roman"/>
+                                        <Setter Property="Height" Value="30"/>
+                                        <Setter Property="Padding" Value="5,5,5,5"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Setter Property="Height" Value="Auto"/>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="StepsDGCol" Binding="{Binding SPText}" Header="SPECIAL NOTES" Width="0.5*" IsReadOnly="False">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="ProcedureDGCol" Binding="{Binding SPWorkAround, Mode=TwoWay}" Header="WORK AROUND" Width="0.5*" IsReadOnly="False" Visibility="Visible">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Grid x:Name="Application" Grid.Row="3" Grid.ColumnSpan="2">
+                            <DataGrid IsSynchronizedWithCurrentItem="True" x:Name="ApplicationDG"  ItemsSource="{Binding Applicationitems}" Margin="0" FontSize="12" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF0074F5" HeadersVisibility="Column" Background="#19555555" VerticalContentAlignment="Bottom"  BorderBrush="Blue" AutoGenerateColumns="False" Visibility="Visible" CanUserAddRows="{Binding IsChecked, ElementName=EditMode}" CanUserDeleteRows="{Binding IsChecked, ElementName=EditMode}" IsEnabled="{Binding IsChecked, ElementName=EditMode}">
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="Background" Value="#FF555555"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="HorizontalAlignment" Value="stretch"/>
+                                        <Setter Property="FontFamily" Value="Times New Roman"/>
+                                        <Setter Property="Height" Value="30"/>
+                                        <Setter Property="Padding" Value="5,5,5,5"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Setter Property="Height" Value="Auto"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                <Setter Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="AppTextCol" Binding="{Binding AppText}" Width="0.5*" Header="APPLICATION" IsReadOnly="False" Visibility="Visible">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="AppCommentCol" Binding="{Binding AppComment, Mode=TwoWay}" Width="0.5*" Header="COMMENT" IsReadOnly="False" Visibility="Visible">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="DisplayNonLeafNode" BorderThickness="0" BorderBrush="{x:Null}" Padding="0" Visibility="Hidden">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="43.54"/>
+                        <RowDefinition Height="16.46"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Foreground="#FF5C63A5" FontWeight="Bold" Grid.Column="1" Grid.Row="0" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,13.54" d:LayoutOverrides="GridBox" ><Run Text="Find An Answer Quickly"/></TextBlock>
+                    <Border CornerRadius="5,0,0,5" BorderBrush="Gray" BorderThickness="0"  Margin="30,0,13,3.54" HorizontalAlignment="Stretch" MinHeight="40" Background="#FF555555">
+                        <TextBlock TextWrapping="Wrap" Visibility="Visible" Grid.Column="1" Grid.Row="1" Text="{Binding TopicDisplayName}" x:Name="Heading" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="21.333" Foreground="#FFCCCCCC" Margin="14,0,0,0" FontWeight="Bold"/>
+                    </Border>
+                    <ListBox ItemsSource="{Binding Branches}" BorderThickness="0" Grid.Row="2" Margin="30,15,0,15" d:LayoutOverrides="GridBox" Visibility="Visible">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock x:Name="Links" Margin="30,15,0,0"><Hyperlink CommandParameter="{Binding}" Click="btn_click" Tag="{Binding TopicName}"><InlineUIContainer>
+        									<TextBlock  Text="{Binding TopicDisplayName}" />
+        								</InlineUIContainer></Hyperlink></TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </GroupBox>
+            <CheckBox x:Name="ShowHide" Content="CheckBox" Height="40" Width="20" Template="{DynamicResource DockingButton}" Background="#FFC0CCFF" HorizontalAlignment="Left" Margin="-2,3,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </DockPanel>
+</Window>

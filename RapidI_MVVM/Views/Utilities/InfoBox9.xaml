@@ -1,0 +1,26 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties"
+	mc:Ignorable="d"
+	x:Class="Rapid.Utilities.InfoBox9"
+	x:Name="MainGrid"
+	d:DesignWidth="361" d:DesignHeight="64">
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition/>
+		<ColumnDefinition/>
+		<ColumnDefinition/>
+		<ColumnDefinition/>
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="*"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+	<TextBlock  x:Name="txtStatus" Margin="0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
+	<CheckBox x:Name="ChkBx" Content="CheckBox" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0"/>
+	<CheckBox x:Name="ChkBx2" Content="CheckBox" Grid.Row="1" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1"/>
+	<CheckBox x:Name="ChkBx3" Content="CheckBox" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"/>
+	<CheckBox x:Name="ChkBx4" Content="CheckBox" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" Visibility="Collapsed"/>
+</Grid>

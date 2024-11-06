@@ -1,0 +1,1705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AddDimAction" Collapsed="true">
+    <Position X="191.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAEAAEACAAAAEBAAEEAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actions\AddDimAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddPointAction" Collapsed="true">
+    <Position X="193.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAEAAAAAAAAABkEAAAQgAAAAAAACAAAAAQABAA=</HashCode>
+      <FileName>Actions\AddPointAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddProbePathAction" Collapsed="true">
+    <Position X="195.75" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAECAAAAAAAAgEEAAAQgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actions\AddProbePathAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddThreadMeasureAction" Collapsed="true">
+    <Position X="197.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAFgLAAABABQAEMBhIwQEAAAAAAAAAAAQDAQAA=</HashCode>
+      <FileName>Actions\AddThreadMeasureAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddThreadPointAction" Collapsed="true">
+    <Position X="200.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAEAAAAAAAAAAEEAAAQgAAAAAAAiAAAAAQAFAA=</HashCode>
+      <FileName>Actions\AddThreadPointAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CopyShapesAction" Collapsed="true">
+    <Position X="202.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAEAAAAAAAAAAEEAAAAgAAIAAAAAAAAAAAAQEA=</HashCode>
+      <FileName>actions\CopyShapesAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineArcAction" Collapsed="true">
+    <Position X="204.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAgAEEACAIAAAAAEmAAAIAAAACAIAAAAAQIAAACA=</HashCode>
+      <FileName>Actions\LineArcAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXFExpose" Collapsed="true">
+    <Position X="232.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCACAhSAIEBAQAAiIABACAAJKAAEkAFKAAJCmDgAIQE=</HashCode>
+      <FileName>DXF\DXFExpose.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGESReader" Collapsed="true">
+    <Position X="234.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAhAAAQAVACIgAGAECSwCAYhBARGACMIQhQJ0BEJAs=</HashCode>
+      <FileName>DXF\IGESReader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGESWriter" Collapsed="true">
+    <Position X="234.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ATASQKjAAACAIAAAgBLQJMACEkAAMBBAoQQAKEAJBAg=</HashCode>
+      <FileName>DXF\IGESWriter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationCalculation" Collapsed="true">
+    <Position X="222.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAgQoQAA4RoAATEJFAJEAAEgGBACkQIBGIAIAEQ=</HashCode>
+      <FileName>Engine\CalibrationCalculation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FocusFunctions" Collapsed="true">
+    <Position X="223" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kYSgDQQTaESAeDFW4ICDjAAItWFygBgAUYGUCsMIKCE=</HashCode>
+      <FileName>Engine\FocusFunctions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsectPtCollection" Collapsed="true">
+    <Position X="225" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAAAAAAAAAQAAAAAAAAAgACAAAAAAAAgCQACA=</HashCode>
+      <FileName>Engine\IsectPtCollection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartProgramFunctions" Collapsed="true">
+    <Position X="222.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>cnsCgBAZYFD4oEZZbjBgbrAHjJBjhGQel1YYEwUZDBk=</HashCode>
+      <FileName>Engine\PartProgramFunctions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointCollection" Collapsed="true">
+    <Position X="225" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAAgAAgAAAQAAAAAAAAAgACAUAAAAAAgCBACA=</HashCode>
+      <FileName>Engine\PointCollection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RapidEnums" Collapsed="true">
+    <Position X="227.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RapidEnums.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnapPointCollection" Collapsed="true">
+    <Position X="227.25" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAwgAAAA=</HashCode>
+      <FileName>Engine\SnapPointCollection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadCalcFunctions" Collapsed="true">
+    <Position X="225" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>FAAFEAiAAwioAQAAKaAEABCADAARAAhAIAAgIJGAAwE=</HashCode>
+      <FileName>Engine\ThreadCalcFunctions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PtCube" Collapsed="true">
+    <Position X="227.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAABEAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\TriangulationCalc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriangulationCalc" Collapsed="true">
+    <Position X="225" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>cAAECQBwAAAQAEQQgNAEAAQAAAAAACQAAQECAAIAABI=</HashCode>
+      <FileName>Engine\TriangulationCalc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleInsideATraingle" Collapsed="true">
+    <Position X="44.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAEAIABAAABQAIIAAAAgAAgAAIAAAAAAAAAAEA=</HashCode>
+      <FileName>Handlers_DerivedShapes\CircleInsideATraingle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NearestPointHandler" Collapsed="true">
+    <Position X="53.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAABACAAQAIAAAAAAAAgAAAIAAAAAAAAAAE=</HashCode>
+      <FileName>Handlers_DerivedShapes\NearestPointHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidPointHandler" Collapsed="true">
+    <Position X="62.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAgAAAABgCAAQAIAAACAAAAgAIIAAAAAAJAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\MidPointHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCDHandler" Collapsed="true">
+    <Position X="76" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAAAAQAIAAAAAAEAgAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\PCDHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointOnCircle" Collapsed="true">
+    <Position X="85" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogAAACECAABACABQAMAAAAAAAAgAAIAAAAAQAAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\PointOnCircle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointOnLine" Collapsed="true">
+    <Position X="89.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAACEAAABACABQAIAAABAAAAgAAICAAAACABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\PointOnLine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlexibleCrossHairHandler" Collapsed="true">
+    <Position X="96.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAAAABACgCQAIAAAAAAAAgAAJAAAAAAAAAAAQ=</HashCode>
+      <FileName>Handlers_FrameGrab\FlexibleCrossHairHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddShapeAction" Collapsed="true">
+    <Position X="216" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAACAAAAAACEEAAAAAAAAAAAAAAAAAAQARCA=</HashCode>
+      <FileName>Actions\AddShapeAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddUCSAction" Collapsed="true">
+    <Position X="220.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAEAAACAAAAAA1EAABAAAAAAAgAAAAAAAAAAAw=</HashCode>
+      <FileName>Actions\AddUCSAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineAngleBisector" Collapsed="true">
+    <Position X="116.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogAAACFkAABICABQAIAQAgAAAAgAAIAAQBgAABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineAngleBisector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineOnePointAngle" Collapsed="true">
+    <Position X="150.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAQCEkCABICABQAIAQAgAAAAgAAICAAAgACBAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineOnePointAngle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineOnePointOffsetDist" Collapsed="true">
+    <Position X="163.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAACEkCABICAhQAIAQAgAAAAgAAICAgAgAABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineOnePointOffsetDist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineParallel2Line" Collapsed="true">
+    <Position X="8.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoCAAQiEkAABICABQAIAQAgAAAAgAIICAAAgIABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineParallel2Line.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineParallelTangent" Collapsed="true">
+    <Position X="17.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4AAAACAmAABICApQAIAQAgBAAAiAAIAABBgAABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineParallelTangent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LinePerpendicular2Line" Collapsed="true">
+    <Position X="28.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAACEkAABICABQCIAQggAAAAgAAICAAAgAABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LinePerpendicular2Line.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LinePerpendicularTangent" Collapsed="true">
+    <Position X="37.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4AAAACAmAAhICAJQAIAQAgBAAAgAAKAABBgAABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LinePerpendicularTangent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineTangent2Circle" Collapsed="true">
+    <Position X="46.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AsAAAACEmAABICEBQBIAQAgAAAAgAAIAAAAgAAAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineTangent2Circle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineTangentOn2Circles" Collapsed="true">
+    <Position X="55.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EoABAACEgBIBICABQAIIAAAAAAAgAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineTangentOn2Circles.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineTangentThruPoint" Collapsed="true">
+    <Position X="64.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4AAAACUmAABICAJQAIAQBgAAAggAAIAAAAgAAIKAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineTangentThruPoint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FocusDepthMultiBoxHandler" Collapsed="true">
+    <Position X="78.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAgAAhQCAAQAIADACAAAAgAAIABEAAAAAAQAg=</HashCode>
+      <FileName>Handlers_FrameGrab\FocusDepthMultiBoxHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabAngularRect" Collapsed="true">
+    <Position X="118.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAABgACAAAAgBAAAAEFAAAEAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabAngularRect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabArc" Collapsed="true">
+    <Position X="121" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAAAAgACAIAAAAAAAAEFAAAEAAiAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabArc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabCircle" Collapsed="true">
+    <Position X="123.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAgACAAAAABAAAAEFAAAUAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabCircle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabEdgeMouseClick" Collapsed="true">
+    <Position X="125.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAgAAAAAAAAAAAAEFAAAEAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabEdgeMouseClick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabFixedRectangle" Collapsed="true">
+    <Position X="127.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAACAQAgIAAAAAAAAIAAEFAAAEAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabFixedRectangle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabHandler" Collapsed="true">
+    <Position X="124.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4gAAAQAkgAhAiBgQEIEIAEFggAkAAiIAAAAAAEBAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabIdAndOd" Collapsed="true">
+    <Position X="152.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQAAAAAABAAAAQAIAIAQAAAAgAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabIdAndOd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameGrabRectangle" Collapsed="true">
+    <Position X="130" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAAAAgAAAAAAAAAIAAEFAAAEAACAAAAAAAAAAAE=</HashCode>
+      <FileName>Handlers_FrameGrab\FrameGrabRectangle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LiveScanModeHandler" Collapsed="true">
+    <Position X="10.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAgAAgAAhACAAQAIAAAAAAAAgAAIAABAAAAAAQAA=</HashCode>
+      <FileName>Handlers_FrameGrab\LiveScanModeHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScanModeHandler" Collapsed="true">
+    <Position X="19.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAgAABACAAQAJAAAEAAAAgAAIAAAAAAAAAQAA=</HashCode>
+      <FileName>Handlers_FrameGrab\ScanModeHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SelectPointHandler" Collapsed="true">
+    <Position X="31" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAAAABACAAQAIAAAAAEAAgAAIAAAAAAAAACIA=</HashCode>
+      <FileName>Handlers_FrameGrab\SelectPointHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadLineArcHandler" Collapsed="true">
+    <Position X="40" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAKCAAAFAgADBAQAMAQGgAgAEgAAIBoIAgGQAAQCA=</HashCode>
+      <FileName>Handlers_Measurement\ThreadLineArcHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_AngleMeasureWithYAxis" Collapsed="true">
+    <Position X="49" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIAUkAGAACAAQgKgAAAIAQCgQAIAAAAAAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_AngleMeasureWithYAxis.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_Chamfer_ArcMeasureHandler" Collapsed="true">
+    <Position X="58" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIgUkACgACAAQIIACAEAASAgAEIAAgABAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_Chamfer_ArcMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_Chamfer_LineMeasureHandler" Collapsed="true">
+    <Position X="67" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIgUkQCgACAAQIIACAEAQSAgAAIAAAABAAEQAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_Chamfer_LineMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cad1LineHandler3D" Collapsed="true">
+    <Position X="132.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEgEAAAEAAKACAEBoAAAgAAAAQAAAAAAQCEAAAAAAgg=</HashCode>
+      <FileName>Hanlders_CadAlignment\Cad1LineHandler3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cad1Pt1LineHandler" Collapsed="true">
+    <Position X="134.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAgoAAEAAKAAIABIAAAgAAAAAAAIAAAQCEAIAAAAAA=</HashCode>
+      <FileName>Hanlders_CadAlignment\Cad1Pt1LineHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cad1Pt1LineHandler3D" Collapsed="true">
+    <Position X="136.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CkgkAAAEAAKADAEBoAAAgAAAAQABAAAAQCEAAAAAAAg=</HashCode>
+      <FileName>Hanlders_CadAlignment\Cad1Pt1LineHandler3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cad1PtHandler" Collapsed="true">
+    <Position X="139" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAACAAAKAAAAAAAAAgAAAAAAAIAAAUCAAAEAAAAA=</HashCode>
+      <FileName>Hanlders_CadAlignment\Cad1PtHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cad2LineHandler" Collapsed="true">
+    <Position X="141.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAACAAIAQKAAAABAAAAgAAAAAAAAAAAQDEAAAAAAAA=</HashCode>
+      <FileName>Hanlders_CadAlignment\Cad2LineHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cad2PtHandler" Collapsed="true">
+    <Position X="143.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAKAAAAAAAAAgAAAAAAAAAQAQiAAAAAAIAA=</HashCode>
+      <FileName>Hanlders_CadAlignment\Cad2PtHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CadAlignHandler" Collapsed="true">
+    <Position X="138" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAKAAAQAQAIAgAAAAAAgAAAAQCAAAAAAAAA=</HashCode>
+      <FileName>Hanlders_CadAlignment\CadAlignHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_AngleMeasureHandler" Collapsed="true">
+    <Position X="154.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIAUkBCgACAAQpKgBAAIAQEgQAIAAAAAAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_AngleMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_AngleMeasureWithXAxis" Collapsed="true">
+    <Position X="166" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIAUkAGAACAAQgKgAAAIAQAgUAIAAAAAAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_AngleMeasureWithXAxis.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleTangent2Circle" Collapsed="true">
+    <Position X="13" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogAAAAEiAABADIBQAIAAAoAAAAgAAYAAAAQAAAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\CircleTangent2Circle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleTangent2LineCircle" Collapsed="true">
+    <Position X="22" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4AAAAgJgAABCKAJYAIABAgBAAAgAAYCAACAAEBAABA=</HashCode>
+      <FileName>Handlers_DerivedShapes\CircleTangent2LineCircle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleTangent2TwoCircle1" Collapsed="true">
+    <Position X="33.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GoAAEgAFgAABCCABYAJAAggAAAAgAAYEAACAAAAEQAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\CircleTangent2TwoCircle1.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleTangent2TwoCircle2" Collapsed="true">
+    <Position X="42.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EoAAEgAFgAABCCABYAIABAgAAAAgAAYEAAAAAAAEQAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\CircleTangent2TwoCircle2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleTangent2TwoLine" Collapsed="true">
+    <Position X="51.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAgFgAABACABYAICAAgAIAAgAAYAAABgAABAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\CircleTangent2TwoLine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_DiameterMeasureHandler" Collapsed="true">
+    <Position X="60.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MIEAQIAUkADgBCAARAIAAEAIAQAgAAIAAAAAAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_DiameterMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMMHandler" Collapsed="true">
+    <Position X="69.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogAgAiAECABACgARINQAKAAAQAgAgJAAAEAAAAIAAA=</HashCode>
+      <FileName>Handlers_Measurement\DMMHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXFAreaHandler" Collapsed="true">
+    <Position X="80.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgIAAAAAAACAAQAIAACAAAAAgAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_Measurement\DXFAreaHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FilletHandler" Collapsed="true">
+    <Position X="87.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAABgEECAgBsCABQQIAYAkAIAIgACMAAAEIEPAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\FilletHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineParallelTangent2Circle" Collapsed="true">
+    <Position X="91.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ApKAAAAQkBABACgBYAIAACgAAAAgAAIsAAAAQAAgAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\LineParallelTangent2Circle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCDMeasureHandler" Collapsed="true">
+    <Position X="98.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAABCAAACABQAIAACAAAAAgAAIAABARAAAACAA=</HashCode>
+      <FileName>Handlers_Measurement\PCDMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_RadiusMeasureHandler" Collapsed="true">
+    <Position X="105.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQKAUlACgAOAAQAIAAAAAAUAgAAIAAAAAAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_RadiusMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RotaryDimensionHandler" Collapsed="true">
+    <Position X="109.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAABCAAACABQAIAACAAAgAgAAIAAAABAAAACAA=</HashCode>
+      <FileName>Handlers_Measurement\RotaryDimensionHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimAngle3D" Collapsed="true">
+    <Position X="145.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAGgAAAAAAAACAQAAAAAAAoAAAAAQIAAAJEAAAAADQ=</HashCode>
+      <FileName>Measurement\DimAngle3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimAngularity" Collapsed="true">
+    <Position X="159.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAgAAEAAAEAAAQAAAAQAAoAAAAAAIEAgIEBAAQABA=</HashCode>
+      <FileName>Measurement\DimAngularity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimArcAngle" Collapsed="true">
+    <Position X="170.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAgIAkAAAAAAAQAAIAAAAoAAAAAAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimArcAngle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimAxisLength" Collapsed="true">
+    <Position X="28.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAABAAAgEQEAAAAAAoAAAACAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimAxisLength.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimChildMeasurement" Collapsed="true">
+    <Position X="39.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAIQAABAAAAIAAAAIAIAAAoAAAAAABA=</HashCode>
+      <FileName>Measurement\DimChildMeasurement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCircle3DToCircle3DDistance" Collapsed="true">
+    <Position X="50.75" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAARAAAABAAoAACAAAIAAAYEAAAAABA=</HashCode>
+      <FileName>Measurement\DimCircle3DToCircle3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCircle3DToConeDistance" Collapsed="true">
+    <Position X="60.25" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABAGgAAAAAAAAACQAIEAAAAoAAAAAQIAAAIEAAAQEDQ=</HashCode>
+      <FileName>Measurement\DImCircle3DToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCircleToCircleDistance" Collapsed="true">
+    <Position X="69.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAQAAAAAAAoAAAAAAICCAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimCircleToCircleDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCircleToLineDistance" Collapsed="true">
+    <Position X="78.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAABAQAQAAQAAAAoAAAAAAIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimCircleToLineDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCircularity" Collapsed="true">
+    <Position X="87.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAgAAEAAAAAAAQIAAAAAAoCAAAAAAAIAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimCircularity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimConcentricity" Collapsed="true">
+    <Position X="94" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBAgAAMAAAAAAAQAQAAAAAoAAAAAAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimConcentricity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimConeToConeDistance" Collapsed="true">
+    <Position X="100.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ARAAgAIAAAAAIAAQAAAAAAAoAAAAIAIAAAIEEAAAABA=</HashCode>
+      <FileName>Measurement\DimConeToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimConeToConics3DDistance" Collapsed="true">
+    <Position X="107.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAGgAAAAAAAAAAQCIAAAQAoAAAACQIAAAIEAAAQADQ=</HashCode>
+      <FileName>Measurement\DimConeToConics3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCylinderAngularity" Collapsed="true">
+    <Position X="116.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAEAAAEgAAQABAAQAAoAAABACIAAgIEBAAQABQ=</HashCode>
+      <FileName>Measurement\DimCylinderAngularity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCylinderToConeDistance" Collapsed="true">
+    <Position X="125.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAgAAAAAAAAQAIAAABAoAAARAQIAAQIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimCylinderToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCylinderToConics3DDistance" Collapsed="true">
+    <Position X="136.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAgAkAAAAAACAQAAAAAAAoAAABCAIAAAIEAAAQABA=</HashCode>
+      <FileName>Measurement\DimCylinderToConics3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCylinderToCylinderDistance" Collapsed="true">
+    <Position X="148" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJCAgAAAAAAAAAAQAAAAAAAoAAAAAAIAABMEAAAAAJA=</HashCode>
+      <FileName>Measurement\DimCylinderToCylinderDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCylinderToSphereDistance" Collapsed="true">
+    <Position X="161.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAgAAAAAAAAQACAAAAAoAAIBAAIAAAIEAEAAABA=</HashCode>
+      <FileName>Measurement\DimCylinderToSphereDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimCylindricity" Collapsed="true">
+    <Position X="172.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAUAAAQQAAQAAAAAAAoCAABACAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimCylindricity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimDepth" Collapsed="true">
+    <Position X="31" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAiJAEAAAAAAAQAAQAAAAIAAgAAAIAAAJEAgQAABQ=</HashCode>
+      <FileName>Measurement\DimDepth.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimDiameter2D" Collapsed="true">
+    <Position X="42.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBgAgAAAAAAAAAAwAAAAAAAoAAAAAAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimDiameter2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimDiameter3D" Collapsed="true">
+    <Position X="53.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAgAAAAAAAAAAwAAAAAAAoAAABACAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimDiameter3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimDigitalMicrometer" Collapsed="true">
+    <Position X="63.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAEACABAQAQAEABAAAoAADgEAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimDigitalMicrometer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimFlatness" Collapsed="true">
+    <Position X="71.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAgAAEAAAAAAAQAAAAAAAoAAAAAAAAAAIEAACARBA=</HashCode>
+      <FileName>Measurement\DimFlatness.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLine3D" Collapsed="true">
+    <Position X="80.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAsAAEAAAAAAAQAAAAAAAoQAAAAAAAAAIEEAAAABA=</HashCode>
+      <FileName>Measurement\DimLine3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLine3DAngularity" Collapsed="true">
+    <Position X="89.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBEAoAAEAAAGAAAQAAAAQAAoAAAAAAIAAgIEBAAQABA=</HashCode>
+      <FileName>Measurement\DimLine3DAngularity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToCircle3DDistance" Collapsed="true">
+    <Position X="96.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAIAAAgAQAAQAAAAoAgCAAAIAAAYEACAQABA=</HashCode>
+      <FileName>Measurement\DimLineToCircle3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToConeDistance" Collapsed="true">
+    <Position X="103" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAIgAAQAAAAAAAQAAAAAAAoAgAAAQIAAAIEACAAABA=</HashCode>
+      <FileName>Measurement\DimLineToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToConics3DDistance" Collapsed="true">
+    <Position X="109.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAABAAAAAQMAAAAAAoAgCACAMAAAIEACAQABA=</HashCode>
+      <FileName>Measurement\DimLineToConics3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToCylinderDistance" Collapsed="true">
+    <Position X="118.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAQAAAAAAAoAgABACIAAAIEACQAABA=</HashCode>
+      <FileName>Measurement\DimLineToCylinderDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToLineDistance3D" Collapsed="true">
+    <Position X="127.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgIAAAAQCAAAQAAAAAAAogAAAAAIAEAIEAAABIBA=</HashCode>
+      <FileName>Measurement\DimLineToLineDistance3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToPlaneDistance" Collapsed="true">
+    <Position X="139" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgQAAAAAAABAQAAAAAAAoAgCAAAIAADIEACAQABA=</HashCode>
+      <FileName>Measurement\DimLineToPlaneDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToSphereDistance" Collapsed="true">
+    <Position X="150.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAQAAAAIAAoAgIAAAIAAAIEACAAABE=</HashCode>
+      <FileName>Measurement\DimLineToSphereDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimOrdinate" Collapsed="true">
+    <Position X="163.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgBAEEgAAAAAQAAAAAAAoQAAAAAAAAAIEAAAABBA=</HashCode>
+      <FileName>Measurement\DimOrdinate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPCDAngle" Collapsed="true">
+    <Position X="175" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAgAEEAAEAAAEQAAAAAAAoAAIAAACAAAJkAABQABA=</HashCode>
+      <FileName>Measurement\DimPCDAngle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPCDOffset" Collapsed="true">
+    <Position X="33.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAgAAEAAAAAACQAAAAAAAoAAAAAAAAAgIEAAAAgBA=</HashCode>
+      <FileName>Measurement\DimPCDOffset.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPerimeter_Diameter" Collapsed="true">
+    <Position X="44.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABgCgIAEAAAAAAAQAAAAAAAoAAAAIAIAAApEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPerimeter_Diameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneAngularity" Collapsed="true">
+    <Position X="55.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IFAAgAAEEAAEAAAQAAAAQAAoAAAAAAIAAgIEBAAQABI=</HashCode>
+      <FileName>Measurement\DimPlaneAngularity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneToCircle3DDistance" Collapsed="true">
+    <Position X="65" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBBAgCAAAgAAAAAQAAAAAAAoAACAAAIAAAYEIAAAABA=</HashCode>
+      <FileName>Measurement\DImPlaneToCircle3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneToConeDistance" Collapsed="true">
+    <Position X="73.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAEAAAQAQAIAAAAAoAAAAAwIAACIEAAAQABA=</HashCode>
+      <FileName>Measurement\DimPlaneToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneToConics3DDistance" Collapsed="true">
+    <Position X="82.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgQAAAAAAIAAQAAAAAAAoAACACAIAACIEAAAQABA=</HashCode>
+      <FileName>Measurement\DimPlaneToConics3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneToCylinderDistance" Collapsed="true">
+    <Position X="91.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEgAgAAAAAASAQAAAAAAAoAAABAAYAACIEAAAQABA=</HashCode>
+      <FileName>Measurement\DimPlaneToCylinderDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneToPlaneDistance" Collapsed="true">
+    <Position X="98.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBBAgAAAAAACAAAQAAAAAAAoAACAAAIAAAIFAAAAABA=</HashCode>
+      <FileName>Measurement\DimPlaneToPlaneDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPlaneToSphereDistance" Collapsed="true">
+    <Position X="105.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgQAAAAAAAAAQAAAAAAEoAAIAAAIAACIEAAAAEBA=</HashCode>
+      <FileName>Measurement\DimPlaneToSphereDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToCircle3DDistance" Collapsed="true">
+    <Position X="112" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAiAAAAAAAAACQAAAAAAAoAAAAAEIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToCircle3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToConeDistance" Collapsed="true">
+    <Position X="121" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAGgAAAQAAAAAAQAAAAAAAoAAAAAQIAAAIEAAAAADQ=</HashCode>
+      <FileName>Measurement\DimPointToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToConics3DDistance" Collapsed="true">
+    <Position X="130" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAgAAAABAAAAAQEAAAAAAoAAAACAIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToConics3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToCylinderDistance" Collapsed="true">
+    <Position X="141.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAEAAQAAAAAAAoAAABACIAAAIEAAAAQBA=</HashCode>
+      <FileName>Measurement\DimPointToCylinderDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToLineDistance3D" Collapsed="true">
+    <Position X="152.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAoAAAAAAAAAAQAAAAACAoAgAAAAAAAAIUAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToLineDistance3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToPlaneDistance" Collapsed="true">
+    <Position X="166" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAgQAAAAAAAgAQAAAAAAAoAAAAAAIAACIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToPlaneDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToPointDistance3D" Collapsed="true">
+    <Position X="177.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAQAAAAQAAoAAAAAAAAAAIEABAAABA=</HashCode>
+      <FileName>Measurement\DimPointToPointDistance3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointCoordinate" Collapsed="true">
+    <Position X="35.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABIEgAgEAAAAAAAQAECEAAAoAEAAAAIAAAIEAABAABA=</HashCode>
+      <FileName>Measurement\DimPointCoordinate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToCircleDistance" Collapsed="true">
+    <Position X="46.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IBAAgAAABAAAAAAQAAAAAAAoAAAAAAIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToCircleDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToPointDistLAngle" Collapsed="true">
+    <Position X="57.75" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAgQAAAAAAAAAQAAAAAgAoAAAAAAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToPointDistLAngle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToSphereDistance" Collapsed="true">
+    <Position X="67" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAgAAAAABAAAAQAAAAAAAoAAIAAAIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToSphereDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimRadius2D" Collapsed="true">
+    <Position X="76" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAgAAAAAAAAAAQAACAAAAoEAAAAAAAAgIEBAAAABA=</HashCode>
+      <FileName>Measurement\DimRadius2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimRadius3D" Collapsed="true">
+    <Position X="85" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEgAAAAAAAAAAQAAAAAAAoIAABACAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimRadius3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArcHandler" Collapsed="true">
+    <Position X="71.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogACAAAGAABADAAQAoCAAACAAAwAAICgAAAAAAAAAQ=</HashCode>
+      <FileName>Handlers\ArcHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseItem" Collapsed="true">
+    <Position X="108.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAUAACAgAAAACQAQAIAAAAAEAABAQAAAhAAAgA=</HashCode>
+      <FileName>Engine\BaseItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChangeUCSAction" Collapsed="true">
+    <Position X="207" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIECAAAAACCAAEEAAAAAAAAAEAAAAAIACBAAAA=</HashCode>
+      <FileName>Actions\ChangeUCSAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimRotaryAngleMeasure" Collapsed="true">
+    <Position X="114.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAgAAEBAAAAAAQAEAAAAAoAAAAAAAAAANkAABAABA=</HashCode>
+      <FileName>Measurement\DimRotaryAngleMeasure.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimSphereToCircle3DDistance" Collapsed="true">
+    <Position X="123.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAQAAAAAAApAAIAAAIAAQYEAAAAABA=</HashCode>
+      <FileName>Measurement\DimSphereToCircle3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimSphereToConeDistance" Collapsed="true">
+    <Position X="132.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAYAIAAAAAoAAIAAwIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimSphereToConeDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimSphereToConics3DDistance" Collapsed="true">
+    <Position X="143.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAACAAAwAAAAAAAoAAIACAIAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimSphereToConics3DDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimSphereToSphereDistance" Collapsed="true">
+    <Position X="154.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgEAAAAAAAAAQAAAAAAAoAIAAAAIABAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimSphereToSphereDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimSphericity" Collapsed="true">
+    <Position X="168.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAEAAAAAAAQAAAAAAAoCQIQAAAAAAIEQAAAABA=</HashCode>
+      <FileName>Measurement\DimSphericity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimTruePosition" Collapsed="true">
+    <Position X="179.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgABEAAEAAAARAAIAAAAoAAACAAIAAAIEAAAAAhQ=</HashCode>
+      <FileName>Measurement\DimTruePosition.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Circle" Collapsed="true">
+    <Position X="14.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>owhIAA0FCCgIWBoQAISAjoRPiAgGICKAQAskAJACgFA=</HashCode>
+      <FileName>Shapes\Circle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleHandlers" Collapsed="true">
+    <Position X="24.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAGAABADAAQIIABBgEAAAsgAAAAQAAAAAABAA=</HashCode>
+      <FileName>Handlers\CircleHandlers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPoints" Collapsed="true">
+    <Position X="18.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEEIAAIAgAQAIAABAQZAAgICAYAQAAECAACABA=</HashCode>
+      <FileName>Shapes\CloudPoints.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollectionListener" Collapsed="true">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAACAAAQACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\CollectionListener.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cone" Collapsed="true">
+    <Position X="25.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABkiElCWBIAgAQBMAihg1JAAgWIAKwQAAEEgDCABA=</HashCode>
+      <FileName>Shapes\Cone.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Conics3D" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAECAEFCCAIAoAQAIgApgUJAAgEAAqQwAAOBAAiABA=</HashCode>
+      <FileName>Shapes\Conics3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cylinder" Collapsed="true">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ogEAkiElCWAIAgAQAMAChARJAAgWIAKAQAQEEgDGABA=</HashCode>
+      <FileName>Shapes\Cylinder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DefaultHandler" Collapsed="true">
+    <Position X="82.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAwAAAACAAQAIAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers\DefaultHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeleteMeasureAction" Collapsed="true">
+    <Position X="209.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAIAAAAAAAAEEAAAAAAAAAAAAABBAAAAAAAA=</HashCode>
+      <FileName>Actions\DeleteMeasureAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeleteShapesAction" Collapsed="true">
+    <Position X="211.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAEAAAgAAAAAAUEAAgAAAAAAAAAAAAAAAAAAYI=</HashCode>
+      <FileName>Actions\DeleteShapesAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeleteUCSAction" Collapsed="true">
+    <Position X="213.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEAAAAAAAACQEEAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actions\DeleteUCSAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLineToLineDistance" Collapsed="true">
+    <Position X="134.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAgAAAAAAAAAAQAEEAAAAoAAAAAAAIAQJkAABAABI=</HashCode>
+      <FileName>Measurement\DimLineToLineDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimBase" Collapsed="true">
+    <Position X="105.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wDAEyAAsBQIAQJoYRS5AIIxIYIIEAgKgUAIGIAgCAJI=</HashCode>
+      <FileName>Measurement\DimBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToLineDistance" Collapsed="true">
+    <Position X="157" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAgAAAAAAAAAAQAAABAAAoAAAAAABAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToLineDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimensionHandler" Collapsed="true">
+    <Position X="157" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>goAAgRBQHCIAACCXcuIRACyIAChiggPAADELAEGSEAA=</HashCode>
+      <FileName>Handlers_Measurement\DimensionHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimLine" Collapsed="true">
+    <Position X="181.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAMEAAAAEAAQAAAAAAAoAAAAAAAAAAIEEAAAABA=</HashCode>
+      <FileName>Measurement\DimLine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimPointToPointDistance" Collapsed="true">
+    <Position X="37.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BBAAgAAAAIAAEAAQAAAAAAAoAAAAAAAAAAIEAAAAABA=</HashCode>
+      <FileName>Measurement\DimPointToPointDistance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DimThread" Collapsed="true">
+    <Position X="49" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAhIEFACAAAgCQQADAAAAqgAAIAgMBBmIMAAAAABQ=</HashCode>
+      <FileName>Measurement\DimThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DepthShape" Collapsed="true">
+    <Position X="21" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEEAAAIAgAQAIAABAQJAAgAAAIAYAAEAAACABA=</HashCode>
+      <FileName>Shapes\DepthShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DummyShape" Collapsed="true">
+    <Position X="23.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEEAAAAIAAAQAIAABAQJAAgAAgIAQAAEAAACABA=</HashCode>
+      <FileName>Shapes\DummyShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXFCollection" Collapsed="true">
+    <Position X="121.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQoAAAAAAAhAAAJAAAAAAAAAAAAAAMAQAAAIAMA=</HashCode>
+      <FileName>DXF\DXFCollection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXFReader" Collapsed="true">
+    <Position X="232.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAgAB0ACEACAEASAAACgISEIAAgAABIQIAQBAA=</HashCode>
+      <FileName>DXF\DXFReader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXFWriter" Collapsed="true">
+    <Position X="232.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAhQAQAAAABAAAAQAQAAQEBAMIEAgAAAAEAIBAA=</HashCode>
+      <FileName>DXF\DXFWriter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCDCircle" Collapsed="true">
+    <Position X="14.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBIECAAAAAIAAABAACAAAACAAAQgAAAEQAAAAAA=</HashCode>
+      <FileName>Shapes\PCDCircle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinglePoint" Collapsed="true">
+    <Position X="227.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgEgAAAAAAAAAAQAAAAAAEAAAAAAAAYRE=</HashCode>
+      <FileName>Shapes\SinglePoint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FramegrabBase" Collapsed="true">
+    <Position X="124" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABoADACEGAAwAGABBBAAECgQAAAFBCKQE0AUgAAAAAE=</HashCode>
+      <FileName>FrameGrab\FramegrabBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FTHandler" Collapsed="true">
+    <Position X="159.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgDAACAGAEgACAAQAoCAAAEAQEgAAgAhAAAAIEAAAQ=</HashCode>
+      <FileName>Handlers\FTHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RapidProperty&lt;T&gt;" Collapsed="true">
+    <Position X="230" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAAAAAACAAAAACAAAAAAA=</HashCode>
+      <FileName>Helper\General.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RapidToggleProperty&lt;T&gt;" Collapsed="true">
+    <Position X="227.5" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAADAAAEAAAAAAIAA=</HashCode>
+      <FileName>Helper\General.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsectPt" Collapsed="true">
+    <Position X="5.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYABgAAMAAgQMAAAAAAEAAAIAAAAAAAAAAAAAAAAEMA=</HashCode>
+      <FileName>Engine\IsectPt.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemListener" Collapsed="true">
+    <Position X="103" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\ItemListener.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Line" Collapsed="true">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gICKAQHFCPQaHAAQAMAApBxpgAkFSAKhY1YEAqgLgLw=</HashCode>
+      <FileName>Shapes\Line.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LineHandlers" Collapsed="true">
+    <Position X="73.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAEAACEEAADADgAQAIAABAAAAAgAAAAAAAAAARAAAQ=</HashCode>
+      <FileName>Handlers\LineHandlers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Listenable" Collapsed="true">
+    <Position X="106" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEABAIAAABAgAAAAAAYAABAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Engine\Listenable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListenableItem" Collapsed="true">
+    <Position X="108.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAIIAACAAAAAAAEAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\ListenableItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MouseHandler" Collapsed="true">
+    <Position X="89.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAAACkAAhCCAIRIIIAAgAAIAgAAlIBAAKAItmIQI=</HashCode>
+      <FileName>Handlers\MouseHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveShapeHandler" Collapsed="true">
+    <Position X="100.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAAAKACAAQIIAAAgAAgAgAAAEEBAAAAEAAAA=</HashCode>
+      <FileName>Handlers\MoveShapeHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveShapesAction" Collapsed="true">
+    <Position X="218.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEAAAEAAAAAAFEACAAEAAAAEAACBAAAARAAAA=</HashCode>
+      <FileName>Actions\MoveShapesAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParallelArc" Collapsed="true">
+    <Position X="112" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AowQAEAEDAABADgBQAIAAAAAAAAgAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers_DerivedShapes\ParrallelArc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Perimeter" Collapsed="true">
+    <Position X="184" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAEEAQAIAgAwAIACBAQJAAgAACIAQAAFhAACABA=</HashCode>
+      <FileName>Shapes\Perimeter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PerimeterHandler" Collapsed="true">
+    <Position X="161.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogAIAAAWAChACAAUAICAEAEAAIgAAYAgIEgIIGACQY=</HashCode>
+      <FileName>Handlers_Measurement\PerimeterHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Plane" Collapsed="true">
+    <Position X="188.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACsCWEAEAICgQQAoAApEQJAAgASIKBUAIEABACADA=</HashCode>
+      <FileName>Shapes\Plane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pline" Collapsed="true">
+    <Position X="16.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAGEAAAIAgASAIAABAQJAAgAAAIAQAIEAAACADA=</HashCode>
+      <FileName>Shapes\Pline.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointHandler" Collapsed="true">
+    <Position X="26.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QoAAAAAAEAABACAAQIIAAAAAAAAgAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers\PointHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RAction" Collapsed="true">
+    <Position X="206" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAUAAAAAAAEEAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Actions\RAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RBF" Collapsed="true">
+    <Position X="223.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DikjACQI4ACSEoFyAAAIAAAQzIQDgACQCTqwAmgFFAE=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RCadApp" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>b/3f3fd9b/v3f+//7rvf/+//8r//7/+/fv///v//+v8=</HashCode>
+      <FileName>Engine\RCadApp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RCollectionBase" Collapsed="true">
+    <Position X="103" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQGCAAEAEghAAAExACABAAgAAgAAAAAAAAAAgIQACA=</HashCode>
+      <FileName>Engine\RCollectionBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RelatedShape" Collapsed="true">
+    <Position X="105.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAxiBAAiQABAAAICABCAAAQKAAIAQABAAAEAAAAAAAA=</HashCode>
+      <FileName>Shapes\RelatedShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPoint" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgoAEEAgAoAgEQAoQAJAQJEAgIAAJBYEAEAAADABA=</HashCode>
+      <FileName>Shapes\RPoint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZoomInOutHandler" Collapsed="true">
+    <Position X="145.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAAACBAACAACAAQAIAAAAAAAAgAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>Handlers\ZoomInOutHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RText" Collapsed="true">
+    <Position X="186.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEEiAgIQgQQAIIgDAQJEQgIIQIgQACGEAAiBDA=</HashCode>
+      <FileName>Shapes\RText.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RTextHandler" Collapsed="true">
+    <Position X="168.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAgAAAgAghBCAAQAIAAAADAAEgAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Handlers\RTextHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RWindow" Collapsed="true">
+    <Position X="227.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YIQgWQ6gAEWAaE84ECCgABGcxkCDAraAAkAjwAMMgkQ=</HashCode>
+      <FileName>Engine\RWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SelectionHandler" Collapsed="true">
+    <Position X="35.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAEAAAAAAACACQAIAAAAAAAAgAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Handlers\SelectionHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shape" Collapsed="true">
+    <Position X="105.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEoCMCkQAfAIAQAIgCFAwFRIgGQQLQQANEBKCKABE=</HashCode>
+      <FileName>Shapes\Shape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeWithList" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iEAAQAAECQBQBAAAABAAAAABgAABIEIkgIAAAACAAAw=</HashCode>
+      <FileName>Shapes\ShapeWithList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnapPoint" Collapsed="true">
+    <Position X="223" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAAAAAAAAABBAAgAAAAAAAAABEAAAAAQAAAAAAA=</HashCode>
+      <FileName>Engine\SnapPoint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnapPtManager" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYABACBGAAAAACAACAASaACAAABgMAAAESBgAAQCRCI=</HashCode>
+      <FileName>Engine\SnapPtManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FixedToolCollection" Collapsed="true">
+    <Position X="227.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAUAAAAAAASgCARAgQQCAAAIBAICAAAAAACQ=</HashCode>
+      <FileName>FixedTool\FixedToolCollection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sphere" Collapsed="true">
+    <Position X="3.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAgIgCEEiAAIAgAQAIQgxAUZQAgCICKAQABGAABKABA=</HashCode>
+      <FileName>Shapes\Sphere.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_RakeAngleMeasureHandler" Collapsed="true">
+    <Position X="94" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAIAUkACgCCAAQIIgAAgAAAkgAAIAAQAAIAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_RakeAngleMeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_SL1MeasureHandler" Collapsed="true">
+    <Position X="103" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIAUkACgACAAQIIAAAEAASIgABIAAAABAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_SL1MeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_SL2MeasureHandler" Collapsed="true">
+    <Position X="107.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIAUkACgACAAQIIAAAEAASIgAAIAAAABgAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_SL2MeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SM_SL3MeasureHandler" Collapsed="true">
+    <Position X="114.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAQIAUkACgACAAQIIAAAEAASIgAAYAAAABAAEAAAI=</HashCode>
+      <FileName>Handlers_SmartMeasures\SM_SL3MeasureHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrimmingHandler" Collapsed="true">
+    <Position X="148" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQQAAAADAABICAAQAIIBAAAgAFhCAACQAAAAABABAA=</HashCode>
+      <FileName>Handlers\TrimmingHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UCS" Collapsed="true">
+    <Position X="126.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4BCYRAlIMAQAAQAAgaIASQACABEgYKAAAAUgCQQDAA=</HashCode>
+      <FileName>Engine\UCS.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UCSLineHandle" Collapsed="true">
+    <Position X="170.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAGAAAAAAiAAQAIACAAAABAgAAAAQAAAAAAAAAQ=</HashCode>
+      <FileName>Handlers\UCSLineHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UCSPointHandle" Collapsed="true">
+    <Position X="15.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAABAAACAAQAIAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers\UCSPointHandle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HelperClass" Collapsed="true">
+    <Position X="230" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>apE40EYAYAYpD4YELIYQBGABAgMgSEECAeoBMLIK1kA=</HashCode>
+      <FileName>Helper\Helper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector" Collapsed="true">
+    <Position X="5.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAQIAQCAAAAAAABAAEBhAWIBAQA=</HashCode>
+      <FileName>Shapes\Vector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FixedCircle" Collapsed="true">
+    <Position X="232" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAgAAAAAAAAAYAIAAAEAACAQAAgAAAAABACA=</HashCode>
+      <FileName>FixedTool\FixedCircle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FixedLine" Collapsed="true">
+    <Position X="234.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACggCAAAAAAAACAAAAAAAAAAKAABAkAAAAAAgCA=</HashCode>
+      <FileName>FixedTool\FixedLine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FixedShape" Collapsed="true">
+    <Position X="234.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIBIAAQAAAAAAGBAAAACAAAAKAAIAwABAGAIgCE=</HashCode>
+      <FileName>FixedTool\FixedShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FixedText" Collapsed="true">
+    <Position X="236.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAGAAAAAAAAQAAAAACAAAAAEACAAAAgAgAABAAiA=</HashCode>
+      <FileName>FixedTool\FixedText.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="RColor" Collapsed="true">
+    <Position X="228" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAQAAAAACAAAAAAIAQABAAAAAAA=</HashCode>
+      <FileName>Helper\General.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Pt_3D" Collapsed="true">
+    <Position X="225.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Line_3D" Collapsed="true">
+    <Position X="227.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAACQAAAAIAAAAQAAAAAAAAAAAAAgAQAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Triangle_3D" Collapsed="true">
+    <Position X="229" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAgAAAAIAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Pt" Collapsed="true">
+    <Position X="223.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="intPt" Collapsed="true">
+    <Position X="225.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LineArc" Collapsed="true">
+    <Position X="229" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAiAAAAQAAAgAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LineArc_Circle" Collapsed="true">
+    <Position X="230.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Surface_3D" Collapsed="true">
+    <Position X="230.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAI=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Curve_2D" Collapsed="true">
+    <Position X="223.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAIACAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="R_Point" Collapsed="true">
+    <Position X="229.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAABggQAAAAA=</HashCode>
+      <FileName>Engine\RWindow.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="Pts_3DList" Collapsed="true">
+    <Position X="225.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Line_3DList" Collapsed="true">
+    <Position X="230.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Triangle_3DList" Collapsed="true">
+    <Position X="230.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PtsList" Collapsed="true">
+    <Position X="227.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LineArcList" Collapsed="true">
+    <Position X="223.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="dbllist" Collapsed="true">
+    <Position X="225.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="IMGLIST" Collapsed="true">
+    <Position X="227.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="intPtsList" Collapsed="true">
+    <Position X="229" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Surface_3DList" Collapsed="true">
+    <Position X="229" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Curve_2DList" Collapsed="true">
+    <Position X="223.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="ITEMSTATUS" Collapsed="true">
+    <Position X="229.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Engine\ItemListener.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Shapes_3D" Collapsed="true">
+    <Position X="225.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAIAAgBgAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Curves_2D" Collapsed="true">
+    <Position X="223.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestFit\RBF.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

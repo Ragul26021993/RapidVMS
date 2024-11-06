@@ -1,0 +1,39 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties"
+	mc:Ignorable="d"
+	x:Class="Rapid.Windows.AutoProbePathPropWin"
+	x:Name="Window"
+	Title="DriveSelectionWin"
+	Width="250" SizeToContent="Height" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="150" WindowStartupLocation="CenterScreen" Height="340">
+	<Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">
+		<Grid x:Name="LayoutRoot">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="46" />
+			</Grid.RowDefinitions>
+			<TextBlock Margin="8,8,31,0" x:Name="txtHeading" Text="Please enter required values" FontWeight="Bold" FontSize="10.667" VerticalAlignment="Top" TextWrapping="Wrap"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,40,0,0" TextWrapping="Wrap" Text="Radius" VerticalAlignment="Top"/>
+			<TextBox x:Name="RadiusTxtBx" Margin="105,35,22,0" TextWrapping="Wrap" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Text_Box_Prop:AttachedTextBoxBehaviour.MaxTextLength="10" VerticalAlignment="Top" Height="24"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,75,0,12" TextWrapping="Wrap" Text="Tolerance" VerticalAlignment="Top"/>
+			<TextBox x:Name="ToleranceTxtBx" Height="24" Margin="105,70,22,8" TextWrapping="Wrap" VerticalAlignment="Top" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Text_Box_Prop:AttachedTextBoxBehaviour.MaxTextLength="10"/>
+			<CheckBox x:Name="ShwMeasureWithDeviationChkBx" Content="Show Measurement With Deviation" Height="26.667" Margin="15,105,8,0" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,145,0,0" Text="Company Name" VerticalAlignment="Top"/>
+			<TextBox x:Name="CompanyNameTxtBx" Height="24" Margin="105,140,22,0" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,180,0,0" Text="Component Drawing No." VerticalAlignment="Top"/>
+			<TextBox x:Name="CompDrawingNumTxtBx" Height="24" Margin="150,175,22,0" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,215,0,0" Text="Component Serial No." VerticalAlignment="Top"/>
+			<TextBox x:Name="CompSerialNumTxtBx" Height="24" Margin="150,210,22,0" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,250,0,0" Text="Component Revision No." VerticalAlignment="Top"/>
+			<TextBox x:Name="CompRevisionNumTxtBx" Height="24" Margin="150,245,22,0" VerticalAlignment="Top"/>
+			<Button x:Name="btnOK" Content="OK" Grid.Row="1" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Template="{DynamicResource Shiny_SpButton2}" Width="90" Height="25" HorizontalAlignment="Left" Margin="20,0,0,0" />
+			<Button x:Name="btnCancel" Content="Cancel" Grid.Row="1" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnCancel_Click" Template="{DynamicResource Shiny_SpButton2}" Width="90" Height="25" HorizontalAlignment="Right" Margin="0,0,20,0" />
+		</Grid>
+	</Border>
+</Window>

@@ -1,0 +1,40 @@
+ 'Public Shared Function Get_Settings_List() As List(Of Windows.Forms.Control)
+    '    Dim CollectionList As New List(Of Windows.Forms.Control)
+    '    'Creating Instances of the required classes 
+    '    Dim Get_C As New GetControl
+    '    Dim C As New SettingsProp
+    '    'Outer loop to create the all Main controls 
+    '    For i As Integer = 0 To C.Total_Main_Controls - 1
+    '        Dim MainC As Windows.Forms.Control = Get_C.Return_Control(C.Main_Control_Type(i), C.Main_Control_Width(i), C.Main_Control_Height(i), C.Main_Control_Text(i), C.Main_Control_Location(i), C.Main_Control_Backcolor(i))
+    '        MainC.Tag = TagMaker(C.Main_Control_ID(i), C.Main_Control_ParentID(i))
+    '        CollectionList.Add(MainC)
+    '        'Condition to check whether the main control is going to be attached to form or it have some child controls also 
+    '        If C.Main_Control_ParentID(i) > 0 Then
+    '            For i1 As Integer = 0 To C.Total_No_of_Child(C.Main_Control_ID(i)) - 1
+    '                Dim ChildC As Windows.Forms.Control = Get_C.Return_Control(C.Child_Type(i1), C.Child_Width(i1), C.Child_Height(i1), C.Child_Text(i1), C.Child_Location(i1), C.Child_Backcolor(i1))
+    '                'Checking for the predefined values for the control
+    '                If C.Child_Has_PredefinedValues(i1) Then
+    '                    Dim Values As ArrayList = C.Get_PreDefined_Values(C.Child_ID(i1))
+    '                    For Count As Integer = 0 To Values.Count - 1
+    '                        CType(ChildC, System.Windows.Forms.ComboBox).Items.Add(Values.Item(Count))
+    '                    Next
+    '                End If
+    '                'Adding the control to the collection list
+    '                CollectionList.Item(i).Controls.Add(ChildC)
+    '            Next
+    '            Dim Control As System.Windows.Forms.Control = Select_Parent_Control(C.Main_Control_ParentID(i), CollectionList)
+    '            If Control.GetType Is GetType(System.Windows.Forms.TabControl) Then
+    '                CType(Control, System.Windows.Forms.TabControl).TabPages.Add(CollectionList.Item(i))
+    '            Else
+    '                Control.Controls.Add(CollectionList.Item(i))
+    '            End If
+    '        End If
+    '    Next
+    '    Dim Tab_List As New List(Of System.Windows.Forms.Control)
+    '    'Exposing The List of the Main Controls That need to be given 
+    '    For i As Integer = 0 To Select_Main_Control(CollectionList).Count - 1
+    '        Tab_List.Add(Select_Main_Control(CollectionList).Item(i))
+    '    Next
+    '    'return the above list 
+    '    Return Tab_List
+    'End Function

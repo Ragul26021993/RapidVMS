@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CTPL.Rapid.App" Collapsed="true">
+    <Position X="2.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAQACIAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.MyPartProgram" Collapsed="true">
+    <Position X="5.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAACCAQAAACAACEAAAAACAAAIAAQAGCAAAACAA=</HashCode>
+      <FileName>Views\Down\MyPartProgram.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.GraphicalCNCControl" Collapsed="true">
+    <Position X="0.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAEAAAAIAEAAAAEACAQAAAAAAAAAAAAAAAJAAA=</HashCode>
+      <FileName>Views\Others\GraphicalCNCControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Commands.CommandReference" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAACAAUAAEAABAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Commands\CommandReference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CTPL.Rapid.Commands.DelegateCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAQACCAQQAAEQAAAAAAAAAAAAAAAAAAACAAEA=</HashCode>
+      <FileName>Commands\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CTPL.Rapid.Commands.DelegateCommand&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAQACCAQQAAEQAAAAAAAAAAAAAAAAAAACAAEA=</HashCode>
+      <FileName>Commands\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CTPL.Rapid.Commands.CommandManagerHelper" Collapsed="true">
+    <Position X="2.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Commands\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Resources.Converters.ContentToPathConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>Resources\Converters\Converters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CTPL.Rapid.Resources.Converters.ContentToMarginConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>Resources\Converters\Converters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CTPL.Rapid.ViewModels.MainViewModel" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAADAAAAAEAACABAAAgAAAAAAAAAIAAEAAAAAgA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.ViewModels.ViewModelBase" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CTPL.Rapid.Views.CNCPanel" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAATAAABAAAAAAAAAAAAAAAAAAAAAAAAAACAAUAAA=</HashCode>
+      <FileName>Views\Down\CNCPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.DepthPanel" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Down\DepthPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.DownTabWin" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABBAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAgA=</HashCode>
+      <FileName>Views\Down\DownTabWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.FdControl" Collapsed="true">
+    <Position X="2.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEAAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Views\Down\FdControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.FixedGraphicsPanel" Collapsed="true">
+    <Position X="4" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Down\FixedGraphics.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.LightingPanel" Collapsed="true">
+    <Position X="2.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAIAAA=</HashCode>
+      <FileName>Views\Down\LightingPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ThreadPanel" Collapsed="true">
+    <Position X="4" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Down\ThreadPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.Arc" Collapsed="true">
+    <Position X="4" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEENACAAAAAAARACARAAgiAQAAAAAAEAEAAICIAAAAA=</HashCode>
+      <FileName>Views\Lighting\Arc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.SingleLightingZone" Collapsed="true">
+    <Position X="0.5" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEIACAAQQABAQAAgEAwAIIAQAAIAAAAAQAoKIgAAAA=</HashCode>
+      <FileName>Views\Lighting\LightingClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.MainView" Collapsed="true">
+    <Position X="4" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>N2GeEO+f38SPjq5Iywqb53+sY85Lz/H5ex+1/8HyXfM=</HashCode>
+      <FileName>Views\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.AboveVideoControl" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\AboveVideoControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.AttachedCorner" Collapsed="true">
+    <Position X="0.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\AttachedCorner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.AttachedImage" Collapsed="true">
+    <Position X="2.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Views\Others\AttachedImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.AttachedShortcut" Collapsed="true">
+    <Position X="4" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\AttachedShortcut.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.AttachedTextBoxBehaviour" Collapsed="true">
+    <Position X="5.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEAAAAAAQAACMAAAIAAAAAIggAIAAAEBEAAAAAEwAA=</HashCode>
+      <FileName>Views\Others\AttachedTextBoxBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.DropDownList" Collapsed="true">
+    <Position X="4" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\DropDownList.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ExtendedSnapDropDown" Collapsed="true">
+    <Position X="0.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\ExtendedSnapDropDown.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.FadeableWin" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAIAACAAAAAgBBAAAAQAAAAAAAgAAAAAABAAAA=</HashCode>
+      <FileName>Views\Others\FadeableWin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.FocusBoxGrid" Collapsed="true">
+    <Position X="5.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAACAAAAAAAAAAAAABCAACEAAAwAAAAAAQACAAAQ=</HashCode>
+      <FileName>Views\Others\FocusBoxGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.InfoBox" Collapsed="true">
+    <Position X="2.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\InfoBox.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.LoginWin" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAMAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Views\Others\LoginWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.NumericUpDown" Collapsed="true">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACACAQAAAAAAAAQAAAAAFAAAAAAAECgAAAAEAA=</HashCode>
+      <FileName>Views\Others\NumericUpDown.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.OpenGlWin" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\OpenGlWin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.PictureViewer" Collapsed="true">
+    <Position X="2.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAAAAAAEwAAAAAIAAwAAARAAAAAAQAAAAQAABChA=</HashCode>
+      <FileName>Views\Others\PictureViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.PPBuildWin" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAQAAAAAAAAAAAAAABAAAAUAAABAAA=</HashCode>
+      <FileName>Views\Others\PPBuildWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.RAxisRecordPanel" Collapsed="true">
+    <Position X="4" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Views\Others\RAxisRecordPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ScrollablePanel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAMEIACAAAACAAIYQEIAEURCATQEYwAAAKhAAQFgIA=</HashCode>
+      <FileName>Views\Others\ScrollablePanel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ScrollableShapeList" Collapsed="true">
+    <Position X="4" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAgAAAAAABA=</HashCode>
+      <FileName>Views\Others\ScrollableShapeList.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ScrToolbar" Collapsed="true">
+    <Position X="5.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAECAAAAAAAgAAQABFggAQAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Views\Others\ScrToolbar.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ShapeInfoWin" Collapsed="true">
+    <Position X="2.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAgMQAAAAAAAAAAAAAAEBAAAA=</HashCode>
+      <FileName>Views\Others\ShapeInfoWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ShapeRenameWin" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\ShapeRenameWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.SplashScreen" Collapsed="true">
+    <Position X="2.25" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\SplashScreen.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.ToolbarWin" Collapsed="true">
+    <Position X="5.75" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABBAIAgAAAAAAAAAAAAEAAAAAAAEAAAAAAAgA=</HashCode>
+      <FileName>Views\Others\ToolbarWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.UCSControl" Collapsed="true">
+    <Position X="0.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\UCSControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.DrawDD" Collapsed="true">
+    <Position X="2.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Up\DrawDD.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.DropDown" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIEAIBABAAAABAAAAQAAAAAAAAAACAAAAIAAA=</HashCode>
+      <FileName>Views\Up\DropDown.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.Lighting.LightingGrid" Collapsed="true">
+    <Position X="0.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAKEAFBQAACAAAABIABAEAAEBgJABCAABgAAACAAA=</HashCode>
+      <FileName>Views\Lighting\LightingGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.TextOnPath.TextOnPathBase" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCEADCAAAIAAkAAAAAAAAAwAgAAAAAIEAoACAAAECA=</HashCode>
+      <FileName>Views\Lighting\TextOnPathBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.Rapid.Views.TextOnPath.TextOnPathVisuals" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBCEAGCAAAIAQAAAAAAAAIABAAAAAgAAAAIQAAAAAAQ=</HashCode>
+      <FileName>Views\Lighting\TextOnPathVisuals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.InfoBox2" Collapsed="true">
+    <Position X="4" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Views\Others\InfoBox2.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTPL.ShapeStatusWin" Collapsed="true">
+    <Position X="4" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAgAAAAAAAQAAAAAAAAAACAAA=</HashCode>
+      <FileName>Views\Others\ShapeStatusWin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CTPL.Rapid.Views.MaskType" Collapsed="true">
+    <Position X="4" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Others\AttachedTextBoxBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CTPL.Rapid.Views.Lighting.LightingShapesTypes" Collapsed="true">
+    <Position X="2.25" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAEAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Views\Lighting\LightingGrid.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CTPL.Rapid.Views.Lighting.DirectionOfDrawing" Collapsed="true">
+    <Position X="0.5" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Views\Lighting\LightingGrid.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

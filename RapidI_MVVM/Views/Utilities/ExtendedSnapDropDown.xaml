@@ -1,0 +1,29 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Rapid.Utilities.ExtendedSnapDropDown"
+	x:Name="MainGrid"
+	d:DesignWidth="100.625" d:DesignHeight="30">
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition/>
+		<ColumnDefinition Width="19.421"/>
+	</Grid.ColumnDefinitions>
+
+    <Popup x:Name="_dropDown" IsOpen="{Binding IsChecked, ElementName=btnDD}" StaysOpen="False" PopupAnimation="Slide"  AllowsTransparency="True" Grid.ColumnSpan="2">
+        <Border Width="{Binding Width, ElementName=MainGrid, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" CornerRadius="0,0,7,7" BorderThickness="2" BorderBrush="{DynamicResource MainWindowBorderBrush}">
+        	<Border.Background>
+        		<LinearGradientBrush EndPoint="0.506,0.991" SpreadMethod="Repeat" StartPoint="0.487,-0.382">
+        			<GradientStop Color="#FFD3F4FF" Offset="0.5"/>
+        			<GradientStop Color="#FF7FDFFF" Offset="0.677"/>
+        			<GradientStop Color="#FF7FDFFF"/>
+        		</LinearGradientBrush>
+        	</Border.Background>
+    		<ToggleButton Height="40" x:Name="btnVSnapMode"  Style="{DynamicResource ScrToolbar_ToggButton}" Background="#05FFFFFF" BorderBrush="{x:Null}" Foreground="{DynamicResource UpperLowerMainToolbarTextcolor}" BorderThickness="0" Content="VSnap OFF" FontSize="16" FontWeight="Bold" />
+		</Border>
+    </Popup>
+    <ToggleButton x:Name="btnSnapMode"  Background="#05FFFFFF" Foreground="{DynamicResource UpperLowerMainToolbarTextcolor}" BorderBrush="{x:Null}" FontSize="16" FontWeight="Bold" Padding="0" Style="{DynamicResource UpperToggButtonStyle}" BorderThickness="0" Content="Snap ON" IsChecked="True"/>
+    <ToggleButton x:Name="btnDD" IsEnabled="{Binding IsChecked, ElementName=btnSnapMode,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"  Template="{DynamicResource DropDownButtonStyle}" Background="#05FFFFFF" BorderBrush="{x:Null}" Foreground="{DynamicResource UpperLowerMainToolbarTextcolor}" BorderThickness="0" Content="" FontSize="16" FontWeight="Bold" Grid.Column="1" />
+</Grid>

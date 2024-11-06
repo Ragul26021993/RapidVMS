@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EdgeDetectionSingleChannel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4SQREgCASQALR0gCEIGDKMNQAg0CIqMAkAAgwAAAEAI=</HashCode>
+      <FileName>Engine\EdgeDetectionClassSingleChannel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RBF" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DikjACQI4ACSEoFyAAAIAAAQzIQDgACQCTqwAmgFFAU=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Pt_3D" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Line_3D" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAACQAAAAIAAAAQAAAAAAAAAAAAAgAQAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Triangle_3D" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAgAAAAIAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Pt" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="intPt" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LineArc" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAiAAAAQAAAgAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LineArc_Circle" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Surface_3D" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAI=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Curve_2D" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAIACAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="Pts_3DList" Collapsed="true">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Line_3DList" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Triangle_3DList" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PtsList" Collapsed="true">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LineArcList" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="dbllist" Collapsed="true">
+    <Position X="2.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="IMGLIST" Collapsed="true">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="intPtsList" Collapsed="true">
+    <Position X="5.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Surface_3DList" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Curve_2DList" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="Shapes_3D" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAIAAgBgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Curves_2D" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RBF.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

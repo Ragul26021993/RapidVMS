@@ -1,0 +1,46 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Rapid.Windows.CloudPointMeasurement"
+        Title="CloudPointMeasurement" 
+		MinWidth="300" MaxWidth="700" MaxHeight="500" Width="500" Height="300" ResizeMode="NoResize">
+	<Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>                  
+		</Grid.ColumnDefinitions>
+		<TextBlock TextWrapping="Wrap" Text="Select the required values" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.ColumnSpan="2"/>
+		<!--<TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="RMS surface roughness" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>       
+		<TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="Mean surface roughness" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>       
+		<TextBlock Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Text="Max peak height" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>       
+		<TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Max valley height" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>       
+		<TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="Peak to valley height" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>       
+		<TextBlock Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Text="skewness" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>       
+		<TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="kurtosis" VerticalAlignment="Center" Margin="10,0,0,0" d:LayoutOverrides="Width"/>-->
+		
+		
+		<CheckBox Grid.Row="1" Grid.Column="0" x:Name="RMSSurfaceRoughnessChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="RMS surface roughness" IsChecked="{Binding Path = Sq}"/>
+		
+		<CheckBox Grid.Row="1" Grid.Column="1" x:Name="MeansurfaceroughnessChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="Mean surface roughness" IsChecked="{Binding Path = Sa}"/>
+		
+		<CheckBox Grid.Row="1" Grid.Column="2" x:Name="MaxpeakheightChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="Max peak height" IsChecked="{Binding Path = Sp}"/>
+		
+		<CheckBox Grid.Row="2" Grid.Column="0" x:Name="MaxvalleyheightChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="Max valley height" IsChecked="{Binding Path = Sv}"/>
+		
+		<CheckBox Grid.Row="2" Grid.Column="1" x:Name="PeaktovalleyheightChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="Peak to valley height" IsChecked="{Binding Path = Sz}"/>
+		
+		<CheckBox Grid.Row="2" Grid.Column="2" x:Name="skewnessChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="skewness" IsChecked="{Binding Path = Ssk}"/>
+		
+		<CheckBox Grid.Row="3" Grid.Column="0" x:Name="kurtosisChbk" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Content="kurtosis" IsChecked="{Binding Path = Sku}"/>
+	    
+		<Button   Grid.Row="4" Grid.Column="1" x:Name="OKBtn" Content="OK"  Click="OKBtn_Click" Style="{DynamicResource SimpleNormalButton}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0"/>		
+	</Grid>
+</Window>

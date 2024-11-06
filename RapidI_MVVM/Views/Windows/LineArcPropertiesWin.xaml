@@ -1,0 +1,56 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Textprop="clr-namespace:Rapid.AttachedProperties"
+	xmlns:Util="clr-namespace:Rapid.Utilities"
+	xmlns:Rapid_Converters="clr-namespace:Rapid.Converters" mc:Ignorable="d"
+	x:Class="Rapid.Windows.LineArcPropertiesWin"
+	x:Name="Window"
+	Title="Line-Arc Properties"
+	Width="470" SizeToContent="Height" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="410">
+	<Window.Resources>
+		<Rapid_Converters:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
+	</Window.Resources>
+	<Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}" Margin="0,0,4,4">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition  Width="150"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition/>
+			<RowDefinition Height="48.334"/>
+		</Grid.RowDefinitions>
+		<Button x:Name="btnOK" Content="OK" Grid.Row="2" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Template="{DynamicResource Shiny_SpButton2}" Width="75" Height="30" HorizontalAlignment="Center" Grid.ColumnSpan="2" />
+		<TextBlock Height="18" HorizontalAlignment="Left" Margin="5,5,0,5" x:Name="txtHeading" Text="Please optimise the values as required:" VerticalAlignment="Center" FontWeight="Bold" FontSize="10.667" Grid.ColumnSpan="2" />
+		<TextBlock Margin="0,15,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Tolerance Factor" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="0,50,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Noise Factor" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="0,85,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Maximum Radius" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="0,120,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Minimum Radius" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="0,145,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Max Distance Between Neighbouring Points" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="0,190,10,0" Grid.Row="1" TextWrapping="Wrap" Text="Minimum Angle Cutoff" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBox x:Name="TolFactorTxtBx" Margin="4,10,50,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Width="80" Text="{Binding Value, Converter={StaticResource DoubleToStringConverter}, ElementName=TolFactorSlider, Mode=TwoWay}" HorizontalContentAlignment="Right"/>
+		<TextBox x:Name="NoiseFactorTxtBx" Margin="4,45,50,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" Text="{Binding Value, Converter={StaticResource DoubleToStringConverter}, ElementName=NoiseFactorSlider, Mode=TwoWay}"/>
+		<TextBox x:Name="MaxRadiusTxtBx" Margin="4,80,50,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" Text="{Binding Value, Converter={StaticResource DoubleToStringConverter}, ElementName=MaxRadiusSlider, Mode=TwoWay}"/>
+		<TextBox x:Name="MinRadiusTxtBx" Margin="4,115,50,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" Text="{Binding Value, Converter={StaticResource DoubleToStringConverter}, ElementName=MinRadiusSlider, Mode=TwoWay}"/>
+		<TextBox x:Name="MaxDistCutoffTxtBx" Margin="4,150,50,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" Text="{Binding Value, Converter={StaticResource DoubleToStringConverter}, ElementName=MaxDistCutoffSlider, Mode=TwoWay}"/>
+		<TextBox x:Name="MinAngleCutoffTxtBx" Margin="4,185,50,0" Textprop:AttachedTextBoxBehaviour.Mask="PositiveInteger" Textprop:AttachedTextBoxBehaviour.MaxTextLength="10" Grid.Column="1" Height="25" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" Text="{Binding Value, Converter={StaticResource DoubleToStringConverter}, ElementName=MinAngleCutoffSlider, Mode=TwoWay}"/>
+		<TextBlock Margin="110,15,22,0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="µm" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="110,50,22,0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="µm" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="110,85,22,0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="mm" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="110,120,22,0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="mm" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="110,155,22,0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="mm" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<TextBlock Margin="110,190,8,0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="Degree" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+		<CheckBox x:Name="ClosedLoopChkBx" Grid.ColumnSpan="2" Content="Closed Loop" Height="19" Margin="130,220,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		<CheckBox x:Name="ShpAsFasTraceChkBx" Grid.ColumnSpan="2" Content="Shape as FasTrace" Height="19" Margin="130,245,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		<CheckBox x:Name="JoinAllPtsChkBx" Grid.ColumnSpan="2" Content="Join All Points" Height="19" Margin="130,270,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		<Button x:Name="btnCancel" Content="Cancel" Grid.Row="2" Margin="0,0,30,0" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnCancel_Click" Template="{DynamicResource Shiny_SpButton2}" Width="75" Height="30" HorizontalAlignment="Right" Grid.Column="1" />
+		<Slider x:Name="TolFactorSlider" Margin="0,13,134,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Width="160" HorizontalAlignment="Right" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="5" Minimum="3" Maximum="300" SmallChange="1" LargeChange="5"/>
+		<Slider x:Name="NoiseFactorSlider" Margin="0,45,134,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Width="160" HorizontalAlignment="Right" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="5" Minimum="3" Maximum="300" SmallChange="1" LargeChange="5"/>
+		<Slider x:Name="MaxRadiusSlider" Margin="0,80,134,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Width="160" HorizontalAlignment="Right" Maximum="100" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="2" Minimum="2" TickFrequency="0.1"/>
+		<Slider x:Name="MinRadiusSlider" Margin="0,115,134,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Width="160" HorizontalAlignment="Right" Maximum="1" SmallChange="0.01" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="0.1" Minimum="0.01" TickFrequency="0.01"/>
+		<Slider x:Name="MaxDistCutoffSlider" Margin="0,150,134,0" Grid.Column="1" Grid.Row="1" Width="160" HorizontalAlignment="Right" Maximum="100" SmallChange="0.01" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="10" d:LayoutOverrides="Height" Minimum="0.01" TickFrequency="0.01" VerticalAlignment="Top"/>
+		<Slider x:Name="MinAngleCutoffSlider" Margin="0,185,134,0" Grid.Column="1" Grid.Row="1" Width="160" HorizontalAlignment="Right" Maximum="20" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="15" VerticalAlignment="Top" Minimum="5" TickFrequency="0.1"/>
+	</Grid>
+</Window>

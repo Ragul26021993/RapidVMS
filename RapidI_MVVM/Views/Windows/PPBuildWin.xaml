@@ -1,0 +1,28 @@
+﻿<local:OpenGlWin
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Rapid.Windows"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="Rapid.Windows.PPBuildWin"
+	x:Name="BuildWin"
+	Title="BuildWindow"
+	Width="560" Height="340" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Background="{x:Null}" AllowsTransparency="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Build Program" Margin="0,0,8,8" Grid.RowSpan="5" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="Arial Rounded MT Bold" FontSize="18.667" BorderBrush="{DynamicResource DroBackColor}" Foreground="{DynamicResource ContainerBorderBrush}" Background="{DynamicResource PanelBackground}"/>
+        <TextBox x:Name="txtProgramPath" Margin="58.083,5,140.25,0" Style="{DynamicResource TaggedHighlighted_TextBox1}" Background="{DynamicResource TextBoxBGBrush}" BorderBrush="{DynamicResource HeaderShading}" Tag="Program Location" Height="28" VerticalAlignment="Top" Grid.Row="1" IsEnabled="False"/>
+        <TextBox  x:Name="txtProgramName" Grid.Row="1" FontWeight="Bold" Style="{DynamicResource Tagged_Double_TextBox}" Background="{DynamicResource TextBoxBGBrush}" BorderBrush="{DynamicResource HeaderShading}" CaretBrush="Black" Tag="Program" ToolTip=".rppx" Height="28" Margin="127.624,40,99.917,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtReportPath" Margin="72,80,140.25,0" Height="28" Grid.Row="2" VerticalAlignment="Top" Style="{DynamicResource TaggedHighlighted_TextBox1}" Tag="Report Location" BorderBrush="{DynamicResource HeaderShading}" Background="{DynamicResource TextBoxBGBrush}" IsEnabled="False"/>
+        <TextBox  x:Name="txtReportName" Grid.Row="2" FontWeight="Bold" Style="{DynamicResource Tagged_Double_TextBox}" BorderBrush="{DynamicResource HeaderShading}" Background="{DynamicResource TextBoxBGBrush}" CaretBrush="Black" Tag="Report" ToolTip=".xls" Height="28" Margin="141.583,120,99.917,0" VerticalAlignment="Top"/>
+        <Button  x:Name="btnDesignTemplate" Content="Design Template" Grid.Row="4" Style="{DynamicResource NormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="18.667" ToolTip="Design Template" BorderThickness="2" FontWeight="Bold" Template="{DynamicResource Shiny_SpButton2}" Width="40" Height="40" HorizontalAlignment="Right" Margin="0,0,120,20.444" Tag="Design Template" VerticalAlignment="Bottom"/>
+        <Button  x:Name="btnBuild" Content="Build" Grid.Row="1" Style="{DynamicResource NormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="16" ToolTip="Build" BorderThickness="2" FontWeight="Bold" Template="{DynamicResource Shiny_SpButton2}" Width="40" Height="40" HorizontalAlignment="Right" Margin="0,0,37,20.444" Tag="Build" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox"/>
+        <Button  x:Name="btnNCtoRppx" Content="NC" Visibility="Hidden" Grid.Row="1" Style="{DynamicResource NormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="16" ToolTip="Build" BorderThickness="2" FontWeight="Bold" Template="{DynamicResource Shiny_SpButton2}" Width="40" Height="40" HorizontalAlignment="Left" Margin="300,0,37,20.444" Tag="Build" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox"/>
+        <Button x:Name="btnClose" Content="X" HorizontalAlignment="Right" Width="28" Style="{DynamicResource UpperButtonStyle}" BorderBrush="{DynamicResource CloseButtonBrush_Border}" Foreground="White" FontSize="12" Padding="0" VerticalContentAlignment="Center" ToolTip="Close" Background="{DynamicResource CloseButtonBrush_BG}" FontFamily="a_FuturaRoundDemi" Height="28" RenderTransformOrigin="0.571,0.286" VerticalAlignment="Center" Margin="0,0,12,0" Tag="Close"/>
+        <ComboBox x:Name="AllExistingProgramCBx" Height="24" Margin="200,160,140,0" VerticalAlignment="Top" Grid.Row="1" BorderBrush="{DynamicResource HeaderShading}" IsReadOnly="True" Background="{DynamicResource ToolbarButtonNormalColorBrush}"/>
+        <TextBox x:Name="txtReportStyle" Margin="101,200,140,0" Grid.Row="1" Style="{DynamicResource TaggedHighlighted_TextBox1}" Tag="Report Style" BorderBrush="{DynamicResource HeaderShading}" Background="{DynamicResource TextBoxBGBrush}" VerticalAlignment="Top" Height="28"/>
+        <TextBlock Text="Select Existing Report" Grid.Row="1" VerticalAlignment="Top" Margin="58,160,0,0" HorizontalAlignment="Left" Foreground="White" Background="{DynamicResource HeaderShading}" FontFamily="Arial Rounded MT Bold" Width="142" Height="24" TextAlignment="Right" Padding="0,5,0,0"/>
+    </Grid>
+</local:OpenGlWin>

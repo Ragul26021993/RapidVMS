@@ -1,0 +1,89 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:Rapid.Utilities"
+    xmlns:localProp="clr-namespace:Rapid.AttachedProperties"
+    x:Class="Rapid.Panels.CNCPanel"
+	x:Name="MainBorder">
+    		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.5*"/>
+			<ColumnDefinition Width="0.5*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+			<RowDefinition Height="0.677*"/>
+			<RowDefinition Height="0.323*"/>
+			</Grid.RowDefinitions>
+    		<GroupBox  x:Name="grpGoTo" Header="Go To" BorderBrush="{DynamicResource DroBackColor}" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" Margin="8,4" Background="{DynamicResource PanelBackground}" Foreground="{DynamicResource ContainerBorderBrush}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdGoto" Margin="0">
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.70*" />
+    					<ColumnDefinition Width="0.3*" />
+    				</Grid.ColumnDefinitions>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtgotodroX" TextAlignment="Right" TextWrapping="NoWrap" Grid.Row="0" BorderThickness="2" FontFamily="Segoe UI" Style="{DynamicResource TaggedHighlighted_TextBox}" BorderBrush="{DynamicResource TB_Label_Brush}" Tag="X" Height="32.6605" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+            			<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtgotodroY" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Y" Grid.Row="1" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+            			<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtgotodroZ" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Z" Grid.Row="2" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+						<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtgotodroR" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="C" Grid.Row="3" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" Visibility="Collapsed" />
+					</Grid>
+            		<Grid Grid.Column="1">
+						<Grid.RowDefinitions>
+							<RowDefinition/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<Button Tag="Go To" HorizontalContentAlignment="Center" x:Name="btnDroGoto"   VerticalContentAlignment="Center" Grid.Column="1" Content="Go To" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" HorizontalAlignment="Center" Margin="0" Height="40" VerticalAlignment="Center"/>
+    					<Button Tag="Go To" HorizontalContentAlignment="Center" x:Name="btnDroBack"   VerticalContentAlignment="Center" Grid.Column="1" Content="Back" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Grid.Row="2" HorizontalAlignment="Center" Width="40" Margin="0" Height="40" VerticalAlignment="Center"/>
+					</Grid>
+    			</Grid>
+    		</GroupBox>
+    		<GroupBox  x:Name="grpMoveBy" Margin="8,4" Header="Move By" Grid.Column="1" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" BorderBrush="{DynamicResource DroBackColor}" Background="{DynamicResource PanelBackground}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdMoveBy">
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.7*" />
+    					<ColumnDefinition Width="0.3*" />
+    				</Grid.ColumnDefinitions>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtmmX" TextAlignment="Right" TextWrapping="NoWrap" Grid.Row="0" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="X" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+            			<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtmmY" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Y" Grid.Row="1" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16"/>
+            			<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtmmZ" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Z" Grid.Row="2" Height="32.8666667" Margin="0" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+						<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtmmR" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="C" Grid.Row="3" Height="32.8666667" Margin="0" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" Visibility="Collapsed" />
+					</Grid>
+            		<Grid Grid.Column="1">
+						<Grid.RowDefinitions>
+							<RowDefinition/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<Button Tag="Move By"  HorizontalContentAlignment="Center" x:Name="btnmmGoto" VerticalContentAlignment="Center" Grid.Column="1" Content="Go To" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" Height="40" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    	<Button Tag="Move By"  HorizontalContentAlignment="Center" x:Name="btnmmBack" VerticalContentAlignment="Center" Grid.Column="1" Content="Back" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Template="{DynamicResource Shiny_SpButton2}" Width="40" Height="40" Grid.Row="2" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Grid>
+                </Grid>
+    		</GroupBox>
+    		<GroupBox x:Name="grpFeedrates" Grid.ColumnSpan="2" Grid.Row="1" Header="Speeds" Tag="x" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" Margin="8,0,8,4" Height="60" Background="{DynamicResource PanelBackground}" BorderBrush="{DynamicResource DroBackColor}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdFeedRates" Margin="0">
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.2*"/>
+    					<ColumnDefinition Width="0.2*"/>
+    					<ColumnDefinition Width="0.2*"/>
+    					<ColumnDefinition Width="0.2*"/>
+    					<ColumnDefinition Width="0.1*"/>
+    				</Grid.ColumnDefinitions>
+    				<local:NumericUpDown x:Name="txtFeedX" Tag="X" Foreground="Black" Margin="4" BorderBrush="{DynamicResource TB_Label_Brush}" FontSize="16" FontFamily="Segoe UI"/>
+    				<local:NumericUpDown x:Name="txtFeedY" FontSize="16" Tag="Y" Grid.Column="1" Foreground="Black" Margin="4" BorderBrush="{DynamicResource TB_Label_Brush}" FontFamily="Segoe UI"/>
+    				<local:NumericUpDown x:Name="txtFeedZ" Grid.Column="2" FontSize="16" Tag="Z" Foreground="Black" Margin="4" BorderBrush="{DynamicResource TB_Label_Brush}" FontFamily="Segoe UI"/>
+    				<local:NumericUpDown x:Name="txtFeedR" Grid.Column="3" FontSize="16" Tag="C" Foreground="Black" Margin="4" BorderBrush="{DynamicResource TB_Label_Brush}" FontFamily="Segoe UI" Visibility="Collapsed"/>
+    			</Grid>
+    		</GroupBox>
+		</Grid>

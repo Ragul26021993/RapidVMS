@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f4d29b4d-37af-4a06-8868-32cf3d7df51e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_MainInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_AutoCalibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_CNC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_Thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_DRO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_FixedGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_FocusDepth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_PartProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_PCD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_LaserComm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_DBSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RapidDimListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RapidDxfListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RapidShapeListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RapidUcsListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_ShapeParameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_MeasureParameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_UCSParameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\OglLighting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_DrawGraphicsText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_Enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ProbePathEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_FixtureCalibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\rw_vblockcallibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_SAOI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_SphereCalibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RapidActionListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_ActionParameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\rw_imagegridprogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\rw_circularinterpolation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_LinearInterPolation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_SuperImposeImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_OverlapImgWin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_RepeatAutoMeasure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_AutoProfileScanMeasure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_CT_SphereCallibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_RepeatShapeMeasure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_DelphiCamModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_ImageDelayCalibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_LBlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_LCParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_CorrectionParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\CorrectionZone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LC_Multiplier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\RW_TIS_Control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RapidWrapper.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\RW_MainInterface.cpp" />
+    <ClCompile Include="Engine\RW_AutoCalibration.cpp" />
+    <ClCompile Include="Engine\RW_CNC.cpp" />
+    <ClCompile Include="Engine\RW_Thread.cpp" />
+    <ClCompile Include="Engine\RW_FixedGraph.cpp" />
+    <ClCompile Include="Engine\RW_FocusDepth.cpp" />
+    <ClCompile Include="Engine\RW_PartProgram.cpp" />
+    <ClCompile Include="Engine\RW_PCD.cpp" />
+    <ClCompile Include="Engine\RW_LaserComm.cpp" />
+    <ClCompile Include="Engine\RW_DBSettings.cpp" />
+    <ClCompile Include="Engine\RapidDimListener.cpp" />
+    <ClCompile Include="Engine\RapidDxfListener.cpp" />
+    <ClCompile Include="Engine\RapidShapeListener.cpp" />
+    <ClCompile Include="Engine\RapidUcsListener.cpp" />
+    <ClCompile Include="Engine\RW_ShapeParameter.cpp" />
+    <ClCompile Include="Engine\RW_MeasureParameter.cpp" />
+    <ClCompile Include="Engine\RW_UCSParameter.cpp" />
+    <ClCompile Include="Engine\OglLighting.cpp" />
+    <ClCompile Include="Engine\RW_DrawGraphicsText.cpp" />
+    <ClCompile Include="Engine\RW_FixtureCalibration.cpp" />
+    <ClCompile Include="Engine\RW_VBlockCallibration.cpp" />
+    <ClCompile Include="Engine\RW_SAOI.cpp" />
+    <ClCompile Include="Engine\RW_SphereCalibration.cpp" />
+    <ClCompile Include="Engine\RapidActionListener.cpp" />
+    <ClCompile Include="Engine\RW_ActionParameter.cpp" />
+    <ClCompile Include="Engine\RW_ImageGridProgram.cpp" />
+    <ClCompile Include="Engine\RW_CircularInterPolation.cpp" />
+    <ClCompile Include="Engine\RW_LinearInterPolation.cpp" />
+    <ClCompile Include="Engine\RW_SuperImposeImage.cpp" />
+    <ClCompile Include="Engine\RW_OverlapImgWin.cpp" />
+    <ClCompile Include="Engine\RW_RepeatAutoMeasure.cpp" />
+    <ClCompile Include="Engine\RW_AutoProfileScanMeasure.cpp" />
+    <ClCompile Include="Engine\RW_CT_SphereCallibration.cpp" />
+    <ClCompile Include="Engine\RW_RepeatShapeMeasure.cpp" />
+    <ClCompile Include="Engine\RW_DRO.cpp" />
+    <ClCompile Include="Engine\RW_DelphiCamModule.cpp" />
+    <ClCompile Include="Engine\RW_ImageDelayCalibration.cpp" />
+    <ClCompile Include="Engine\RW_LBlock.cpp" />
+    <ClCompile Include="Engine\RW_LCParams.cpp" />
+    <ClCompile Include="Engine\RW_TIS_Control.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Engine\OglLighting.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

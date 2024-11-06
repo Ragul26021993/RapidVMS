@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeployedProjects>
+    <string>CalibrationModule\CalibrationModule.vbproj</string>
+    <string>EdgeDetectionClassSingleChannel\EdgeDetectionClassSingleChannel.vcxproj</string>
+    <string>ErrorHandlerApp\ErrHandlerApp.vbproj</string>
+    <string>ExcelModule\ExcelModule.csproj</string>
+    <string>GridModule\GridModule.vcxproj</string>
+    <string>HardwareCommunication\HardwareCommunication.vcxproj</string>
+    <string>LicensingModule\LicensingModule.vbproj</string>
+    <string>MainDLL\MainDLL.vcxproj</string>
+    <string>RapidGraphics\RapidGraphics.vcxproj</string>
+    <string>RapidI_MVVM\RapidI_MVVM.csproj</string>
+    <string>RapidMath2D\RapidMath2D.vcxproj</string>
+    <string>RapidMath3D\RapidMath3D.vcxproj</string>
+    <string>RapidWrapper\RapidWrapper.vcxproj</string>
+    <string>RBF\RBF.vcxproj</string>
+    <string>RCam3\RCam3.csproj</string>
+  </DeployedProjects>
+  <DirectoryMappings>
+    <Item Key="" Value="INSTALLFOLDER" />
+  </DirectoryMappings>
+  <FileMappings />
+  <DeploySymbols>false</DeploySymbols>
+  <DeployLocalizations>true</DeployLocalizations>
+  <DeployExternalLocalizations>false</DeployExternalLocalizations>
+  <ExcludedProjectItems>-</ExcludedProjectItems>
+</Configuration>

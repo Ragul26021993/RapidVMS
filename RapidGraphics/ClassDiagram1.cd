@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RGraphicsFont" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AWAgAACAAAAAAAAAIABAggAAAiAAAAQgGACABAEAAAA=</HashCode>
+      <FileName>Engine\RGraphicsFont.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGraphicsWindow" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACwAAQIIABAAAAAAAAAAAwIIAhAAAAAAwQECAAESAAY=</HashCode>
+      <FileName>Engine\RGraphicsWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGraphicsDraw" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kXN9dH51YZePvfwBpj3alyf3hvDlwx6/nP++b88/B98=</HashCode>
+      <FileName>Engine\RGraphicsDraw.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="GraphicsColor" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAQACAAAAAAAAAAIAQABAQAAAAA=</HashCode>
+      <FileName>Engine\RGraphicsDraw.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GRWindow" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAQAIAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Engine\RGraphicsDraw.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

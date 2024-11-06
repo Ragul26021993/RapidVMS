@@ -1,0 +1,40 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" mc:Ignorable="d"
+	xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties"
+	x:Class="Rapid.Windows.ProfileScanWidthWin"
+	x:Name="Window"
+	Title="Rapid-I Profile Scan Width"
+	MaxWidth="400" Width="350" Height="340" ShowInTaskbar="False" >
+	<Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/> 
+		</Grid.ColumnDefinitions>
+		<TextBlock TextWrapping="Wrap" Text="Enter the required values" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.ColumnSpan="2"/>
+		<TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Width" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0" />
+		<TextBox x:Name="WidthTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="1" Grid.Column="1" Margin="0" VerticalAlignment="Center" Text="0" HorizontalAlignment="Center" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" HorizontalContentAlignment="Right"/>
+		<TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Best fit Points Bundle" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0" />
+        <TextBox x:Name="BFPtsBundleTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="2" Grid.Column="1" Margin="0" VerticalAlignment="Center" Text="0" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger" HorizontalAlignment="Center" HorizontalContentAlignment="Right"/>
+		<TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="Scan Jump" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0" />
+        <TextBox x:Name="ScanJumpTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="3" Grid.Column="1" Margin="0" VerticalAlignment="Center" Text="0" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger" HorizontalAlignment="Center" HorizontalContentAlignment="Right"/>
+		<TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" Text="Measurement Count" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0" />
+        <TextBox x:Name="MeasurementCountTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="4" Grid.Column="1" Margin="0" VerticalAlignment="Center" Text="0" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger" HorizontalAlignment="Center" HorizontalContentAlignment="Right"/>
+		<RadioButton x:Name="LineBFTypeRBtn" Content="Line Best Fit Type" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,3,0" IsChecked="True"/>
+		<RadioButton x:Name="ArcBFTypeRBtn" Content="Arc Best Fit Type" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="3,0,0,0"/>
+		<CheckBox x:Name="AutoContinueOuterChkBx" Content="Auto Continue for Outer Edge" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+		<Button  x:Name="OkBtn" Content="Ok" Grid.Row="7" Click="OkBtn_Click" Style="{DynamicResource SimpleNormalButton}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0" Width="130"/>
+		<Button  x:Name="CancelBtn" Content="Cancel" Grid.Row="7" Click="CancelBtn_Click" Style="{DynamicResource SimpleNormalButton}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0" Grid.Column="1" Width="130"/>
+       </Grid>
+</Window>

@@ -1,0 +1,135 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:Rapid.Utilities"
+    xmlns:localProp="clr-namespace:Rapid.AttachedProperties"
+    x:Class="Rapid.Panels.SAOI"
+	x:Name="MainBorder" >
+	<Grid.Resources>
+		<BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+		<Style x:Key="TopBottom" TargetType="{x:Type GroupBox}">
+		<Setter Property="BorderBrush" Value="#D5DFE5"/>
+    	<Setter Property="BorderThickness" Value="1"/>
+    	<Setter Property="Template">
+    		<Setter.Value>
+    			<ControlTemplate TargetType="{x:Type GroupBox}">
+    				<ControlTemplate.Resources>
+    					<Storyboard x:Key="OnMouseLeftButtonDown1"/>
+    					<Storyboard x:Key="TextBoxinFocus"/>
+    				</ControlTemplate.Resources>
+    				<Grid x:Name="LightingGrid" SnapsToDevicePixels="true">
+    					<Grid.Effect>
+    						<DropShadowEffect Opacity="0.6"/>
+    					</Grid.Effect>
+    					<Grid.ColumnDefinitions>
+    						<ColumnDefinition Width="8"/>
+    						<ColumnDefinition Width="Auto" MinWidth="152"/>
+    						<ColumnDefinition/>
+    						<ColumnDefinition Width="6"/>
+    					</Grid.ColumnDefinitions>
+    					<Grid.RowDefinitions>
+    						<RowDefinition Height="Auto" MinHeight="21.625"/>
+    						<RowDefinition/>
+    						<RowDefinition Height="Auto"/>
+    					</Grid.RowDefinitions>
+    					<Border BorderBrush="{TemplateBinding Foreground}" Grid.ColumnSpan="4" Grid.RowSpan="2" Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="1,0,1,1"/>
+    					<Border BorderBrush="{TemplateBinding Foreground}" BorderThickness="1,1,1,0" Grid.ColumnSpan="4" Grid.RowSpan="1" Background="{TemplateBinding BorderBrush}" CornerRadius="8,8,0,0">
+    						<Border BorderThickness="1" CornerRadius="0" VerticalAlignment="Stretch" Margin="0,0,0,0.892" HorizontalAlignment="Left" Width="Auto">
+    							<Border.Effect>
+    								<DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+    							</Border.Effect>
+    							<DockPanel>
+                                        <RadioButton Content="TopLeft" Style="{DynamicResource TabSelector2}" Name="RadioTopLeft"  IsChecked="True" Width="79.377"/>
+                                        <RadioButton Content="BottomRight" Style="{DynamicResource TabSelector2}" Name="RadioBottomRight" Width="108.377"/>
+    							</DockPanel>
+    						</Border>
+    					</Border>
+    					<ContentPresenter Grid.ColumnSpan="2" Grid.Column="1" Margin="{TemplateBinding Padding}" Grid.Row="1" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+    				</Grid>
+    			</ControlTemplate>
+    		</Setter.Value>
+    	</Setter>
+		</Style>
+	</Grid.Resources>
+			<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.5*"/>
+			<ColumnDefinition Width="0.5*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+			<RowDefinition Height="0.355*"/>
+			<RowDefinition Height="0.322*"/>
+			<RowDefinition Height="0.323*"/>
+			</Grid.RowDefinitions>
+    	<GroupBox  x:Name="grpGridTop" Header="TopLeft" Grid.Row="1" BorderBrush="{DynamicResource DroBackColor}" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" Margin="1" Background="{DynamicResource PanelBackground}" Foreground="{DynamicResource ContainerBorderBrush}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdGridTop" Margin="0">
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="0.5*"/>
+						<RowDefinition Height="0.5*"/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.70*" />
+    				</Grid.ColumnDefinitions>
+        		<TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtTopX" Text="166" TextAlignment="Right" TextWrapping="NoWrap" Grid.Row="0" BorderThickness="2" FontFamily="Segoe UI" Style="{DynamicResource TaggedHighlighted_TextBox}" BorderBrush="{DynamicResource TB_Label_Brush}" Tag="X" Height="32.6605" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+            	<TextBox  localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtTopY" Text="153" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Y" Grid.Row="1" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+    			</Grid>
+    		</GroupBox>
+    		<GroupBox  x:Name="grpMoveBy" Margin="1" Header="Cell Size" Grid.Row="1" Grid.Column="1" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" BorderBrush="{DynamicResource DroBackColor}" Background="{DynamicResource PanelBackground}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdMoveBy">
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="0.5*"/>
+						<RowDefinition Height="0.5*"/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.7*" />
+    				</Grid.ColumnDefinitions>
+            <TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtCellWidth" Text="2.5" TextAlignment="Right" TextWrapping="NoWrap" Grid.Row="0" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="X" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+            <TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" x:Name="txtCellHeight" Text="2.5" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Y" Grid.Row="1" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16"/>
+    			</Grid>
+    		</GroupBox>
+			<GroupBox  x:Name="grpWidth" Margin="1" Header="Grid Size" Grid.Column="0" Grid.Row="2" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" BorderBrush="{DynamicResource DroBackColor}" Background="{DynamicResource PanelBackground}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdWidth">
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="0.5*"/>
+    					<RowDefinition Height="0.5*"/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.7*" />
+    				</Grid.ColumnDefinitions>
+            <TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" Text="10" x:Name="txtGridWidth" TextAlignment="Right" TextWrapping="NoWrap" Grid.Row="0" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="X" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16" />
+            <TextBox localProp:AttachedTextBoxBehaviour.Mask="Decimal" localProp:AttachedTextBoxBehaviour.MaxTextLength="10" MaxLines="1" Text="10" x:Name="txtGrigHeight" TextAlignment="Right" TextWrapping="NoWrap" BorderThickness="2" FontFamily="Segoe UI" BorderBrush="{DynamicResource TB_Label_Brush}" Style="{DynamicResource TaggedHighlighted_TextBox}" Tag="Y" Grid.Row="1" Height="32.8666667" Background="{DynamicResource TextBoxBGBrush}" FontSize="16"/>
+                   </Grid>
+    		</GroupBox>
+			<GroupBox  x:Name="grpAttrib" Margin="1" Header="Grid" Grid.Column="1" Grid.Row="2" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" BorderBrush="{DynamicResource DroBackColor}" Background="{DynamicResource PanelBackground}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdattrib">
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="0.5*"/>
+    					<RowDefinition Height="0.5*"/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.7*" />
+    					<ColumnDefinition Width="0.3*" />
+    				</Grid.ColumnDefinitions>
+					<Button x:Name="btnShowGrid" Style="{DynamicResource SimpleNormalButton}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="18.667" Background="{DynamicResource ButtonBackcolor}" Grid.Row="0" Content="Hide" Margin="0,1,0,-1"></Button>
+              	    </Grid>
+    		</GroupBox>
+    		<GroupBox x:Name="grpFeedrates" Grid.ColumnSpan="2" Grid.Row="0" Header="" Tag="x" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="{DynamicResource Sub_GB_HeaderFont}" Margin="0" Height="60" Background="{DynamicResource PanelBackground}" BorderBrush="{DynamicResource DroBackColor}" FontSize="{DynamicResource SubHeader_GB_FontSize}">
+    			<Grid x:Name="grdFeedRates" Margin="0">
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.120*"/>
+    					<ColumnDefinition Width="0.148*"/>
+    					<ColumnDefinition Width="0.152*"/>
+    					<ColumnDefinition Width="0.140*"/>
+    					<ColumnDefinition Width="0.140*"/>
+    					<ColumnDefinition Width="0.130*"/>
+    				</Grid.ColumnDefinitions>
+					<Button x:Name="BtnHome" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="10.667" Background="{DynamicResource ButtonBackcolor}" Grid.Column="5" Content="Home"></Button>
+					<Button x:Name="BtnNext" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="10.667" Background="{DynamicResource ButtonBackcolor}" Grid.Column="4" Content="Next"></Button>
+					<Button x:Name="BtnStart" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="10.667" Background="{DynamicResource ButtonBackcolor}" Grid.Column="3" Content="Start"></Button>
+					<Button x:Name="BtnRightbot" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="10.667" Background="{DynamicResource ButtonBackcolor}" Grid.Column="2" Content="Bot.Right"></Button>
+					<Button x:Name="btnSetGridCoordinates" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="10.667" Background="{DynamicResource ButtonBackcolor}" Grid.Column="1" Content="Top.Left" ></Button>
+					<Button x:Name="BtnSet" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" FontSize="10.667" Background="{DynamicResource ButtonBackcolor}" Grid.Column="0" Content="Set" ></Button>
+    			</Grid>
+    		</GroupBox>
+		</Grid>

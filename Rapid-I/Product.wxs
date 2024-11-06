@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?if $(var.Platform)=x64 ?>
+	<?define ProductCode = "{5A9058FD-C04B-4B56-8ACF-81B0D7AD4574}" ?>
+	<?else?>
+	<?define ProductCode = "{4A03D3F6-1855-4453-975C-FD7CE18EE5EA}" ?>
+	<?endif?>
+	<?define UpgradeCode = "{93147571-8693-45F7-A846-54CCE1DDC436}" ?>
+	<?define BuildVersion = 1.2.3.4 ?>
+	
+	<Product Id="$(var.ProductCode)" Name="Rapid_I" Language="0" Version="$(var.BuildVersion)" Manufacturer="!(loc.Company)" UpgradeCode="$(var.UpgradeCode)">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Manufacturer="!(loc.Company)" Description="!(loc.Description)" Comments="!(loc.Comments)" Keywords="!(loc.Keywords)" Languages="0" />
+
+		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)" />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Icon Id="icon.ico" SourceFile="$(var.RapidI_MVVM.ProjectDir)\Rapid-I.ico" />
+
+		<Property Id="ARPPRODUCTION">icon.ico</Property>
+		<Property Id="ARPURLINFOABOUT">http://www.rapidi.in</Property>
+
+		<UIRef Id="WixUI_Minimal" />
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\Assets\License.rtf" />
+
+		<Feature Id="ProductFeature" Title="Rapid_I" Level="1">
+			<!--<ComponentGroupRef Id="ProductComponents" />-->
+			<ComponentGroupRef Id="INSTALLFOLDER_files" />
+			<ComponentGroupRef Id="DatasComponents" />
+			<ComponentGroupRef Id="DatasComponents1" />
+			<ComponentGroupRef Id="DatasComponents2" />
+			<ComponentGroupRef Id="DatasComponents3" />
+			<ComponentGroupRef Id="DatasComponents4" />
+			<ComponentGroupRef Id="DatasComponents41" />
+			<ComponentGroupRef Id="DatasComponents42" />
+			<ComponentGroupRef Id="DatasComponents421" />
+			<ComponentGroupRef Id="DatasComponents422" />
+			<ComponentGroupRef Id="DatasComponents43" />
+			<ComponentGroupRef Id="DatasComponents44" />
+			<ComponentGroupRef Id="DatasComponents45" />
+			<ComponentGroupRef Id="DatasComponents46" />
+			<ComponentGroupRef Id="DatasComponents5" />
+			<ComponentGroupRef Id="DatasComponents6" />
+			<ComponentGroupRef Id="DatasComponents7" />
+			<ComponentGroupRef Id="DatasComponents8" />
+			<ComponentGroupRef Id="DatasComponents10" />
+		</Feature>
+	</Product>
+
+</Wix>

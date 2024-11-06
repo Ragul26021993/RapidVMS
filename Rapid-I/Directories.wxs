@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			
+			<!--<Directory Id="ProgramData">
+				<Directory Id="DataBaseFOLDER" Name="Rapid_I_5.0_New" />
+			</Directory>-->
+		<Directory Id="CommonAppDataFolder">
+			<Directory Id="CommonAppDataManufacturerFolder" Name="Rapid_I_5.0_New">
+				<Directory Id="MyAppDataFolder1" Name="Database"/>
+				<Directory Id="MyAppDataFolder2" Name="Image"/>
+				<Directory Id="MyAppDataFolder3" Name="Images"/>
+				<Directory Id="MyAppDataFolder4" Name="Log">
+					<Directory Id="MyAppDataFolder41" Name="CommandSend"/>
+					<Directory Id="MyAppDataFolder42" Name="ErrorLog">
+						<Directory Id="MyAppDataFolder421" Name="LogFile"/>
+						<Directory Id="MyAppDataFolder422" Name="ScreenShot"/>
+					</Directory>
+					<Directory Id="MyAppDataFolder43" Name="ModuleInit"/>
+					<Directory Id="MyAppDataFolder44" Name="PointsLog"/>
+					<Directory Id="MyAppDataFolder45" Name="ProgramLog"/>
+					<Directory Id="MyAppDataFolder46" Name="UserLog"/>
+				</Directory>
+				<Directory Id="MyAppDataFolder5" Name="Programs"/>
+				<Directory Id="MyAppDataFolder6" Name="Reports"/>
+				<Directory Id="MyAppDataFolder7" Name="Saved Parameters"/>
+				<Directory Id="MyAppDataFolder8" Name="Shape Points"/>
+				<Directory Id="MyAppDataFolder9" Name="Temp"/>
+				<Directory Id="MyAppDataFolder10" Name="Templates"/>
+			</Directory>
+		</Directory>
+			
+			<?if $(var.Platform)=x64 ?>
+			
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLFOLDER" Name="Rapid_I" />
+			</Directory>
+			
+			<?else?>
+			
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Rapid_I" />
+			</Directory>
+			
+			<?endif?>
+	
+		</Directory>
+	</Fragment>
+	<!--<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+      <Directory Id="CommonAppDataFolder">
+        <Directory Id="CommonAppXXXX" Name="test">
+          <Directory Id="CommonAppYYYY" Name="example">
+            <Component Id="CreateProgramDataZZZ" Guid="3AFC7298-45CB-4FDC-9482-ADB17FF25B24">
+              <CreateFolder />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </DirectoryRef>
+	</Fragment>-->
+</Wix>

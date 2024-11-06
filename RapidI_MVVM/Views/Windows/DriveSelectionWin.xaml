@@ -1,0 +1,38 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Rapid.Windows.DriveSelectionWin"
+	x:Name="Window"
+	Title="DriveSelectionWin"
+	Width="400" Height="260" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="104.5" WindowStartupLocation="CenterScreen" >
+    <!--<Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">-->
+    <GroupBox x:Name="DriveSelector" Header="Part Program Storage Location" FontFamily="Segoe UI" FontSize="16" Style="{DynamicResource GB_ToolStyle_NoComboBox}" Background="{DynamicResource PanelBackground}" BorderBrush="{DynamicResource DroBackColor}">
+        <Grid x:Name="LayoutRoot">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="35*" />
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnOK" Content="OK" Grid.Row="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Template="{DynamicResource Shiny_SpButton2}" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,9,20,13" Height="32" />
+            <TextBlock Margin="8,0,0,0" x:Name="txtHeading" Text="Part Program Storage Location:" FontSize="10.667" VerticalAlignment="Bottom" TextWrapping="Wrap" HorizontalAlignment="Left" Height="14" Width="242"/>
+            <TextBlock Margin="8,0,0,0" x:Name="txtHeading2" Text="Report Files Storage Location:" FontSize="10.667" VerticalAlignment="Bottom" TextWrapping="Wrap" HorizontalAlignment="Left" Grid.Row="3" Height="14"/>
+            <TextBlock x:Name="tblock_ProgramLocator" VerticalAlignment="Center" Background="#FF6EC4FF" Grid.Row="1" Margin="20,0,60,0"/>
+            <Button x:Name="Btn_ProgramLocator" Height="28" Content="..." HorizontalAlignment="Right" Width="30" FontWeight="Bold" FontSize="20" Click="Btn_ProgramLocator_Click" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,12,0" />
+            <CheckBox x:Name="chkDecoupleReportPath" Content="Store Reports in a different location" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="12" Margin="0,0,0,4"/>
+            <TextBlock x:Name="tblock_ReportLocator" VerticalAlignment="Center" Background="#FF6EC4FF" Grid.Row="4" Margin="20,0,60,0"/>
+            <Button x:Name="Btn_ReportsLocator" Height="28" Content="..." HorizontalAlignment="Right" Width="30" FontWeight="Bold" FontSize="20" Click="Btn_ProgramLocator_Click" Grid.Row="4" VerticalAlignment="Center" Margin="0,0,12,0" />
+            <!--<Line StrokeThickness="20" HorizontalAlignment="Stretch" VerticalAlignment="Top" X2="400" Y1="60" Y2="60" Fill="Black" Stroke="Black" />-->
+            
+        </Grid>
+    </GroupBox>
+    <!--</Border>-->
+</Window>

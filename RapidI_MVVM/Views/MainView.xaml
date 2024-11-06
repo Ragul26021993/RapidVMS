@@ -1,0 +1,1392 @@
+﻿<Window 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"  
+	xmlns:c="clr-namespace:Rapid.Commands" 
+	xmlns:Util="clr-namespace:Rapid.Utilities" 
+	xmlns:AttachedProp="clr-namespace:Rapid.AttachedProperties" 
+	xmlns:Options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
+	xmlns:RapidI_MVVM_Views_Lighting="clr-namespace:Rapid.LightingControl" 
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
+	xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+	xmlns:local="clr-namespace:Rapid" 
+    xmlns:ww="clr-namespace:Rapid.Views.Utilities"
+	x:Class="Rapid.MainView"
+	x:Name="MainWindow" mc:Ignorable="d" Left="0" Top="0" Title="Rapid-I"  WindowStyle="None"  ResizeMode="CanMinimize" Background="{x:Null}" Loaded="Window_Loaded" d:DesignWidth="1920" d:DesignHeight="1024" Height="1080" Width="1920" Icon="Rapid-I.ico" >
+
+    <Window.Resources>
+
+        <local:GlobalSettings x:Key="GlobalSettingsDataSource" d:IsDataSource="True"/>
+
+        <c:CommandReference x:Key="DoNothingCommandRefrence" Command="{Binding DoNothingCommand}"/>
+        <c:CommandReference x:Key="MinimizeCommandRefrence" Command="{Binding MinimizeCommand}"/>
+        <!-- Allows a KeyBinding to be associated with a command defined in the View Model  -->
+        <c:CommandReference x:Key="ExitCommandReference" Command="{Binding ExitCommand}" />
+
+        <ControlTemplate x:Key="BigArrowLeftRepeatButton" TargetType="{x:Type RepeatButton}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="MouseEnter">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="Transparent"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.4" Value="White"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseLeave">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <SplineColorKeyFrame KeyTime="0" Value="White"/>
+                        <SplineColorKeyFrame KeyTime="0:0:0.4" Value="Transparent"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseClick">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pressed1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.4" Value="Transparent"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.83*"/>
+                    <ColumnDefinition Width="0.07*"/>
+                </Grid.ColumnDefinitions>
+                <Path x:Name="Bg" Stretch="Fill" Data="F1 M 524.298,266.02L 553.329,246.836L 553.329,285.204L 524.298,266.02 Z " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="0" Grid.Column="0">
+                    <Path.Fill>
+                        <LinearGradientBrush EndPoint="0.011,0.504" StartPoint="0.995375,0.499901">
+                            <GradientStop Color="#FF002152" Offset="0.84"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Path x:Name="Default" Stretch="Fill" Data="F1 M 524.298,266.02L 553.329,246.836L 553.329,285.204L 524.298,266.02 Z " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1" Stroke="Black">
+                    <Path.Fill>
+                        <LinearGradientBrush StartPoint="0.995375,0.499901" EndPoint="0.177284,0.499901">
+                            <GradientStop Color="#FF0049B6" Offset="0"/>
+                            <GradientStop Color="#FF8FE5FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Path x:Name="Pressed1" Stretch="Fill" Data="F1 M 524.298,266.02L 553.329,246.836L 553.329,285.204L 524.298,266.02 Z " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1" Opacity="0">
+                    <Path.Fill>
+                        <LinearGradientBrush EndPoint="-0.028,0.5" StartPoint="1.029,0.502">
+                            <GradientStop Color="#FFFFBE30" Offset="0.721"/>
+                            <GradientStop Color="#FF976800" Offset="0.95"/>
+                            <GradientStop Color="#FFFFBE30" Offset="0.15"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <BeginStoryboard x:Name="MouseLeave_BeginStoryboard" Storyboard="{StaticResource MouseLeave}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="ButtonBase.Click">
+                    <BeginStoryboard x:Name="MouseClick_BeginStoryboard" Storyboard="{StaticResource MouseClick}"/>
+                </EventTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="BigArrowRightRepeatButton" TargetType="{x:Type RepeatButton}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="MouseEnter">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="Transparent"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.4" Value="White"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseLeave">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <SplineColorKeyFrame KeyTime="0" Value="White"/>
+                        <SplineColorKeyFrame KeyTime="0:0:0.4" Value="Transparent"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseClick">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pressed1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.4" Value="Transparent"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.07*"/>
+                    <ColumnDefinition Width="0.83*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Path x:Name="Bg" Stretch="Fill" Data="F1 M 524.298,266.02L 553.329,246.836L 553.329,285.204L 524.298,266.02 Z " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Fill>
+                        <LinearGradientBrush EndPoint="0.011,0.504" StartPoint="0.995375,0.499901">
+                            <GradientStop Color="#FF002152" Offset="0.84"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Path x:Name="Default" Stretch="Fill" Data="F1 M 524.298,266.02L 553.329,246.836L 553.329,285.204L 524.298,266.02 Z " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1" Stroke="#00000000" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Fill>
+                        <LinearGradientBrush StartPoint="0.995375,0.499901" EndPoint="0.177284,0.499901">
+                            <GradientStop Color="#FF0049B6" Offset="0"/>
+                            <GradientStop Color="#FF8FE5FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Path x:Name="Pressed1" Stretch="Fill" Data="F1 M 524.298,266.02L 553.329,246.836L 553.329,285.204L 524.298,266.02 Z " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Fill>
+                        <LinearGradientBrush EndPoint="-0.028,0.5" StartPoint="1.029,0.502">
+                            <GradientStop Color="#FFFFBE30" Offset="0.721"/>
+                            <GradientStop Color="#FF976800" Offset="0.95"/>
+                            <GradientStop Color="#FFFFBE30" Offset="0.15"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <BeginStoryboard x:Name="MouseLeave_BeginStoryboard" Storyboard="{StaticResource MouseLeave}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="ButtonBase.Click">
+                    <BeginStoryboard x:Name="MouseClick_BeginStoryboard" Storyboard="{StaticResource MouseClick}"/>
+                </EventTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
+        <ControlTemplate x:Key="BigArrowUpRepeatButton" TargetType="{x:Type RepeatButton}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="MouseEnter">
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static VerticalAlignment.Stretch}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="Transparent"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.5" Value="White"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseLeave">
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static VerticalAlignment.Stretch}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.4" Value="Transparent"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MousePressed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pressed1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Default">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.2" Value="White"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.4" Value="White"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseReleased">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pressed1">
+                        <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Default">
+                        <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <SplineColorKeyFrame KeyTime="0" Value="White"/>
+                        <SplineColorKeyFrame KeyTime="0:0:0.2" Value="White"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Grid d:DesignWidth="160">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.07*"/>
+                    <RowDefinition Height="0.86*"/>
+                    <RowDefinition Height="0.07*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.ColumnSpan="3" Fill="{DynamicResource MainWindowBorderBrush}" Grid.RowSpan="3" RadiusX="4" RadiusY="4"/>
+                <Path x:Name="BG1" Data="F1 M 620,198.71L 540,190.001L 700,190.001L 620,198.71 Z " Stretch="Fill" Fill="{DynamicResource BlueButtonBrush}" Height="Auto" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.RowSpan="3" d:IsHidden="True">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Default" Data="F1 M 620,198.71L 540,190.001L 700,190.001L 620,198.71 Z " Stretch="Fill" Fill="{DynamicResource ArrowButtonBrush}" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1" Stroke="#00000000">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Pressed1" Data="F1 M 620,198.71L 540,190.001L 700,190.001L 620,198.71 Z " Stretch="Fill" Fill="{DynamicResource TabSelectorBrush_normal}" Height="Auto" VerticalAlignment="Stretch" Opacity="0" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <BeginStoryboard x:Name="MouseLeave_BeginStoryboard" Storyboard="{StaticResource MouseLeave}"/>
+                </EventTrigger>
+                <!--<EventTrigger RoutedEvent="ButtonBase.Click">
+					<BeginStoryboard x:Name="MousePressed_BeginStoryboard" Storyboard="{StaticResource MousePressed}"/>
+				</EventTrigger>-->
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="Pressed1" Property="Opacity" Value="1"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="BigArrowDownRepeatButton" TargetType="{x:Type RepeatButton}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="MouseEnter">
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static HorizontalAlignment.Center}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static VerticalAlignment.Center}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="Transparent"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.5" Value="White"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MouseLeave">
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static HorizontalAlignment.Stretch}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="Default">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Stretch}"/>
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static VerticalAlignment.Stretch}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+                        <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                        <EasingColorKeyFrame KeyTime="0:0:0.2" Value="Transparent"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="MousePressed">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pressed1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                        <!--<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>-->
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Default">
+						<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+						<DiscreteDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+					</DoubleAnimationUsingKeyFrames>
+					<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Default">
+						<EasingColorKeyFrame KeyTime="0" Value="White"/>
+						<EasingColorKeyFrame KeyTime="0:0:0.2" Value="White"/>
+						<EasingColorKeyFrame KeyTime="0:0:0.4" Value="White"/>
+					</ColorAnimationUsingKeyFrames>-->
+
+                </Storyboard>
+                <Storyboard x:Key="MouseReleased">
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pressed1">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Default">
+						<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+					</DoubleAnimationUsingKeyFrames>-->
+
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Grid d:DesignWidth="160">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.07*"/>
+                    <RowDefinition Height="0.86*"/>
+                    <RowDefinition Height="0.07*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.ColumnSpan="3" Fill="{DynamicResource MainWindowBorderBrush}" Grid.RowSpan="3" RadiusX="4" RadiusY="4"/>
+                <Path x:Name="bg2" Data="F1 M 620,198.71L 540,190.001L 700,190.001L 620,198.71 Z " Stretch="Fill" Fill="{DynamicResource BlueButtonBrush}" Height="Auto" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.RowSpan="3" d:IsHidden="True">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Default" Data="F1 M 620,198.71L 540,190.001L 700,190.001L 620,198.71 Z " Stretch="Fill" Fill="{DynamicResource ArrowButtonBrush}" Height="Auto" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1" Stroke="#00000000">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Pressed1" Data="F1 M 620,198.71L 540,190.001L 700,190.001L 620,198.71 Z " Stretch="Fill" Fill="{DynamicResource TabSelectorBrush_normal}" Height="Auto" VerticalAlignment="Stretch" Opacity="0" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <BeginStoryboard x:Name="MouseLeave_BeginStoryboard" Storyboard="{StaticResource MouseLeave}"/>
+                </EventTrigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="Pressed1" Property="Opacity" Value="1"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="ScrollBarStyle2" TargetType="{x:Type ScrollBar}">
+            <Setter Property="Background" Value="{StaticResource VerticalScrollBarBackground}"/>
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Width" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
+            <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                        <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="{x:Null}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" Height="0.227*"/>
+                                <RowDefinition Height="0.544*"/>
+                                <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}" Height="0.229*"/>
+                            </Grid.RowDefinitions>
+                            <RepeatButton Command="{x:Static ScrollBar.LineUpCommand}" IsEnabled="{TemplateBinding IsMouseOver}" Style="{StaticResource ScrollBarButton}" Microsoft_Windows_Themes:ScrollChrome.ScrollGlyph="UpArrow" Template="{DynamicResource BigArrowUpRepeatButton}" Margin="0"/>
+                            <RepeatButton Command="{x:Static ScrollBar.LineDownCommand}" IsEnabled="{TemplateBinding IsMouseOver}" Style="{StaticResource ScrollBarButton}" Grid.Row="2" Microsoft_Windows_Themes:ScrollChrome.ScrollGlyph="DownArrow" Template="{DynamicResource BigArrowDownRepeatButton}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="MinWidth" Value="0"/>
+                    <Setter Property="Height" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
+                    <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
+                    <Setter Property="Background" Value="{StaticResource HorizontalScrollBarBackground}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Grid x:Name="Bg" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
+                                        <ColumnDefinition Width="0.00001*"/>
+                                        <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
+                                    </Grid.ColumnDefinitions>
+                                    <RepeatButton Command="{x:Static ScrollBar.LineLeftCommand}" IsEnabled="{TemplateBinding IsMouseOver}" Style="{StaticResource ScrollBarButton}" Microsoft_Windows_Themes:ScrollChrome.ScrollGlyph="LeftArrow"/>
+                                    <Track x:Name="PART_Track" Grid.Column="1" IsEnabled="{TemplateBinding IsMouseOver}">
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource HorizontalScrollBarPageButton}"/>
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource HorizontalScrollBarPageButton}"/>
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb Style="{StaticResource ScrollBarThumb}" Microsoft_Windows_Themes:ScrollChrome.ScrollGlyph="HorizontalGripper"/>
+                                        </Track.Thumb>
+                                    </Track>
+                                    <RepeatButton Grid.Column="2" Command="{x:Static ScrollBar.LineRightCommand}" IsEnabled="{TemplateBinding IsMouseOver}" Style="{StaticResource ScrollBarButton}" Microsoft_Windows_Themes:ScrollChrome.ScrollGlyph="RightArrow"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Background" TargetName="Bg" Value="{StaticResource ScrollBarDisabledBackground}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <ControlTemplate x:Key="ScrollViewerControlTemplate3" TargetType="{x:Type ScrollViewer}">
+            <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="13.984"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="14.016"/>
+                </Grid.RowDefinitions>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="ValidationStates">
+                        <VisualState x:Name="Valid"/>
+                        <VisualState x:Name="InvalidFocused"/>
+                        <VisualState x:Name="InvalidUnfocused"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ScrollBar x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding Visibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Style="{DynamicResource ScrollBarStyle2}" Foreground="{x:Null}" HorizontalAlignment="Stretch" Width="Auto" Grid.RowSpan="3" Opacity="1" Background="{x:Null}"/>
+                <Rectangle Fill="{DynamicResource DropDownListForeColor}" Margin="0" Grid.Row="1"/>
+                <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="ListBoxItemsStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels"
+				Value="true" />
+            <Setter Property="OverridesDefaultStyle"
+				Value="true" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Border"
+							Padding="2"
+							SnapsToDevicePixels="true" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected">
+                                        <Storyboard/>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+												Storyboard.TargetProperty="(Panel.Background).                             (SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+													Value="#FFC5CBF9" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SelectedUnfocused">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+												Storyboard.TargetProperty="(Panel.Background).                             (SolidColorBrush.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+													Value="#FFC5CBF9" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListBoxStyle2" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Grid x:Name="Bd" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}" Template="{DynamicResource ScrollViewerControlTemplate3}" HorizontalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </ScrollViewer>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+        <Style x:Key="GroupBoxStyle23" TargetType="{x:Type GroupBox}">
+            <Setter Property="BorderBrush" Value="#D5DFE5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupBox}">
+                        <Grid SnapsToDevicePixels="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="6"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="6"/>
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="4" Grid.Column="0" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3"/>
+                            <Border BorderBrush="White" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="4" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3">
+                                <Border.OpacityMask>
+                                    <MultiBinding ConverterParameter="7" Converter="{StaticResource BorderGapMaskConverter}">
+                                        <Binding ElementName="Header" Path="ActualWidth"/>
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}"/>
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Self}"/>
+                                    </MultiBinding>
+                                </Border.OpacityMask>
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                    <Border BorderBrush="White" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+                                </Border>
+                            </Border>
+                            <Border x:Name="Header" Grid.Column="1" Padding="3,1,3,0" Grid.Row="0" Grid.RowSpan="2">
+                                <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </Border>
+                            <ContentPresenter Grid.ColumnSpan="2" Grid.Column="1" Margin="{TemplateBinding Padding}" Grid.Row="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle StrokeDashArray="1 2" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" Margin="2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+        <!--<Style x:Key="StopButtonStyle" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+			<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Themes:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderDefaulted="{TemplateBinding IsDefaulted}" SnapsToDevicePixels="true">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualStateGroup.Transitions>
+										<VisualTransition GeneratedDuration="0" To="MouseOver"/>
+									</VisualStateGroup.Transitions>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Themes:ButtonChrome>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter Property="RenderDefaulted" TargetName="Chrome" Value="true"/>
+							</Trigger>
+							<Trigger Property="ToggleButton.IsChecked" Value="true">
+								<Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="#ADADAD"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>-->
+        <Path x:Key="ArrowDown" Width="22.4902" Height="13.1201" Canvas.Left="180.733" Canvas.Top="92" Stretch="Fill" StrokeThickness="0.32" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 186.88,92.16L 197.12,92.16L 197.12,98.56L 203.063,98.56L 191.978,104.96L 180.893,98.56L 186.88,98.56L 186.88,92.16 Z "/>
+        <Path x:Key="ArrowUp" Width="22.4903" Height="13.1201" Canvas.Left="180.733" Canvas.Top="92" Stretch="Fill" StrokeThickness="0.32" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 186.88,104.96L 197.12,104.96L 197.12,98.56L 203.063,98.56L 191.978,92.16L 180.893,98.56L 186.88,98.56L 186.88,104.96 Z "/>
+
+    </Window.Resources>
+
+    <!--<Window.InputBindings>
+		<KeyBinding Key="X" Modifiers="Control" Command="{StaticResource ExitCommandReference}"/>
+		<KeyBinding Key="C" Modifiers="Shift" Command="{StaticResource MinimizeCommandRefrence}"/>
+	</Window.InputBindings>-->
+
+    <Border x:Name="MainBorder" BorderBrush="{DynamicResource MainWindowBorderBrush}" BorderThickness="0" DataContext="{Binding Source={StaticResource GlobalSettingsDataSource}}">
+        <Grid x:Name="MainLayout" >
+            <Grid.Background>
+                <ImageBrush ImageSource="Tile_BG_Rapid-IUI5-5-3.jpg" TileMode="Tile" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <!--<Grid.Background>
+				<ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Tile_BG_Rapid-IUI5-5-3.jpg" Stretch="UniformToFill" ViewportUnits="Absolute" Viewport="0,0,48,48" TileMode="Tile"/>
+			</Grid.Background>-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="750"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="409.876"/>
+                <ColumnDefinition Width="820"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Path Data="M2,368 L1906,5.6670001 M2,376 L1905,42 M2,384 L1906,82 M2,392 L1906,122 M2,400 L1906,162 M2,361 L1762,1.0000001 M1602,1.0000001 L1,353 M2,409 L1906,201" Fill="Black" Margin="-5,0,-5,0" Stretch="Fill" Stroke="White" StrokeThickness="2" Opacity="0.3" Grid.ColumnSpan="3" Height="315.729" VerticalAlignment="Top" d:IsLocked="True"/>
+            <Path Data="M2,368 L1906,5.6670001 M2,376 L1905,42 M2,384 L1906,82 M2,392 L1906,122 M2,400 L1906,162 M2,361 L1762,1.0000001 M1602,1.0000001 L1,353 M2,409 L1906,201" Fill="Black" Margin="-5,-203.684,-5,1" Stretch="Fill" Stroke="White" StrokeThickness="2" Opacity="0.4" Grid.ColumnSpan="3" Grid.Row="1" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" d:IsLocked="True">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                        <SkewTransform AngleY="0" AngleX="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <ScrollViewer x:Name="scrHelp" HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" d:LayoutOverrides="VerticalAlignment" Margin="-158.459,-87.084,0,0" >
+                <TextBlock x:Name="txtHelp" TextWrapping="Wrap" IsHitTestVisible="False" FontSize="16" FontFamily="Times New Roman" />
+            </ScrollViewer>
+            <Grid x:Name="Tools_Grid" Margin="5,8,8,4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="TopLeftBorder" BorderBrush="{DynamicResource ContainerBorderBrush}" CornerRadius="8,8,0,0" Background="{DynamicResource HeaderShading}" BorderThickness="1,1,1,0">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                    <Grid Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="BtnInsertImageinVideoWindow" Grid.Column="0" Click="BtnInsertImage_Click" Content="1" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" BorderThickness="1" Margin="0,0,0,0" Visibility="Hidden" Grid.ColumnSpan="1"/>
+                        <Button x:Name="BtnSaveBinarisedImage" Grid.Column="1" Click="SaveBinarisedImageClick" Content="2" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" BorderThickness="1" Margin="0,0,0,0" Visibility="Hidden" Grid.ColumnSpan="1"/>
+                    </Grid>
+                </Border>
+                <Grid x:Name="TopLeftGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.571*"/>
+                        <RowDefinition Height="0.115*"/>
+                        <RowDefinition Height="0.314*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="168.142"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="90.821"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel x:Name="WindowStackPanel" ClipToBounds="True" Orientation="Horizontal" Grid.Column="2" d:LayoutOverrides="Width, Height" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button ClipToBounds="True" x:Name="btnHelp" Style="{DynamicResource CircularGlassButton}" Margin="0" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ChildWindowHeaderColor}" BorderThickness="0" FontSize="29.333" Width="28" Content="?" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Template="{DynamicResource Button_Left2}" FontFamily="Verdana" FontWeight="Bold" Padding="2,0,2,2">
+                            <Button.Foreground>
+                                <SolidColorBrush Color="Blue" Options:Freeze="True"/>
+                            </Button.Foreground>
+                        </Button>
+                        <Button ClipToBounds="True" x:Name="btnMinimize" Command="{StaticResource MinimizeCommandRefrence}"  Content="-" Style="{DynamicResource CircularGlassButton}" FontSize="29.333" FontFamily="Arial Rounded MT Bold" BorderBrush="{DynamicResource ChildWindowHeaderColor}" Margin="0" BorderThickness="0" Width="28" Height="28" VerticalContentAlignment="Center" Background="{DynamicResource ButtonBackcolor}" HorizontalContentAlignment="Center" Template="{DynamicResource Button_Cenral2}">
+                            <Button.Foreground>
+                                <!--The Color resource that defines the color for the foreground of the Upper toolbars-->
+                                <SolidColorBrush Color="Blue" Options:Freeze="True"/>
+                            </Button.Foreground>
+                        </Button>
+                        <Button ClipToBounds="True" x:Name="btnClose" Command="{StaticResource ExitCommandReference}" Style="{DynamicResource SimpleLookingButtonStyle}" FontFamily="a_FuturaRoundDemi" Margin="0" BorderThickness="0" FontSize="13.333" Width="28" Height="28" Content="x" Background="{DynamicResource CloseButtonBrush_Border}" BorderBrush="{DynamicResource CloseButtonBrush_BG}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Template="{DynamicResource Button_Right2}" Foreground="White" Padding="4,3,4,5" FontWeight="Bold"/>
+                    </StackPanel>
+                    <Path x:Name="Dashes" Stretch="Fill" Fill="{DynamicResource PanelBackground}" Data="M 749.177,38.862L 748.303,38.8619L 722.025,38.8619C 721.479,38.8619 721.223,38.3884 721.452,37.8042L 722.696,34.631C 722.925,34.0468 723.554,33.5733 724.099,33.5733L 748.489,33.5731L 751.459,33.573L 761.482,33.573C 762.028,33.573 762.131,34.0466 761.712,34.6308L 759.435,37.804C 759.016,38.3882 758.234,38.8617 757.688,38.8617L 749.177,38.862 Z M 744.7,46.0218L 743.884,46.0218L 719.345,46.0218C 718.835,46.0218 718.618,45.5482 718.86,44.9641L 720.173,41.7907C 720.414,41.2066 721.023,40.7331 721.533,40.7331L 744.309,40.7329L 747.082,40.7329L 756.442,40.7329C 756.952,40.7329 757.026,41.2065 756.607,41.7907L 754.33,44.9638C 753.911,45.548 753.158,46.0215 752.648,46.0215L 744.7,46.0218 Z M 740.236,53.0727L 739.477,53.0725L 716.654,53.0725C 716.18,53.0725 716.001,52.599 716.255,52.0148L 717.635,48.8415C 717.889,48.2574 718.48,47.7839 718.954,47.7839L 740.137,47.7837L 742.716,47.7836L 751.422,47.7836C 751.896,47.7836 751.941,48.2572 751.522,48.8414L 749.245,52.0146C 748.826,52.5988 748.102,53.0723 747.628,53.0723L 740.236,53.0727 Z M 735.669,60.3175L 734.969,60.3174L 713.925,60.3174C 713.488,60.3174 713.35,59.8438 713.617,59.2597L 715.067,56.0864C 715.334,55.5023 715.905,55.0287 716.342,55.0287L 735.874,55.0285L 738.252,55.0285L 746.279,55.0285C 746.716,55.0285 746.731,55.502 746.312,56.0862L 744.035,59.2594C 743.616,59.8436 742.922,60.3172 742.485,60.3172L 735.669,60.3175 Z M 731.258,67.1044L 730.614,67.1043L 711.238,67.1043C 710.835,67.1043 710.735,66.6308 711.014,66.0465L 712.53,62.8733C 712.809,62.2891 713.361,61.8156 713.764,61.8156L 731.747,61.8155L 733.937,61.8153L 741.328,61.8153C 741.73,61.8153 741.717,62.2889 741.298,62.8731L 739.021,66.0463C 738.602,66.6305 737.936,67.1041 737.534,67.1041L 731.258,67.1044 Z " Margin="131,10.4,0,0" Width="34" Stroke="{DynamicResource ContainerBorderBrush}" StrokeThickness="0.5" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2">
+                        <Path.Effect>
+                            <DropShadowEffect Opacity="0.6" BlurRadius="1" ShadowDepth="1"/>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="Rapid_I" Data="M18.637447,16.152582 L16.865816,21.366077 L18.360594,21.366077 C19.272045,21.366079 20.049246,21.144293 20.692198,20.70072 C21.33515,20.257149 21.797047,19.622169 22.077887,18.795788 C22.366894,17.945103 22.34273,17.291897 22.005398,16.83617 C21.668066,16.380445 21.043674,16.152582 20.132225,16.152582 z M11.566873,9.2802486 L23.634474,9.2802486 C27.134441,9.2802505 29.545795,10.051945 30.86854,11.595331 C32.19128,13.138721 32.359047,15.362659 31.371832,18.267147 C30.727549,20.162964 29.732027,21.724583 28.385265,22.952002 C27.038502,24.17942 25.540068,24.896429 23.889965,25.103024 L27.325277,35.96751 L16.570164,35.96751 L14.895659,27.162901 L11.90354,35.96751 L2.4973736,35.96751 z M43.233398,23.754078 C42.528542,23.754078 41.874672,24.006247 41.27179,24.510582 C40.6689,25.014917 40.229126,25.6742 39.952461,26.488428 C39.679977,27.290504 39.6758,27.937634 39.93993,28.429817 C40.204063,28.922001 40.688553,29.168093 41.39341,29.168091 C42.110416,29.168093 42.764191,28.925039 43.354736,28.438931 C43.945282,27.952826 44.378883,27.302658 44.655548,26.488428 C44.936386,25.662046 44.945786,24.999725 44.683746,24.501467 C44.4217,24.003208 43.938255,23.754078 43.233398,23.754078 z M42.174408,16.517162 C43.341064,16.517162 44.315697,16.769331 45.098312,17.273666 C45.880928,17.778004 46.499714,18.558811 46.954681,19.616095 L47.803467,17.118721 L56.571617,17.118721 L50.165833,35.96751 L41.725803,35.96751 L42.692226,33.123787 C41.367775,34.339054 40.109215,35.235313 38.916542,35.812565 C37.723873,36.389816 36.525978,36.67844 35.322868,36.67844 C33.135384,36.67844 31.637522,35.748764 30.829273,33.889404 C30.021027,32.030045 30.114594,29.635969 31.109972,26.707176 C32.150734,23.644705 33.689899,21.180752 35.727463,19.315315 C37.76503,17.449881 39.914009,16.517162 42.174408,16.517162 z M69.251801,23.790535 C68.546944,23.790537 67.892075,24.045742 67.287201,24.556152 C66.68232,25.066566 66.239456,25.734962 65.958618,26.561344 C65.677773,27.387726 65.667381,28.053085 65.927429,28.557421 C66.187477,29.061756 66.669922,29.313925 67.374779,29.313923 C68.067482,29.313925 68.718269,29.061756 69.327133,28.557421 C69.936005,28.053085 70.380859,27.387726 70.661697,26.561344 C70.942535,25.734962 70.950943,25.066566 70.686905,24.556152 C70.422867,24.045742 69.944504,23.790537 69.251801,23.790535 z M75.223511,16.517162 C77.496056,16.517162 79.013191,17.443804 79.774918,19.297087 C80.536644,21.15037 80.392944,23.620399 79.343834,26.707176 C78.34845,29.635969 76.822906,32.023968 74.767212,33.871174 C72.71151,35.71838 70.583847,36.641983 68.384216,36.641983 C67.193253,36.641983 66.203568,36.371586 65.415161,35.830791 C64.626755,35.289997 64.045708,34.478809 63.672016,33.397221 C63.592072,33.84687 63.478428,34.342091 63.331078,34.882885 C63.183723,35.423679 62.998589,36.022198 62.775661,36.67844 L60.254078,44.097645 L51.267178,44.097645 L60.436081,17.118721 L69.167778,17.118721 L68.318985,19.616095 C69.476151,18.570965 70.624527,17.793194 71.76413,17.282782 C72.903725,16.772369 74.056854,16.517162 75.223511,16.517162 z M85.93837,17.118721 L95.089333,17.118721 L88.683548,35.96751 L79.532585,35.96751 z M93.995026,6.9287071 C95.52626,6.9287071 96.598251,7.3145542 97.211014,8.0862484 C97.823776,8.8579426 97.902954,9.9121876 97.448563,11.248981 C96.990181,12.597927 96.182175,13.670401 95.024536,14.4664 C93.866898,15.262402 92.534615,15.6604 91.027679,15.6604 C89.508598,15.6604 88.435699,15.259361 87.808983,14.457285 C87.182266,13.655209 87.096008,12.585775 87.550217,11.248981 C88.004608,9.9121876 88.806496,8.8579426 89.955872,8.0862484 C91.105247,7.3145542 92.45163,6.9287071 93.995026,6.9287071 z M107.30609,23.863453 C106.60123,23.863453 105.94846,24.112583 105.34776,24.61084 C104.74705,25.1091 104.30627,25.771421 104.02544,26.597801 C103.7446,27.424183 103.73411,28.098658 103.99397,28.621222 C104.25382,29.143787 104.7301,29.405069 105.42281,29.405069 C106.11551,29.405069 106.76942,29.143787 107.38456,28.621222 C107.99969,28.098658 108.44768,27.424183 108.72852,26.597801 C109.00936,25.771421 109.01871,25.1091 108.75658,24.61084 C108.49444,24.112583 108.01094,23.863453 107.30609,23.863453 z M114.89135,7.7125549 L123.87825,7.7125549 L114.27583,35.96751 L105.76289,35.96751 L106.70453,33.196701 C105.51813,34.363358 104.32251,35.235313 103.11769,35.812565 C101.91286,36.389816 100.68459,36.67844 99.432869,36.67844 C97.160316,36.67844 95.64119,35.748764 94.875473,33.889404 C94.109764,32.030045 94.249374,29.563053 95.294312,26.488428 C96.289696,23.559635 97.818275,21.171635 99.880051,19.32443 C101.94183,17.477226 104.07253,16.553623 106.27216,16.553621 C107.46312,16.553623 108.44673,16.824018 109.22298,17.364811 C109.99924,17.905605 110.58028,18.716797 110.96613,19.798384 C111.03354,19.421652 111.14187,18.968964 111.29112,18.440323 C111.44037,17.911682 111.64716,17.258476 111.91148,16.480705 z M123.36661,22.787941 L135.83525,22.787941 L133.24588,30.407663 L120.77724,30.407663 z M145.82249,9.2802486 L155.57501,9.2802486 L146.50551,35.96751 L136.75299,35.96751 z" Fill="{DynamicResource PanelBackground}" Margin="8,8,0,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="0.5" Stroke="{DynamicResource ContainerBorderBrush}" Grid.RowSpan="2" Width="128" Height="38" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Path.Effect>
+                            <DropShadowEffect Opacity="0.6" ShadowDepth="1" BlurRadius="1"/>
+                        </Path.Effect>
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <TextBlock x:Name="VIS_Tblock" TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" FontSize="10.667" Foreground="{DynamicResource PanelBackground}" Grid.Row="2" Margin="8,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Text="Vision Measuring Systems"/></TextBlock>
+                    <Rectangle x:Name="AboutRect" StrokeThickness="0" Fill="Black" Opacity="0" Grid.RowSpan="3" RadiusX="8" RadiusY="8"/>
+                    <Grid x:Name="gd_UserName" Grid.Column="1" Grid.RowSpan="3" Margin="10,7,10,4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="UserNameBorder" BorderBrush="{DynamicResource GlowBorder}" BorderThickness="1" CornerRadius="5" Background="{DynamicResource HeaderButton_BG}" Grid.RowSpan="2"/>
+                        <Button x:Name="LoginBtn" Content="Login" Background="Transparent" Foreground="LawnGreen" FontSize="15" Height="30" FontWeight="Bold" Click="LoginBtn_Click" BorderThickness="0"/>
+                        <Button x:Name="LogoutBtn" Content="Logout" Background="Transparent" Foreground="Red" FontSize="15" Height="30" FontWeight="Bold" Click="LogoutBtn_Click" BorderThickness="0" Grid.Row="1"/>
+                        <TextBlock x:Name="UserNameTxt" TextWrapping="Wrap" Text="Not Logged In" Padding="0" Foreground="Transparent" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Height="0" Width="0" Margin="-100,-30,0,0"/>
+                        <TextBlock x:Name="UserLevelTxt" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Transparent" FontSize="10" Grid.Row="1" Height="0" Width="0" Margin="-100,-30,0,0"/>
+                    </Grid>
+                    <StackPanel x:Name="modifierButtonViewer" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,4,4" Orientation="Horizontal">
+                        <TextBlock x:Name="tbControlBtn" Text=" Ctrl " Background="LightBlue" Margin="0,0,4,0" Visibility="Hidden"/>
+                        <TextBlock x:Name="tbShiftBtn" Text=" Shift " Background="LightBlue" Margin="0,0,4,0" Visibility="Hidden"/>
+                        <TextBlock x:Name="tbAltBtn" Text=" Alt " Background="LightBlue" Margin="0,0,4,0" Visibility="Hidden"/>
+                    </StackPanel>
+                </Grid>
+                <GroupBox x:Name="gb_ToolsGrid" Header="GroupBox" Grid.Row="1" Template="{DynamicResource GenericPanel}" BorderThickness="0"/>
+                <Grid x:Name="LeftPanelGrid" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox x:Name="MeasureGrpBx" Header="Measure" Margin="4,2,4,4" Height="90" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal">
+                        <Util:ScrToolbar x:Name="MeasureScrollList" Margin="2,1,0,2" Height="Auto"/>
+                    </GroupBox>
+                    <GroupBox x:Name="DrawGrpBx" Header="Draw" Margin="4,2,4,4" Height="90" Grid.Row="1" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal">
+                        <Util:ScrToolbar x:Name="DrawScrollList" Margin="2,1,0,2" Height="Auto"/>
+                    </GroupBox>
+                    <GroupBox x:Name="DerivedShpGrpBx" Header="Derived Shapes" Margin="4,2,4,4" Height="90" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal" Grid.Row="2">
+                        <Util:ScrToolbar x:Name="DerivedShapeScrollList" Margin="2" Height="Auto"/>
+                    </GroupBox>
+                    <GroupBox x:Name="CrossHairGrpBx" Header="Cross Hair"  Margin="4,2,4,4" Height="90" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal" Grid.Row="3">
+                        <Util:ScrToolbar x:Name="CrosshairScrollList" Margin="2,1,0,2" Height="Auto"/>
+                    </GroupBox>
+                    <GroupBox x:Name="EditGrpBx" Header="Edit"  Margin="4,2,4,4" Height="90" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal" Grid.Row="4">
+                        <Util:ScrToolbar x:Name="EditScrollList" Margin="2,1,0,2" Height="Auto"/>
+                    </GroupBox>
+                    <GroupBox x:Name="ToolsGrpBx" Header="Tools"  Margin="4,2,4,4" Height="90" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal" Grid.Row="5">
+                        <Util:ScrToolbar x:Name="ToolsScrollList" Margin="2,1,0,2" Height="Auto"/>
+                    </GroupBox>
+                    <GroupBox x:Name="UCSGrpBx" Header="UCS"  Margin="4,2,4,4" Height="90" FontFamily="Arial Rounded MT Bold" FontSize="26.667" Foreground="{x:Null}" Style="{DynamicResource SelectableToolbarContainer}" FontWeight="Normal" Grid.Row="6">
+                        <Util:ScrToolbar x:Name="UCSScrollList" Margin="2,1,0,2" Height="Auto"/>
+                    </GroupBox>
+                </Grid>
+                <Border x:Name="RcadToolbarBorder" BorderThickness="1" Margin="2,2,2,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
+                <Border x:Name="DxfToolbarBorder" BorderThickness="1" Margin="2,325,2,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid x:Name="Video__Grid" Grid.Column="1" Margin="4,8,8,4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="600*" />
+                </Grid.RowDefinitions>
+                <Border Background="{DynamicResource HeaderShading}" CornerRadius="8,8,0,0" BorderThickness="1,1,1,0" BorderBrush="{DynamicResource ContainerBorderBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                </Border>
+                <StackPanel x:Name="DROPanel" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,4,0,0">
+                    <Grid x:Name="XdroGrid" Margin="2,0,2,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="85*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="{DynamicResource GlowBorder}" BorderThickness="1,1,1,0" Grid.ColumnSpan="2" Grid.RowSpan="1" Background="{DynamicResource HeaderButton_BG}" Margin="0"/>
+                        <Button x:Name="btnX" Content="X" Style="{DynamicResource DROButton2}" FontWeight="Bold" Width="90" FontSize="20" Foreground="White" FontFamily="Segoe UI"/>
+                        <Button x:Name="btnLockX" Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="PaleGreen" BorderThickness="1,0,1,1" BorderBrush="White"/>
+                    </Grid>
+                    <Grid x:Name="YdroGrid" Margin="2,0,2,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="85*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="{DynamicResource GlowBorder}" BorderThickness="1,1,1,0" Grid.ColumnSpan="2" Grid.RowSpan="1" Background="{DynamicResource HeaderButton_BG}" Margin="0"/>
+                        <Button x:Name="btnY" Content="Y" Style="{DynamicResource DROButton2}" FontWeight="Bold" Width="90" FontSize="26.667" Foreground="White"/>
+                        <Button x:Name="btnLockY" Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="PaleGreen" BorderThickness="1,0,1,1" BorderBrush="White"/>
+                        <!--<Button x:Name="btnLockY" Content="Y" Style="{DynamicResource DROLockButton}" FontWeight="Bold" Width="28" Margin="-3,0,0,0" FontFamily="Arial Rounded MT Bold" Foreground="White" FontSize="26.667" Grid.Column="1"/>-->
+                    </Grid>
+                    <Grid x:Name="ZdroGrid" Margin="2,0,2,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="85*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="{DynamicResource GlowBorder}" BorderThickness="1,1,1,0" Grid.ColumnSpan="2" Grid.RowSpan="1" Background="{DynamicResource HeaderButton_BG}" Margin="0"/>
+                        <Button x:Name="btnZ" Content="Z" Style="{DynamicResource DROButton2}" FontWeight="Bold" Width="90" FontSize="26.667" Foreground="White"/>
+                        <Button x:Name="btnLockZ" Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="PaleGreen" BorderThickness="1,0,1,1" BorderBrush="White"/>
+                        <!--<Button x:Name="btnLockZ" Content="Z" Style="{DynamicResource DROLockButton}" FontWeight="Bold" Width="28" Margin="0,0,0,0" FontFamily="Arial Rounded MT Bold" Foreground="White" FontSize="26.667" Grid.Column="1"/>-->
+                    </Grid>
+                    <Grid x:Name="RdroGrid" Margin="2,0,2,0" Visibility="Hidden">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="85*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="{DynamicResource GlowBorder}" BorderThickness="1,1,1,0" Background="{DynamicResource HeaderButton_BG}" Margin="0"/>
+                        <Button x:Name="btnR" Content="C" Style="{DynamicResource DROButton2}" FontWeight="Bold" Width="112" FontSize="20" Foreground="White"/>
+                        <Button x:Name="btnLockR" Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="PaleGreen" BorderThickness="1,0,1,1" BorderBrush="White"/>
+                        <!--<Button x:Name="btnLockR" Content="R" Style="{DynamicResource DROLockButton}" FontWeight="Bold" Width="28" Margin="-3,0,0,0" FontFamily="Arial Rounded MT Bold" Foreground="White" FontSize="26.667" Grid.Column="1"/>-->
+                    </Grid>
+
+                    <Button x:Name="ScanOnOffBtn" Content="Scan" Style="{DynamicResource SimpleLookingButtonStyle}" FontWeight="Bold" FontSize="16" 
+							Background="{DynamicResource HeaderButton_BG}" BorderBrush="{DynamicResource GlowBorder}" Foreground="{DynamicResource GlowBorder}" 
+							Visibility="Hidden" Margin="0" Width="63"/>
+
+                    <Grid x:Name="AdroGrid" Margin="4,0,2,0" Visibility="Hidden">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="85*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="{DynamicResource GlowBorder}" BorderThickness="1,1,1,0" Background="{DynamicResource HeaderButton_BG}" Margin="0"/>
+                        <Button x:Name="btnA" Content="A" Style="{DynamicResource DROButton3}" FontWeight="Bold" Width="52" FontSize="26.667" FontFamily="Arial Rounded MT Bold" Foreground="White" />
+                        <Button x:Name="btnLockA" Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="PaleGreen" BorderThickness="1,0,1,1" BorderBrush="White"/>
+                        <!--<Button x:Name="btnLockR" Content="R" Style="{DynamicResource DROLockButton}" FontWeight="Bold" Width="28" Margin="-3,0,0,0" FontFamily="Arial Rounded MT Bold" Foreground="White" FontSize="26.667" Grid.Column="1"/>-->
+                    </Grid>
+
+                    <!--<Button x:Name="btnA" Width="30" Foreground="White" Background="{DynamicResource HeaderButton_BG}" BorderBrush="{DynamicResource GlowBorder}" Content="V" FontSize="24" FontWeight="Bold" Visibility="Hidden"/>-->
+                </StackPanel>
+                <StackPanel x:Name="DropDownPanel" HorizontalAlignment="Right" Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalAlignment="Center" Height="40" Margin="0,4,4,0" >
+                    <Util:DropDownWithTyper x:Name="MagnificationList" Width="80" Margin="0"/>
+                    <Util:DropDownList x:Name="mmInchesList" Width="80" Margin="2,0,0,0"/>
+                    <Util:DropDownList x:Name="UCSList" Width="95" Margin="2,0,0,0"/>
+                    <Button x:Name="SnapStateButton" Content="Snap" Width="67" FontWeight="Bold" FontSize="14.667" Foreground="{DynamicResource GlowBorder}" Style="{DynamicResource SimpleLookingButtonStyle}" FontFamily="Arial Rounded MT Bold" Margin="2,0,0,0" Background="{DynamicResource HeaderButton_BG}" BorderBrush="{DynamicResource GlowBorder}" />
+                </StackPanel>
+                <GroupBox x:Name="VideoDisplayGrpBx" Header="GroupBox" Grid.Row="1" Template="{DynamicResource GenericPanel}" BorderThickness="1" Grid.RowSpan="2" 
+						  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Background="{DynamicResource PanelBackground}" BorderBrush="Black">
+                    <Grid x:Name="gd_MessageAndVideoGrid" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" Grid.RowSpan="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="52"/>
+                            <RowDefinition Height="604*" />
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="TxtHelperGrid" Height="48" VerticalAlignment="Top" Margin="4,2,4,0" d:IsEffectDisabled="True" Grid.Row="0">
+                            <Grid.Effect>
+                                <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                            </Grid.Effect>
+                            <Border x:Name="bdDisplay" BorderBrush="Black" Background="{DynamicResource PanelBackground}" BorderThickness="1" CornerRadius="8"/>
+                            <TextBlock x:Name="TxtHelper" Margin="3" TextWrapping="Wrap" FontSize="13.333" Foreground="Black"/>
+                            <TextBlock x:Name="TxtGridRunCount" Margin="3" TextWrapping="Wrap" FontSize="13.333" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <WrapPanel x:Name="wpDROCorrection" Width="200" Visibility="Hidden" Background="SkyBlue" Margin="8,4,4,4" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock x:Name="xCorr" Text="0.0000" TextAlignment="Right" Width="80" Background="LightGray" VerticalAlignment="Center" Margin="4,4,8,4" />
+                                <TextBlock x:Name="yCorr" Text="0.0000" TextAlignment="Right" Width="80" Background="LightGray" VerticalAlignment="Center" Margin="4,4,8,4" />
+                            </WrapPanel>
+                        </Grid>
+                        <Util:VideoPanel x:Name="VideoHolder" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Height="600" Margin="4,4,4,0" Grid.Row="1" Grid.RowSpan="1" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.ColumnSpan="1" />
+                        <!--<Rectangle x:Name="VideoRect" Stroke="Black" StrokeThickness="0" Margin="4,57,4,4" Visibility="Hidden"/>-->
+                        <Grid x:Name="GridHobChecker" Visibility="Hidden" Grid.Row="2" Width="800" Height="600" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,0,4,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="272"/>
+                                <ColumnDefinition Width="182"/>
+                                <ColumnDefinition Width="348"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="240"/>
+                                <RowDefinition Height="260"/>
+                                <RowDefinition Height="106"/>
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Order Details" Margin="12,12,10,8" FontSize="13.333" FontWeight="Bold" Foreground="Black" BorderBrush="#FF0C5B8B" Style="{DynamicResource GB_ToolStyle_NoComboBox}" Background="#FF9BD1FF">
+                                <Grid Margin="4,4,4,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="88*"/>
+                                        <ColumnDefinition Width="161*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <WrapPanel x:Name="dName1WP" Margin="-8.79,0,4,0" HorizontalAlignment="Right" Width="92.79">
+                                        <TextBlock Text="Date:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" Width="{Binding Width, ElementName=dName1WP}" Height="20" Margin="0,8,0,4"/>
+                                        <TextBlock x:Name="textBlock" Text="PC No.:" VerticalAlignment="Top" FontWeight="Bold" FontSize="10.667" Margin="0,8,0,2" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="{Binding Width, ElementName=dName1WP}" TextAlignment="Right" Height="20"/>
+                                        <TextBlock Text="Serial No.:" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontSize="10.667" Width="{Binding Width, ElementName=dName1WP}" TextAlignment="Right" Height="20" Margin="0,8,0,0"/>
+                                        <TextBlock Text="Machine No.:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" Width="{Binding Width, ElementName=dName1WP}" Height="20" Margin="0,8,0,2"/>
+                                        <TextBlock Text="Customer Name:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" Width="{Binding Width, ElementName=dName1WP}" Height="20" Margin="0,8,0,0"/>
+                                        <TextBlock Text="Operator:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" Width="{Binding Width, ElementName=dName1WP}" Height="20" Margin="0,8,0,0" Padding="0,0,0,0"/>
+                                    </WrapPanel>
+                                    <StackPanel x:Name="wpPersonalData" Margin="0,0,8,0" Grid.Column="1" Orientation="Vertical">
+                                        <DatePicker x:Name="DatePickerBx" Height="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Center" Margin="8,6,0,6" FontWeight="Normal" FontSize="10.667" HorizontalAlignment="Stretch"/>
+                                        <TextBox x:Name="OrderNo_TxtBx" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Height="20" Margin="8,2,0,0" FontWeight="Normal" FontSize="12" HorizontalAlignment="Stretch"/>
+                                        <ComboBox x:Name="SerialNo_TxtBx" SelectionChanged="SerialNumberChangedHandler" VerticalContentAlignment="Center" IsEditable="True" VerticalAlignment="Center" Margin="8,8,0,0" FontWeight="Normal" FontSize="12"/>
+                                        <ComboBox x:Name="MachineNo_TxtBx" Height="20" IsEditable="True" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="8,8,0,0" FontWeight="Normal" FontSize="12" HorizontalAlignment="Stretch"/>
+                                        <ComboBox x:Name="CustomerName_TxtBx" Text="" Height="21" IsEditable="True" Margin="8,8,0,0" FontWeight="Normal" FontSize="12" HorizontalAlignment="Stretch"/>
+                                        <ComboBox x:Name="Operator_TxtBx" Height="20" IsEditable="True" VerticalContentAlignment="Center" Text="" VerticalAlignment="Center" Margin="8,8,0,8" FontWeight="Normal" FontSize="12" HorizontalAlignment="Stretch"/>
+                                    </StackPanel>
+                                    <Button x:Name="BtnRestoreValues" Content="R" HorizontalAlignment="Left" Margin="-9,10,0,0" VerticalAlignment="Top" Width="24" Style="{DynamicResource ScrollToolbar_NormalButton2}" Click="Button_Click" Visibility="Hidden"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="gb_Runout" Grid.Row="1" Header="Run Out" Margin="12,4,12,0" FontSize="13.333" FontWeight="Bold" Foreground="Black" BorderBrush="#FF0C5B8B" Style="{DynamicResource GB_ToolStyle_NoComboBox}" Background="#FF9BD1FF">
+                                <Grid Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="144"/>
+                                        <RowDefinition Height="28"/>
+                                        <RowDefinition Height="28"/>
+                                        <RowDefinition Height="28"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="93*"/>
+                                        <ColumnDefinition Width="79*"/>
+                                        <ColumnDefinition Width="85*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <WrapPanel x:Name="wrapPanel1" Margin="0,0,5,0" HorizontalAlignment="Right" Width="81">
+                                        <TextBlock Text="Hub Dia:" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Right" VerticalAlignment="Center" Height="16" Width="81" Margin="0,8"/>
+                                        <TextBlock Text="Outer Diameter:" VerticalAlignment="Top" Margin="0,8" TextAlignment="Right" FontSize="10.667" Foreground="Black" Width="{Binding Width, ElementName=wrapPanel1}"/>
+                                        <TextBlock Text="Active Length:" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" Margin="0,8" Width="{Binding Width, ElementName=wrapPanel1}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Total Length:" FontSize="10.667" FontWeight="Bold" TextAlignment="Right" Margin="0,8,0,0" Width="{Binding Width, ElementName=wrapPanel1}"/>
+                                    </WrapPanel>
+                                    <StackPanel x:Name="wpRunoutVal" Grid.Column="1" Margin="0,0,1,0">
+                                        <TextBox x:Name="Diameter_txtBox" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Text="37.6" TextAlignment="Right" FontWeight="Normal" FontSize="10.667" Grid.Column="1" VerticalAlignment="Center" Height="20" Margin="4" Width="48" HorizontalAlignment="Left"/>
+                                        <TextBox x:Name="OuterDiameter_TxtBx" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="12" FontWeight="Normal" Margin="4,8,0,8" Width="48" HorizontalAlignment="Left"/>
+                                        <TextBox x:Name="ActiveLength_txtBox" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" Width="48" FontWeight="Normal" FontSize="10.667" Margin="4,4,0,6" HorizontalAlignment="Left"/>
+                                        <TextBox x:Name="TotalLength_TxtBox" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" Width="48" FontWeight="Normal" FontSize="10.667" Margin="4,4,0,6" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <Grid Grid.Column="2" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0"/>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Button x:Name="Btn_StartRunOut" Content="Start" Click="BtnStartRunout_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="4,4,4,0" Grid.Column="2" Height="30" VerticalAlignment="Top" FontSize="16" Grid.Row="1" Foreground="#FF0C8B0C"/>
+                                        <Button  x:Name="Btn_RunoutStop" Content="Stop"  Click="StopRunoutClick" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Red" FontWeight="Bold" Style="{DynamicResource ScrollToolbar_NormalButton2}" Grid.Column="2" Margin="4,4,4,0" VerticalAlignment="Top" Height="30" Grid.Row="2"/>
+                                        <Button x:Name="Btn_RunOutReset" Click="Reset_Runout" Content="Reset" Style="{DynamicResource ScrollToolbar_NormalButton2}" Grid.Column="2" FontSize="12" Margin="4,4,4,0" Height="30" VerticalAlignment="Top" Grid.Row="3" />
+                                        <Button x:Name="Btn_Direction" Click="Btn_Direction_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" Grid.Column="2" FontSize="12" Margin="4,4,4,0" Height="28" VerticalAlignment="Top" Content="{DynamicResource ArrowDown}" VerticalContentAlignment="Stretch"/>
+                                    </Grid>
+                                    <Button x:Name="Btn_StartRunOut_Copy" Content="ro" Margin="0" Click="Set_Runout_Click" Grid.Column="0" Style="{DynamicResource ScrollToolbar_NormalButton2}" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Visibility="Visible" Grid.Row="1"/>
+                                    <Button x:Name="Btn_TestRunoutPts" Content="Try" Click="Btn_TestRunoutPts_Click" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="10" Visibility="Hidden" />
+                                    <CheckBox x:Name="chk_RepeatRunout" Content="Repeat" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="4,0,0,0" FontWeight="Normal" FontSize="10.667"/>
+                                    <CheckBox x:Name="chkY_Runout" Content="Y-Runout" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="10.667" FontWeight="Bold" Visibility="Hidden" Height="15" Width="68"/>
+                                    <TextBlock Text="Runout Values:" FontSize="10.667" Grid.Row="3" TextAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Right" Height="14" Width="75" />
+                                    <TextBlock Text="Hob Position:" FontSize="10.667" Grid.Row="1" TextAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Right" Height="14" Width="75" />
+                                    <TextBlock Text="Top:" TextAlignment="Right" FontSize="10.667" Grid.Column="1" VerticalAlignment="Bottom" Height="14" Grid.Row="2" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Bottom:" TextAlignment="Right" FontSize="10.667" VerticalAlignment="Bottom" Grid.Column="2" Height="14" Grid.Row="2" HorizontalAlignment="Center" />
+                                    <TextBlock x:Name="tb_Runout_Top" Text="-.-" FontSize="12" TextAlignment="Right" Background="#FF5BA3E0" FontWeight="Bold" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="8,0" />
+                                    <TextBlock x:Name="tb_Runout_Bottom" Text="-.-" FontSize="12" TextAlignment="Right" Background="#FF5BA3E0" FontWeight="Bold" Panel.ZIndex="2" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="8,0" />
+                                    <TextBlock x:Name="CentreX" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="Bold" TextAlignment="Right" FontSize="12" Text="-.-" Grid.Row="1" Background="#FF5BA3E0" Grid.Column="1" Margin="8,0"/>
+                                    <TextBlock x:Name="CentreY" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="Bold" TextAlignment="Right" FontSize="12" Grid.Column="2" Text="-.-" Grid.Row="1" Background="#FF5BA3E0" Margin="8,0"/>
+                                    <CheckBox x:Name="chkDoRotaryRunout" Content="Do Rotary Runout" HorizontalAlignment="Left" Height="14" Margin="7,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="136" FontSize="10" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Header="Hob Parameters" Margin="12,12,12,0" FontSize="13.333" FontWeight="Bold" BorderBrush="#FF0C5B8B" Style="{DynamicResource GB_ToolStyle_NoComboBox}" Background="#FF9BD1FF">
+                                <Grid Margin="0,0,8,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="388*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="42*"/>
+                                        <ColumnDefinition Width="37*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Margin="0">
+                                        <Grid Height="60" Margin="8,4,8,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.33*"/>
+                                                <RowDefinition Height="0.33*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.25*"/>
+                                                <ColumnDefinition Width="0.25*"/>
+                                                <ColumnDefinition Width="0.25*"/>
+                                                <ColumnDefinition Width="0.25*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Rectangle Stroke="Black" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                                            <Rectangle Stroke="Black" Grid.RowSpan="3" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                            <TextBlock Text="Rake Face:" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Height="15.96" Grid.Column="0" FontSize="10.667" Margin="5,6.24,0,4.467" Width="59"/>
+                                            <RadioButton x:Name="LeftMoveRBtn" IsChecked="True" Content="Back" FontFamily="Segoe UI" FontSize="10.667" GroupName="Z1_RBtns" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" FontWeight="Normal" VerticalAlignment="Center" Height="14" Width="48" Margin="4,0,0,0"/>
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Height="15.031" Grid.Column="2" FontSize="10.667" Margin="10,6.24,0,5.396" Width="48.283"><Run Language="en-in" Text="Lead"/><Run Text=":"/></TextBlock>
+                                            <RadioButton x:Name="RightMoveRBtn" Content="Front" FontFamily="Segoe UI" FontSize="10.667" GroupName="Z1_RBtns" HorizontalAlignment="Left" Panel.ZIndex="20" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" FontWeight="Normal" Height="14" Width="48" Margin="4,0,0,0"/>
+                                            <RadioButton x:Name="DownRBtn" IsChecked="True" FontFamily="Segoe UI" FontSize="10.667" GroupName="Z2_RBtns" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Panel.ZIndex="21" Content="RH" FontWeight="Normal" Height="14" Width="48" Margin="4,0,0,0"/>
+                                            <RadioButton x:Name="UpRBtn" Content="LH" FontFamily="Segoe UI" FontSize="10.667" GroupName="Z2_RBtns" HorizontalAlignment="Left" Grid.Column="2" Panel.ZIndex="22" Grid.Row="1" VerticalAlignment="Center" FontWeight="Normal" Width="40" Margin="4,0,0,0"/>
+                                            <Button x:Name="tempCalculator" Content="gI" Width="20" HorizontalAlignment="Right" Margin="2,2,2,2" Click="gI_Click" Visibility="Hidden"/>
+                                        </Grid>
+                                        <Grid Margin="0,0,0,0" Height="380">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="31*"/>
+                                                <ColumnDefinition Width="18*"/>
+                                                <ColumnDefinition Width="14*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.65*"/>
+                                                <RowDefinition Height="0.35*"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel x:Name="wrapPanel2" Margin="0,0,4,0" Width="Auto" Grid.ColumnSpan="1">
+                                                <ToggleButton x:Name="Btn_ModuleType" Content="Module " Click="ModuleType_Click" VerticalAlignment="Top" HorizontalContentAlignment="Right" Background="#66FFFFFF" Margin="44,4,0,4" Height="24" HorizontalAlignment="Right" Width="72" Style="{DynamicResource ScrollToolbar_ToggButton2}" FontSize="10.667"/>
+                                                <TextBlock Text="Number of Starts:" Margin="0,8,0,4" HorizontalAlignment="Stretch" Height="20" TextAlignment="Right" FontSize="10.667" Foreground="Black" Width="{Binding Width, ElementName=wrapPanel2}"/>
+                                                <TextBlock Text="Accuracy class:" VerticalAlignment="Top" Margin="0,8" Height="20" TextAlignment="Right" Width="{Binding Width, ElementName=wrapPanel2}" FontSize="10.667" Foreground="Black"/>
+                                                <TextBlock Text="Lead Angle:" VerticalAlignment="Top" Margin="0,6" Height="20" TextAlignment="Right" Width="{Binding Width, ElementName=wrapPanel2}" FontSize="10.667" Foreground="Black" Visibility="Collapsed"/>
+                                                <TextBlock Text="Pressure Angle:" VerticalAlignment="Top" Margin="0,8" Height="20" TextAlignment="Right" Width="{Binding Width, ElementName=wrapPanel2}" FontSize="10.667" Foreground="Black" Visibility="Collapsed"/>
+                                                <ToggleButton x:Name="Btn_GashLead" Content="Gash Lead" Click="GashType_Click" VerticalAlignment="Top" HorizontalContentAlignment="Right" Background="#66FFFFFF" Margin="41,0,0,6" Height="24" HorizontalAlignment="Right" Width="76" Style="{DynamicResource ScrollToolbar_ToggButton2}" FontSize="10.667"/>
+                                                <TextBlock Text="Start Depth:" VerticalAlignment="Top" Margin="0,6" Height="20" TextAlignment="Right" Width="{Binding Width, ElementName=wrapPanel2}" FontSize="10.667" Foreground="Black"/>
+                                                <TextBlock Text="Number of Gashes:" HorizontalAlignment="Right" Width="117.698" FontSize="10.667" TextAlignment="Right" VerticalAlignment="Center" Margin="0,4,0,4" Height="20" Foreground="Black"/>
+                                                <TextBlock Text="Number of Teeth:" Height="20" FontSize="10.667" TextAlignment="Right" Margin="0,6,0,4" Width="118" Foreground="Black"/>
+                                                <TextBlock Text="Rake Angle:" Height="20" FontSize="10.667" TextAlignment="Right" Margin="0,6,0,0" Width="118" Foreground="Black"/>
+                                            </StackPanel>
+                                            <StackPanel x:Name="wpHobParams" Margin="0" Grid.Column="1">
+                                                <TextBox x:Name="Module_TxtBx" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" TextChanged="ModuleType_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" FontWeight="Normal" Height="20" Margin="8,6,0,4"/>
+                                                <TextBox x:Name="NoofStarts_TxtBx" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" FontWeight="Normal" Height="20" Margin="8,6,0,4"/>
+
+                                                <ComboBox x:Name="AccuracyClass_TxtBox" Height="24" Margin="8,6,0,4" HorizontalAlignment="Stretch" SelectedIndex="1">
+                                                    <TextBlock Text="AAA"/>
+                                                    <TextBlock Text="AA"/>
+                                                    <TextBlock Text="A"/>
+                                                    <TextBlock Text="B"/>
+                                                    <TextBlock Text="C"/>
+                                                    <TextBlock Text="D"/>
+                                                </ComboBox>
+                                                <TextBox x:Name="LeadAngle_TxtBx" TextChanged="Angle_ChangedHandler" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" FontWeight="Normal" Height="20" Margin="8,6,0,4" Visibility="Collapsed"/>
+                                                <TextBox x:Name="PressureAngle_TxtBx" TextChanged="Angle_ChangedHandler" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" FontWeight="Normal" Height="20" Margin="8,6,0,4" Visibility="Collapsed"/>
+                                                <TextBox x:Name="leadofGash_TxtBx" Text="0" TextChanged="Angle_ChangedHandler" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Stretch" FontSize="12" FontWeight="Normal" Margin="8,8,0,4"/>
+                                                <TextBox x:Name="StartDepth_TxtBx" HorizontalAlignment="Stretch" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="12" FontWeight="Normal" Margin="8,6,0,4" Text="0.3"/>
+                                                <TextBox x:Name="NoofGashes_TxtBx" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Text="10" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="20" FontSize="12" FontWeight="Normal" TextAlignment="Right" Margin="8,6,0,4"/>
+                                                <TextBox x:Name="NumberofTeeth_TxtBx" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Measurement3RBtn}" HorizontalAlignment="Stretch" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" FontSize="12" FontWeight="Normal" TextAlignment="Right" Margin="8,6,0,4"/>
+                                                <TextBox x:Name="RakeAngle_TxtBx" TextChanged="Angle_ChangedHandler" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Measurement3RBtn}" HorizontalAlignment="Stretch" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" FontSize="12" FontWeight="Normal" TextAlignment="Right" Margin="8,6,0,0"/>
+                                            </StackPanel>
+                                            <CheckBox x:Name="chkCutterMode" Content="Cutter" FontSize="10" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="2" Margin="0,8,0,0" Height="15" Width="49" />
+                                            <StackPanel Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Margin="4,0">
+                                                <CheckBox x:Name="chkAutoMeasure" Content="Auto Measure" Click="Btn_AutoMeasure_Click" Height="36" Margin="4,4,4,4" FontSize="14.667" Style="{DynamicResource ScrollToolbar_ToggButton2}"/>
+                                                <Button x:Name="Btn_Y_Axis_Centre" Click="Btn_GotoCentre_Click" Content="Go To Y Centre" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="12" Grid.Row="1" Grid.ColumnSpan="2" Margin="4,8,4,4" Height="31.594" VerticalAlignment="Top"/>
+                                                <WrapPanel HorizontalAlignment="Stretch" Height="36" Margin="4,8,0,0">
+                                                    <Button  x:Name="BtnResetAll_Copy" Content="Reset Current Run" Click="ResetThisRun" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Bold" Margin="0,0,4,0" Height="36" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Row="1" Width="118"/>
+                                                    <Button  x:Name="BtnResetAll" Content="Reset All" Click="ResetAll" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="12,0,0,0" Width="112"/>
+                                                </WrapPanel>
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Margin="8,0,4,4">
+                                        <Grid x:Name="GridFirstTooth" Margin="0,4" Height="110">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.25*"/>
+                                                <RowDefinition Height="0.25*"/>
+                                                <RowDefinition Height="0.25*"/>
+                                                <RowDefinition Height="0.25*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40*"/>
+                                                <ColumnDefinition Width="60*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <CheckBox x:Name="chkFirstTooth" Content="First Tooth" Style="{DynamicResource ScrollToolbarCheckBox2}" VerticalAlignment="Center" Height="30" FontSize="12" Grid.ColumnSpan="2" Checked="Meas_Type_CheckChanged" Unchecked="Meas_Type_CheckChanged" Margin="7,0,0,0"/>
+                                            <Button x:Name="Btn_FirstToothStart" Content="Start" Click="Btn_BeginFirstToothMeasure_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" Margin="4,0,0,0" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Hidden"/>
+                                            <RadioButton x:Name="rb_4Pt" Content="4 Pt" HorizontalAlignment="Left" Height="16" Margin="4,16,0,0" VerticalAlignment="Top" Width="52" FontSize="10.667" Visibility="Hidden"/>
+                                            <RadioButton x:Name="rb_2Pt" Content="2 Pt" HorizontalAlignment="Left" Height="16" Margin="0,16,0,0" VerticalAlignment="Top" Width="52" FontSize="10.667" IsChecked="True" Visibility="Hidden" Grid.Column="1" Grid.ColumnSpan="2"/>
+                                            <Button  x:Name="Btn_FirstToothStop" Content="Stop"  Click="Btn_StopFirstTooth_Click" FontSize="12" Background="{x:Null}" BorderBrush="Red" Foreground="Black" FontWeight="Bold" Style="{DynamicResource ScrollToolbar_NormalButton2}" Grid.Row="2" Margin="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+                                            <TextBlock Text="# from Top :" FontSize="10.667" TextAlignment="Right" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="14" Width="61" Margin="10,0,0,6.667" Grid.Row="1"/>
+                                            <TextBox x:Name="Txt_FirstTooth" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Text="1" FontSize="12" FontWeight="Normal" TextAlignment="Right" Grid.Column="1" Height="20" Width="60" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,4.3" Grid.Row="1"/>
+                                            <TextBlock Text="OD :" TextAlignment="Right" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0" Height="16" Grid.Row="2" FontSize="12" Margin="0,0,4,0"/>
+                                            <TextBlock x:Name="CalculatedOD" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Right" FontSize="13.333" Text="-.-" Margin="0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Background="#FF5BA3E0" Height="20" HorizontalAlignment="Left" Width="100"/>
+                                            <TextBlock x:Name="C_Axis0" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Right" FontSize="12" Text="-.-" Margin="0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Background="#FF5BA3E0" Height="20" HorizontalAlignment="Left" Width="100"/>
+                                            <Button  x:Name="Btn_CAxis_Zero" Content="C-Axis 0"  Click="Set_CAxis_Zero" FontSize="12" Background="{x:Null}" BorderBrush="Red" Foreground="Black" FontWeight="Bold" Style="{DynamicResource ScrollToolbar_NormalButton2}" Grid.Row="3" Margin="4"/>
+                                            <CheckBox x:Name="chkMasterHob" Content="Master" HorizontalAlignment="Right" Margin="0" FontSize="9" FontWeight="Normal" VerticalContentAlignment="Center" Padding="4,0,0,1" ScrollViewer.CanContentScroll="True" Grid.Column="1" d:LayoutOverrides="Height" Grid.Row="1" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid x:Name="gridFormPos" Height="116" Margin="0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="115*"/>
+                                                <ColumnDefinition Width="123*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.25*"/>
+                                                <RowDefinition Height="0.75*"/>
+                                            </Grid.RowDefinitions>
+                                            <CheckBox x:Name="chkFormPos" Content="Form &amp; Pos of Cutting Face" Style="{DynamicResource ScrollToolbarCheckBox2}" VerticalAlignment="Top" Height="30" FontSize="12" Margin="8,0" Grid.ColumnSpan="2" Checked="Meas_Type_CheckChanged" Unchecked="Meas_Type_CheckChanged"/>
+                                            <WrapPanel x:Name="wrapPanel3" Grid.Row="1" Margin="0" HorizontalAlignment="Right" Width="73.06">
+                                                <Button Content="Tooth Depth:" HorizontalAlignment="Right" Click="Default_ToothDepth_Click" Width="{Binding Width, ElementName=wrapPanel3}" FontSize="10.667" Height="20" HorizontalContentAlignment="Right" Margin="0,6,0,4" Foreground="Black" Style="{DynamicResource ScrollToolbar_NormalButton2}"/>
+                                                <TextBlock Text="# of Points:" VerticalAlignment="Center" Width="{Binding Width, ElementName=wrapPanel3}" TextAlignment="Right" FontSize="10.667" Margin="0,6,0,4" Height="20" Foreground="Black"/>
+                                                <TextBlock Text="Error:" HorizontalAlignment="Right" Width="{Binding Width, ElementName=wrapPanel3}" TextAlignment="Right" FontSize="10.667" Margin="0,4,0,0" Foreground="Black"/>
+                                            </WrapPanel>
+                                            <StackPanel x:Name="wpFormParams" Grid.Row="1" Grid.Column="1" Margin="8,0">
+                                                <TextBox x:Name="ToothDepth_TxtBx" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" TextChanged="ToothDepthRake_TextChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" Width="60" HorizontalAlignment="Left" Height="20" Margin="0,4" FontSize="12" FontWeight="Normal"/>
+                                                <TextBox x:Name="PointsPerTooth_Face_TxtBx" Width="60" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Text="10" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Margin="0,4" FontSize="12" FontWeight="Normal"/>
+                                                <TextBlock x:Name="tbFP_Error" FontWeight="Bold" TextAlignment="Right" FontSize="13.333" Text="-.-" Margin="0,4,0,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Background="#FF5BA3E0" Height="20" HorizontalAlignment="Left" Width="60"/>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Grid x:Name="gridSpacing" Height="112" Margin="0,4">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="115*"/>
+                                                <ColumnDefinition Width="123*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.3*"/>
+                                                <RowDefinition Height="0.7*"/>
+                                            </Grid.RowDefinitions>
+                                            <CheckBox x:Name="chkGashSpacing" Checked="Meas_Type_CheckChanged" Unchecked="Meas_Type_CheckChanged" Content="Spacing of Gashes" Style="{DynamicResource ScrollToolbarCheckBox2}" FontSize="12" Margin="8,0,8,1" Grid.ColumnSpan="2" />
+                                            <WrapPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="0" HorizontalAlignment="Right" Width="72">
+                                                <TextBlock Text="Tooth Depth:" HorizontalAlignment="Right" FontSize="10.667" TextAlignment="Right" VerticalAlignment="Center" Foreground="Black" Margin="0,6,4,6"/>
+                                                <TextBlock Text="Ind. Pitch:" HorizontalAlignment="Right" FontSize="10.667" TextAlignment="Right" VerticalAlignment="Center" Foreground="Black" Margin="0,8,4,6"/>
+                                                <TextBlock Text="Cum. Pitch:" HorizontalAlignment="Right" FontSize="10.667" TextAlignment="Right" VerticalAlignment="Center" Foreground="Black" Margin="0,6,4,0"/>
+                                            </WrapPanel>
+                                            <WrapPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                                                <TextBox x:Name="ToothDepth_Spacing_TxtBx" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="12" FontWeight="Normal" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Margin="4,4" Width="60"/>
+                                                <TextBlock x:Name="tbIP_Error" FontWeight="Bold" TextAlignment="Right" FontSize="13.333" Text="-.-" Margin="4,4,0,2" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Background="#FF5BA3E0" Height="20" HorizontalAlignment="Left" Width="60"/>
+                                                <TextBlock x:Name="tbCP_Error" FontWeight="Bold" TextAlignment="Right" FontSize="13.333" Text="-.-" Margin="4,4,0,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Background="#FF5BA3E0" Height="20" HorizontalAlignment="Left" Width="60"/>
+                                            </WrapPanel>
+                                        </Grid>
+                                        <Grid x:Name="gridGashLead" Height="84" Margin="0,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="115*"/>
+                                                <ColumnDefinition Width="123*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.4*"/>
+                                                <RowDefinition Height="0.6*"/>
+                                            </Grid.RowDefinitions>
+                                            <CheckBox x:Name="chkLeadofGash" Checked="Meas_Type_CheckChanged" Unchecked="Meas_Type_CheckChanged" Content="Lead of Gash" Style="{DynamicResource ScrollToolbarCheckBox2}" VerticalAlignment="Center" Height="30" FontSize="12" Margin="8,0" Grid.ColumnSpan="2"/>
+                                            <WrapPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="0" HorizontalAlignment="Right" Width="72">
+                                                <TextBlock Text="Tooth Depth:" FontSize="10.667" TextAlignment="Right" Foreground="Black" HorizontalAlignment="Right" Grid.Row="1" Margin="0,4,4,4" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Gash Lead:" FontSize="10.667" TextAlignment="Right" Foreground="Black" HorizontalAlignment="Right" Grid.Row="1" Margin="0,4,4,0" VerticalAlignment="Center"/>
+                                            </WrapPanel>
+                                            <WrapPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                                                <TextBox x:Name="ToothDepth_Lead" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Measurement3RBtn}" Height="20" AttachedProp:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" Width="60" FontSize="12" FontWeight="Normal" TextAlignment="Right" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="4,0,0,0"/>
+                                                <TextBlock x:Name="tbGashLead" FontWeight="Bold" TextAlignment="Right" FontSize="13.333" Text="-.-" Margin="4,4,0,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Background="#FF5BA3E0" Height="20" HorizontalAlignment="Left" Width="60"/>
+                                            </WrapPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                    <ToggleButton x:Name="Btn_OverRideToothDepth" Content="Override" Grid.Column="1" HorizontalAlignment="Right" Height="24" Margin="0,82,4,0" VerticalAlignment="Top" Width="61" Style="{DynamicResource ScrollToolbar_ToggButton2}" Visibility="Hidden"/>
+                                </Grid>
+                            </GroupBox>
+                            <Grid Grid.Column="2" Grid.Row="2" Margin="0,8,12,12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.7*"/>
+                                    <RowDefinition Height="0.3*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                </Grid.ColumnDefinitions>
+                                <ProgressBar x:Name="GetCentreProgress" VerticalAlignment="Center" Height="15" BorderThickness="1" BorderBrush="Black" Grid.ColumnSpan="2" Background="White" Foreground="#FF007CD4" Grid.Row="1" Margin="4,0"/>
+                                <Button  x:Name="Start1Btn" Content="Start" Click="StartBtn_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF0C8B0C" FontWeight="Bold" Grid.ColumnSpan="1" Margin="4,4,8,4"/>
+                                <Button  x:Name="Stop1Btn" Content="Stop" Click="StopBtn_Click" FontSize="32"  Style="{DynamicResource ScrollToolbar_NormalButton2}" Background="Red" BorderBrush="{x:Null}" Foreground="Red" FontWeight="Bold" Margin="8,4,4,4" Grid.Row="0" Grid.Column="1" />
+                            </Grid>
+                            <Grid x:Name="gridTimers" Margin="12,8,12,12" Grid.Row="2" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.5*"/>
+                                    <RowDefinition Height="0.5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.4*"/>
+                                    <ColumnDefinition Width="0.4*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Time:" Grid.Row="0" HorizontalAlignment="Center" Margin="0,4,4,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                                <TextBlock Text="Cycle Time Elapsed:" Grid.Row="0" HorizontalAlignment="Center" Margin="0,4,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Grid.Column="1" Foreground="#FF003CBB"/>
+                                <TextBlock x:Name="txtCurrentTime" Grid.Row="1" TextWrapping="Wrap" FontSize="21.333" FontWeight="Bold" Margin="0" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="10:10 AM"/></TextBlock>
+                                <TextBlock x:Name="txtCycleTime" Grid.Row="1" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Center" TextAlignment="Left" FontSize="21.333" FontWeight="Bold" Foreground="#FF001C9C" Grid.Column="1" Margin="0" HorizontalAlignment="Center"/>
+                                <CheckBox x:Name="cbRepeatMeasurement" Grid.Column="2" Visibility="Hidden" Grid.Row="0" VerticalAlignment="Bottom" Content="Repeat" HorizontalAlignment="Right" Margin="0,0,4,4"/>
+                            </Grid>
+                            <Expander x:Name="Settings" Header="Settings" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" ExpandDirection="Up" IsExpanded="False" Margin="100,0,8,12" Expanded="Settings_Expanded" Background="#FF9BD1FF" BorderBrush="Black" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                                <StackPanel x:Name="spSettingsDisplay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
+                                    <DataGrid x:Name="dgHobSettings" Margin="4" Background="Blue" RowBackground="{DynamicResource RowBackground_DG}" RowHeight="30" AlternatingRowBackground="{DynamicResource AlternatingRowBackground_DG}" AutoGeneratedColumns="dgHobSettings_AutoGeneratedColumns"/>
+                                    <Button x:Name="BtnSaveHobSettings" Click="BtnSaveHobSettings_Click" Content="Save" HorizontalAlignment="Right" Width="60" Height="24" FontSize="13.333" FontWeight="Bold" Margin="0,8,8,0"/>
+                                </StackPanel>
+                            </Expander>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+
+                <Border x:Name="ToolbarBorder_AboveVideo" BorderThickness="1" Margin="4,54,4,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
+
+            </Grid>
+            <Grid x:Name="RapidCADGrid" Grid.Column="2" Margin="5,8,16,250" HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="OtherWinPanelBorder" Background="{DynamicResource HeaderShading}" CornerRadius="8,8,0,0" BorderBrush="{DynamicResource ContainerBorderBrush}" BorderThickness="1,1,1,0">
+                    <Border.Effect>
+                        <DropShadowEffect x:Name="OWinPanelShadow" ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                </Border>
+                <StackPanel x:Name="OtherWinPanel" Orientation="Horizontal" Margin="5,6,1,0" Width="660" HorizontalAlignment="Right">
+                    <ToggleButton x:Name="RapidCADRBtn" Content="RapidCAD" Width="135.791" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=OtherWinPanel}" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold" Margin="2,0,0,0"/>
+                    <ToggleButton x:Name="ProgramRBtn" Content="Program" Width="135" Style="{DynamicResource TabSelector2}" FontSize="16" HorizontalAlignment="Center" Height="{Binding ActualHeight, ElementName=OtherWinPanel}" FontWeight="Bold"/>
+                    <ToggleButton x:Name="PicViewerRBtn" Content="Pic Viewer" Width="150" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=OtherWinPanel}" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold"/>
+                </StackPanel>
+                <GroupBox x:Name="RapidCADHolder" Header="GroupBox" Template="{DynamicResource GenericPanel}" Grid.Row="1" BorderThickness="0"/>
+                <Border x:Name="ToolbarBorder" BorderThickness="1" Margin="2,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid x:Name="LowerGrid1" Margin="5,0,10,4" Grid.Row="1" Height="270">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="8,8,0,0" Background="{DynamicResource HeaderShading}" BorderBrush="{DynamicResource ContainerBorderBrush}" BorderThickness="1,1,1,0">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                    <StackPanel x:Name="LowerWinPanel1" Orientation="Horizontal" Margin="4,3,0,0">
+                        <ToggleButton x:Name="FocusRBtn" Content="Focus" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel1, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="77" Foreground="Black"/>
+                        <ToggleButton x:Name="ThreadRBtn" Content="Thread" HorizontalAlignment="Left" Width="100" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel1, Mode=OneWay}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                        <ToggleButton x:Name="FixedGraphicsRBtn" Content="Fixed Graphics" HorizontalAlignment="Left" Width="143" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel1, Mode=OneWay}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                    </StackPanel>
+                </Border>
+                <GroupBox x:Name="LowerPanelHolder1" Header="GroupBox" Template="{DynamicResource GenericPanel}" Grid.Row="1" BorderThickness="0,0,0,1"/>
+            </Grid>
+            <Grid x:Name="LowerGrid2" Grid.Column="1" HorizontalAlignment="Left" Margin="8,0,0,4" Grid.Row="1" Width="356.5" Height="270">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="0.128*"/>
+                    <RowDefinition Height="0.872*"/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="8,8,0,0" Background="{DynamicResource HeaderShading}" BorderThickness="1,1,1,0" BorderBrush="{DynamicResource ContainerBorderBrush}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                    <StackPanel x:Name="LowerWinPanel2" Orientation="Horizontal" Margin="4,3,0,0">
+                        <ToggleButton x:Name="LightingRBtn" Content="Lighting" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel2, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="120" Foreground="Black"/>
+                    </StackPanel>
+                </Border>
+                <GroupBox x:Name="LowerPanelHolder2" Header="GroupBox" Template="{DynamicResource GenericPanel}" MouseEnter="LowerPanelHolder2_MouseEntered" Grid.Row="1" Grid.RowSpan="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                <Grid x:Name="gridCamCentreViewer" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="txt_MM_X" Grid.Row="0" Width="44" HorizontalAlignment="Stretch" TextAlignment="Right"/>
+                    <TextBlock x:Name="txt_MM_Y" Grid.Row="1" Width="44" HorizontalAlignment="Stretch" TextAlignment="Right"/>
+                </Grid>
+            </Grid>
+            <Grid x:Name="LowerGrid3" Grid.Column="1" Margin="0,0,10,4" Grid.Row="1" HorizontalAlignment="Right" Width="436.5" Height="270">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="8,8,0,0" Background="{DynamicResource HeaderShading}" BorderThickness="1,1,1,0" BorderBrush="{DynamicResource ContainerBorderBrush}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                    <StackPanel x:Name="LowerWinPanel3" Orientation="Horizontal" Margin="4,3,0,0">
+                        <ToggleButton x:Name="CNCRBtn" Content="Manual" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel3, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="90"/>
+                        <ToggleButton x:Name="HolderRBtn" Content="Holder" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel3, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="90" Tag="VBlockHolder" Visibility="Visible"/>
+                        <ToggleButton x:Name="SAOIRBtn" Visibility="Hidden" Content="SAOI" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel3, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="90"/>
+                    </StackPanel>
+                </Border>
+                <GroupBox x:Name="LowerPanelHolder3" Header="GroupBox" Template="{DynamicResource GenericPanel}" Grid.Row="1"/>
+            </Grid>
+            <Grid x:Name="LowerGrid4" Grid.Column="2" Margin="5,0,16,8" Height="450" VerticalAlignment="Bottom" Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="8,8,0,0" Background="{DynamicResource HeaderShading}" BorderThickness="1,1,1,0" BorderBrush="{DynamicResource ContainerBorderBrush}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                    </Border.Effect>
+                    <StackPanel x:Name="LowerWinPanel4" Orientation="Horizontal" Margin="4,3,0,0">
+                        <ToggleButton x:Name="DXFTBtn" Content="DXF" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel4, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="70"/>
+                        <ToggleButton x:Name="ShapesRBtn" Content="Shapes" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel4, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="91"/>
+                        <ToggleButton x:Name="MeasurementsRBtn" Content="Measurements" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel4, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="144"/>
+                        <ToggleButton x:Name="ActionsRBtn" Content="Actions" Style="{DynamicResource TabSelector2}" Height="{Binding ActualHeight, ElementName=LowerWinPanel4, Mode=OneWay}" FontSize="16" FontWeight="Bold" Width="100"/>
+                    </StackPanel>
+                </Border>
+                <GroupBox x:Name="LowerPanelHolder4" Header="GroupBox" Template="{DynamicResource GenericPanel}" Grid.Row="1"/>
+                <GroupBox x:Name="DxfHolder" Grid.Row="1" BorderThickness="0"/>
+                <Border x:Name="DxfLowerToolbarBorder" BorderThickness="1" Margin="2,2,2,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
+            </Grid>
+            <StackPanel x:Name="ToolBarStkPanel" Orientation="Vertical" HorizontalAlignment="Left" Height="274.5" Margin="-2,81,0,0" VerticalAlignment="Top" Width="28.667" Visibility="Hidden">
+                <Button x:Name="ToolBxBtn" Content="Tool Box" Style="{DynamicResource ScrollToolbar_NormalButton2}" VerticalContentAlignment="Center" Padding="2" Width="60" Height="29">
+                    <Button.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform x:Name="btnRotator" Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.LayoutTransform>
+                </Button>
+            </StackPanel>
+            <Button x:Name="PPToolBxBtn" Content="PP" Margin="5,0,0,10" Width="60" Style="{DynamicResource ScrollToolbar_NormalButton2}" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="Width" Grid.Column="2" Height="53" FontSize="21.333" Visibility="Hidden"/>
+            <Button x:Name="BtntoinstantateNormaltemplate" Content="test" Margin="5,0,0,10" Width="60" Style="{DynamicResource ScrollToolbar_NormalButton2WithIconName}" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="Width" Grid.Column="2" Height="53" FontSize="21.333" Visibility="Hidden"/>
+            <RadioButton x:Name="BtntoinstantateNormaltemplate1" Content="test" Margin="5,0,0,10" Width="60" Style="{DynamicResource ScrollToolbar_RadioButton2WithIconName}" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="Width" Grid.Column="2" Height="53" FontSize="21.333" Visibility="Hidden"/>
+            <ToggleButton x:Name="BtntoinstantateNormaltemplate2" Content="test" Margin="5,0,0,10" Width="60" Style="{DynamicResource ScrollToolbar_ToggButton2WithIconName}" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="Width" Grid.Column="2" Height="53" FontSize="21.333" Visibility="Hidden"/>
+            <Grid x:Name="PPToolbarGrid" Height="53" VerticalAlignment="Top" Margin="5,520,15,0" d:IsEffectDisabled="True" Grid.Column="2" d:LayoutOverrides="GridBox">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="8" Opacity="0.6"/>
+                </Grid.Effect>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Black" Background="{DynamicResource PanelBackground}" BorderThickness="1" CornerRadius="8"/>
+                <Border x:Name="bdrPP" BorderThickness="1" CornerRadius="7" Background="{DynamicResource PanelBackground}" 
+                        BorderBrush="{DynamicResource ToolbarBorderColor}" HorizontalAlignment="Right" Margin="0,0,200,0">
+                    <Util:ScrToolbar x:Name="St" Margin="2" Height="Auto"/>
+                </Border>
+                <StackPanel x:Name="stOptions" Orientation="Horizontal" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" />
+            </Grid>
+            <!--<Border BorderThickness="0,1,0,0" BorderBrush="#FF8ACDFF" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180, -10">-->
+            <Grid x:Name="CNCAssistButtonHolderGrid" Visibility="Hidden" Background="#FF8ACDFF" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180, -9">
+                <!--<Path Height="1" Width="200" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FF8ACDFF" Data="F1 M 580.283,1572.28L 644.283,1572.28"/>-->
+                <Border BorderThickness="1,0,1,1" BorderBrush="Black">
+                    <ToggleButton x:Name="btnForceAutoFG" Width="100" Height="40" Style="{DynamicResource ScrollToolbar_ToggButton2}" Content="Auto" 
+                                  Checked="btnForceAutoFG_Checked" Unchecked="btnForceAutoFG_Checked" Margin="4, 4, 4, 4"/>
+                </Border>
+                <Button x:Name="CloseAssistPanel" Visibility="Hidden" Content="x" Background="Tomato" Width="16" Height="16" Margin="0,0, 2,2"  HorizontalAlignment="Right" 
+                        VerticalAlignment="Bottom" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Padding="0" FontWeight="Bold" 
+                        Click="CloseAssistPanel_Click" BorderBrush="{x:Null}" Foreground="White" BorderThickness="0" />
+            </Grid>
+            <!--</Border>-->
+   
+        </Grid>
+    </Border>
+</Window>
+

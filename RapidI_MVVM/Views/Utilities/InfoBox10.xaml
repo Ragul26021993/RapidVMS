@@ -1,0 +1,22 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties"
+	mc:Ignorable="d"
+	x:Class="Rapid.Utilities.InfoBox10"
+	x:Name="MainGrid"
+	d:DesignWidth="248" d:DesignHeight="64">
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition/>
+		<ColumnDefinition/>
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="*"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+	<TextBlock  x:Name="txtStatus" Margin="0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+	<RadioButton x:Name="RBtn" Content="RadioButton" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0" IsChecked="True"/>
+	<RadioButton x:Name="RBtn2" Content="RadioButton" Grid.Row="1" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1"/>
+</Grid>

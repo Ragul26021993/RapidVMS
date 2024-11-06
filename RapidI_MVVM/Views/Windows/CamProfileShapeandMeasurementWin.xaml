@@ -1,0 +1,73 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Rapid.Windows.CamProfileShapeandMeasurementWin"	
+        Title="Cam Profile Shape and Measurement" Height="540" Width="320" ResizeMode="NoResize"
+		WindowStyle="None" Background="{x:Null}" AllowsTransparency="True">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <GroupBox Header="Create Cam Profile Shape" Margin="0,0,8,0" Grid.RowSpan="13" Style="{DynamicResource GB_ToolStyle_NoComboBox}" BorderBrush="{DynamicResource DroBackColor}" Foreground="{DynamicResource ContainerBorderBrush}" Background="{DynamicResource PanelBackground}" Grid.ColumnSpan="2">
+        <Grid x:Name="gridHolder">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.083*"/>
+            <RowDefinition Height="0.06*"/>
+            <RowDefinition Height="0.108*"/>
+            <RowDefinition Height="0.108*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".6*"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnClose" Content="X" HorizontalAlignment="Right" Click="btnClose_Click" Width="28" Style="{DynamicResource UpperButtonStyle}" BorderBrush="{DynamicResource CloseButtonBrush_Border}" Foreground="White" FontSize="12" Padding="0" VerticalContentAlignment="Center" ToolTip="Close" Background="{DynamicResource CloseButtonBrush_BG}" FontFamily="a_FuturaRoundDemi" Height="28" RenderTransformOrigin="0.571,0.286" VerticalAlignment="Top" Margin="0,0,12,0" Tag="Close" Grid.Column="1"/>
+        <TextBlock Text="Angular Steps in Decimal Degrees" x:Name="InstructionTxtBl" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0"/>
+        <RadioButton x:Name="InnerRBtn" IsChecked="True" Content="Inner" Height="18" Margin="40,10,53,0" VerticalAlignment="Top" Grid.Row="2" FontFamily="Segoe UI" FontSize="12" GroupName="X_RBtns"/>
+        <RadioButton x:Name="OuterRBtn" Content="Outer" Height="18" Margin="100,10,0,0" VerticalAlignment="Top" Grid.Row="2" FontFamily="Segoe UI" FontSize="12" GroupName="X_RBtns"/>
+        <TextBlock Text="Outer MinRadius" x:Name="OtrMnTxtBl" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Margin="0,0,-2,0" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=OuterRBtn}" Width="60" Height="40" Grid.Column="1"/>
+        <TextBlock Text="Outer MaxRadius" x:Name="OtrMxTxtBl" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="4" Margin="0,0,10,0" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=OuterRBtn}"/>
+        <TextBlock Text="Inner MinRadius" x:Name="InrMnTxtBl" HorizontalAlignment="Right" Grid.Row="3" Margin="0,9.812,5,15.811" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" d:LayoutOverrides="HorizontalAlignment, Height"/>
+        <TextBlock Text="Inner MaxRadius" x:Name="InrMxTxtBl" HorizontalAlignment="Right" Grid.Row="4" Margin="0,11.811,5,13.811" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" d:LayoutOverrides="HorizontalAlignment, Height"/>
+        <TextBlock Text="Lower Tolerance" x:Name="LwrTlrncTxtBl" HorizontalAlignment="Right" Grid.Row="5" Margin="0,9.809,5,15.811" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" d:LayoutOverrides="HorizontalAlignment, Height"/>
+        <TextBlock Text="Upper Tolerance" x:Name="UprTlrncTxtBl" HorizontalAlignment="Right" Grid.Row="6" Margin="0,11.811,5,13.811" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" d:LayoutOverrides="HorizontalAlignment, Height"/>
+        <TextBlock Text="Measurement Settings" x:Name="MsrmntTxtBl" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="7" Margin="10,30,10,0" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}"/>
+        <TextBlock Text="Angular Steps in Degrees" x:Name="MsrmntAnglTxtBl" HorizontalAlignment="Right" Grid.Row="8" Margin="0,10.811,10,14.801" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" d:LayoutOverrides="Height"/>
+        <TextBlock Text="Number of Points to bundle" x:Name="MsrmntPtsTxtBl" HorizontalAlignment="Right" Grid.Row="9" Margin="0,11.812,5,13.811" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" d:LayoutOverrides="Height"/>
+        <RadioButton x:Name="TouchRBtn" IsChecked="True" Content="Touch" Height="18" Margin="40,10,53,0" VerticalAlignment="Top" Grid.Row="10" FontFamily="Segoe UI" FontSize="12" GroupName="Y_RBtns"/>
+        <RadioButton x:Name="VisionRBtn" Content="Vision" Height="18" Margin="100,10,0,0" VerticalAlignment="Top" Grid.Row="10" FontFamily="Segoe UI" FontSize="12" GroupName="Y_RBtns"/>
+        <Button  x:Name="CompleteBtn" Content="Process Complete" Visibility="Hidden" Grid.Row="12" Click="CompleteBtn_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="92.5,0,-30.5,0" Width="130"/>
+        <Button  x:Name="Cam_MeasurementBtn" Content="Cam Measurement" Visibility="Hidden"  Grid.Row="11" Click="Cam_MeasurementBtn_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="91,0,-29,0" Width="130"/>
+        <Button  x:Name="StartBtn" Content="Start" Visibility="Hidden" Grid.Row="12" Click="StartBtn_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0" Width="100"/>
+        <Button  x:Name="StopBtn" Content="Stop" Visibility="Hidden" Grid.Row="12" Click="StopBtn_Click" Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="-22,0,50,0" Grid.Column="1" Width="100"/>
+
+
+        <TextBox x:Name="AngularStepsTxtBx" Grid.Row="1" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" 
+			Text_Box_Prop:AttachedTextBoxBehaviour.MaximumValue="360"
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="0" Text="0.5" d:LayoutOverrides="VerticalMargin"/>
+        <TextBox x:Name="OuterCircleMinRadiusTxtBx" Grid.Row="3" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="1" Text="74.0" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=OuterRBtn}"  />
+        <TextBox x:Name="OuterCircleMaxRadiusTxtBx" Grid.Row="4" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="1" Text="76.5" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=OuterRBtn}" />
+        <TextBox x:Name="InnerCircleMinRadiusTxtBx" Grid.Row="3" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="1" Text="7.905" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" />
+        <TextBox x:Name="InnerCircleMaxRadiusTxtBx" Grid.Row="4" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="1" Text="11.905" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}"/>
+        <TextBox x:Name="LowerToleranceTxtBx" Grid.Row="5" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="0" Text="0.025" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" />
+        <TextBox x:Name="UpperToleranceTxtBx" Grid.Row="6" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="0" Text="0.025" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" />
+        <TextBox x:Name="Angular_step_4_IDTool_MsrmntTxtBx" Grid.Row="8" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="0" Text="1" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" />
+        <TextBox x:Name="NoofPts_Bundle_4_IDTool_MsrmntTxtBx" Grid.Row="9" Grid.Column="1" Width="80" Height="25" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"			
+			Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="0" Text="1" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=InnerRBtn}" />
+        <ToggleButton  x:Name="OKBtn" Content="OK" Grid.Row="11" Click="OKBtn_Click" Style="{DynamicResource ScrollToolbar_ToggButton2}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="46,0" Width="100" d:LayoutOverrides="GridBox"/>
+        <Button  x:Name="CancelBtn" Content="Cancel" Grid.Row="11" Click="CancelBtn_Click"  Style="{DynamicResource ScrollToolbar_NormalButton2}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="-24,0,52,0" Grid.Column="1" Width="100" d:LayoutOverrides="GridBox"/>
+
+    </Grid>
+    </GroupBox>
+</Window>

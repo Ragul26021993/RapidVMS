@@ -1,0 +1,114 @@
+﻿<local:OpenGlWin
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:Rapid.Windows"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	xmlns:local1="clr-namespace:Rapid.Utilities"
+	x:Class="Rapid.Windows.CamPropertiesWindow"
+	x:Name="CamPropWin"
+	Title="Camera Properties"
+	Width="480" Height="344" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="Manual" Background="{x:Null}" AllowsTransparency="True">
+    <local:OpenGlWin.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <!--<Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>-->
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+    </local:OpenGlWin.Resources>
+    <Grid x:Name="MainGrid">
+        <GroupBox Header="Camera Properties" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="Arial Rounded MT Bold" FontSize="18.667" BorderBrush="{DynamicResource DroBackColor}" Foreground="{DynamicResource ContainerBorderBrush}" Background="{DynamicResource PanelBackground}" >
+            <Grid x:Name="ControllerContainer">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="54"/>
+                    <ColumnDefinition Width="167*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="12"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="132"/>
+                </Grid.RowDefinitions>
+                <Button  x:Name="OKBtn" Content="OK" Grid.Row="9" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="#FF7187FF" Foreground="Black" FontSize="14.667" ToolTip="OK" BorderThickness="2" FontWeight="Normal" Margin="0,0,4,6" Tag="Design Template" Grid.Column="5" VerticalAlignment="Bottom" Height="60"/>
+                <Button x:Name="DefaultBtn" Content="Default Surface" Grid.Row="4" Style="{DynamicResource SimpleNormalButton}" 
+						Background="{x:Null}" BorderBrush="#FF7187FF" Foreground="Black" FontSize="10" ToolTip="OK" BorderThickness="2" 
+						FontWeight="Bold" Tag="Design Template" Grid.Column="5" 
+						FontFamily="Segoe UI" VerticalAlignment="Center" Height="24" Margin="0,0,4,0"/>
+                <Button x:Name="DefaultBtn_Profile" Content="Default Profile" Grid.Row="7" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="#FF7187FF" Foreground="Black" FontSize="10" ToolTip="OK" BorderThickness="2" FontWeight="Bold" Tag="Design Template" Grid.Column="5" Margin="0,0,4,0" FontFamily="Segoe UI" VerticalAlignment="Center" Height="24"/>
+                <ToggleButton x:Name="DefaultBtn_RefDot" Content="Ref Dot Mode" Click="DefaultBtn_RefDot_Click" Grid.Row="9" Style="{DynamicResource ScrollToolbar_ToggButton2}" Background="{x:Null}" BorderBrush="#FF7187FF" Foreground="Black" FontSize="10" ToolTip="OK" BorderThickness="2" FontWeight="Bold" Tag="Design Template" Grid.Column="5" FontFamily="Segoe UI" VerticalAlignment="Top" Height="24" Margin="0,4,4,0"/>
+                <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Brightness" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Right" Margin="0,9,8,9" Grid.ColumnSpan="2"/>
+                <TextBlock Margin="0,8,6,10" Grid.Row="2" TextWrapping="Wrap" Text="Contrast" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="Gamma" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Right" Margin="0,9,8,9" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="4" TextWrapping="Wrap" Text="Saturation" FontSize="13.333" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,9,8,9" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="txt_SharpLabel" Grid.Row="4" TextWrapping="Wrap" Text="Sharpness" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Right" Margin="0,26,6,124" Grid.ColumnSpan="2" Grid.RowSpan="1"/>
+                <TextBlock x:Name="txt_GainLabel" Grid.Row="4" TextWrapping="Wrap" Text="Gain" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Right" Margin="0,26,6,124" Grid.Column="1" Grid.RowSpan="1"/>
+                <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="Exposure" VerticalAlignment="Center" FontSize="13.333" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,8,0"/>
+                <Slider x:Name="BrightnessSlider" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="127" Margin="8"/>
+                <Slider x:Name="ContrastSlider" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="127" Margin="8"/>
+                <Slider x:Name="GammaSlider" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="128" Minimum="1" Maximum="255" Margin="8"/>
+                <Slider x:Name="SaturationSlider" Grid.Column="2" Grid.Row="4" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="127" VerticalAlignment="Center" Margin="8"/>
+                <Slider x:Name="SharpnessSlider" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="127" Margin="8,0,8,132" Grid.RowSpan="1"/>
+                <Slider x:Name="GainSlider" VerticalAlignment="Center" Grid.Column="2" Grid.Row="6" Maximum="256" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="128" Minimum="1" Margin="8,0,8,132" Grid.RowSpan="4" Visibility="Hidden"/>
+                <Slider x:Name="ExposureSlider" VerticalAlignment="Center" Grid.Column="2" Grid.Row="7" Maximum="128" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="40" Margin="8,0" Grid.RowSpan="1" LargeChange="4"/>
+                <TextBox x:Name="BrightnessTxtBx" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="13.333" Grid.Column="3" Margin="4,8" IsEnabled="False" TextAlignment="Right"/>
+                <TextBox x:Name="ContrastTxtBx" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="13.333" Grid.Column="3" Margin="4,8" IsEnabled="False" TextAlignment="Right"/>
+                <TextBox x:Name="GammaTxtBx" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="13.333" Grid.Column="3" Margin="4,8" IsEnabled="False" TextAlignment="Right"/>
+                <TextBox x:Name="SaturationTxtBx" Grid.Row="4" TextWrapping="Wrap" FontSize="13.333" Grid.Column="3" Margin="4,8" IsEnabled="False" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox x:Name="SharpnessTxtBx" HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="44" FontSize="13.333" Grid.Column="3" Margin="7,0,7,9" IsEnabled="False" TextAlignment="Right"/>
+                <TextBox x:Name="GainTxtBx" HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="44" FontSize="13.333" Grid.Column="3" Margin="7,0,7,7" IsEnabled="False" TextAlignment="Right"/>
+                <TextBox x:Name="ExposureTxtBx" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13.333" Grid.Column="3" Margin="4,8,4,0" IsEnabled="False" TextAlignment="Right" Grid.RowSpan="1"/>
+                <CheckBox x:Name="EnableColorChkBx" Content="Enable Color" VerticalAlignment="Top" Margin="24,23,160,0" Grid.Row="8" IsChecked="True" Visibility="Hidden" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+
+                <TextBlock Grid.Row="9" TextWrapping="Wrap" Text="Ch 1" VerticalAlignment="Top" FontSize="13.333" HorizontalAlignment="Right" Margin="0,12,8,0" Grid.ColumnSpan="1"/>
+                <local1:NumericUpDown x:Name="Ch1_DGain" Tag="" Visibility="Hidden" FontSize="10" Grid.Column="1" Grid.Row="9" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="24" Margin="0,8,0,0" />
+                <Slider x:Name="Ch1_Slider" Margin="8,12,8,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="8" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="96" LargeChange="2" Minimum="1" Grid.RowSpan="2"/>
+                <TextBox x:Name="txb_Ch1" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13.333" Grid.Column="3" Margin="4,10,4,0" IsEnabled="False" TextAlignment="Right" Grid.RowSpan="2"/>
+                <TextBlock Grid.Row="9" TextWrapping="Wrap" Text="Ch 2" VerticalAlignment="Top" FontSize="13.333" HorizontalAlignment="Right" Margin="0,44,8,0" Grid.ColumnSpan="1"/>
+                <local1:NumericUpDown x:Name="Ch2_DGain" Tag="" Visibility="Hidden" FontSize="10" Grid.Column="1" Grid.Row="9" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="24" Margin="0,38,0,0" />
+                <Slider x:Name="Ch2_Slider" Margin="8,42,8,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="8" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="96" LargeChange="2" Minimum="1" Grid.RowSpan="2"/>
+                <TextBox x:Name="txb_Ch2" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13.333" Grid.Column="3" Margin="4,42,4,0" IsEnabled="False" TextAlignment="Right" Grid.RowSpan="2"/>
+                <TextBlock Grid.Row="9" TextWrapping="Wrap" Text="Ch 3" VerticalAlignment="Top" FontSize="13.333" HorizontalAlignment="Right" Margin="0,74,8,0" Grid.ColumnSpan="1"/>
+                <local1:NumericUpDown x:Name="Ch3_DGain" Tag="" FontSize="10" Visibility="Hidden" Grid.Column="1" Grid.Row="9" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="24" Margin="0,68,0,0" />
+                <Slider x:Name="Ch3_Slider" Margin="8,72,8,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="8" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="96" LargeChange="2" Minimum="1" Grid.RowSpan="2"/>
+                <TextBox x:Name="txb_Ch3" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13.333" Grid.Column="3" Margin="4,72,4,0" IsEnabled="False" TextAlignment="Right" Grid.RowSpan="2"/>
+                <TextBlock Grid.Row="9" TextWrapping="Wrap" Text="Ch 4" VerticalAlignment="Top" FontSize="13.333" Margin="0,104,8,0" HorizontalAlignment="Right" Grid.ColumnSpan="1"/>
+                <local1:NumericUpDown x:Name="Ch4_DGain" Tag="" Visibility="Hidden" FontSize="10" Grid.Column="1" Grid.Row="9" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="24" Margin="0,100,0,0" />
+                <Slider x:Name="Ch4_Slider" Margin="8,102,8,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="8" Maximum="255" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Value="96" LargeChange="2" Minimum="1" Grid.RowSpan="2"/>
+                <TextBox x:Name="txb_Ch4" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13.333" Grid.Column="3" Margin="4,102,4,0" IsEnabled="False" TextAlignment="Right" Grid.RowSpan="2"/>
+                <Button x:Name="Btn_SetDefault_Surface" Content="Set Surface" Grid.Row="1" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" 
+						BorderBrush="#FF7187FF" Foreground="Black" FontSize="10" BorderThickness="2" FontWeight="Bold" Tag="Design Template" Margin="4,0" FontFamily="Segoe UI" Click="Btn_SetDefault_Click" Height="22" VerticalAlignment="Center" Grid.Column="5" Visibility="Hidden"/>
+                <Button x:Name="Btn_SetDefault_Profile" Content="Set Profile" Grid.Row="2" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" 
+						BorderBrush="#FF7187FF" Foreground="Black" FontSize="10" BorderThickness="2" FontWeight="Bold" Tag="Design Template" Margin="4,0" FontFamily="Segoe UI" Click="Btn_SetDefault_Click" Height="24" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="5" Visibility="Hidden"/>
+                <Button x:Name="Btn_SetDefault_RefDot" Content="Set RefDot" Grid.Row="3" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" 
+						BorderBrush="#FF7187FF" Foreground="Black" FontSize="10" BorderThickness="2" FontWeight="Bold" Width="80" Tag="Design Template" Margin="4,0" FontFamily="Segoe UI" Click="Btn_SetDefault_Click" Height="24" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="5" Visibility="Hidden"/>
+
+                <Button x:Name="Btn_CrossHair_Offset" Grid.Row="9" FontSize="10" FontWeight="Bold" Grid.Column="4" Content="Cam ON/OFF" FontFamily="Segoe UI" Click="Btn_CrossHair_Offset_Click" Style="{DynamicResource NormalTextedButton}" BorderBrush="#FF7187FF" Background="#FFAEDDFF" BorderThickness="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Height="60" VerticalAlignment="Bottom" Margin="8,0,8,6" Visibility="Hidden" />
+                <Button x:Name="btn_Test" Visibility="Hidden" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="20" Click="Btn_SetDefault_Click"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnClose" Content="X" HorizontalAlignment="Right" Width="32" Style="{DynamicResource UpperButtonStyle}" BorderBrush="{DynamicResource CloseButtonBrush_Border}" 
+				Foreground="White" FontSize="14" Padding="0" VerticalContentAlignment="Center" ToolTip="Close" Background="{DynamicResource CloseButtonBrush_BG}" FontFamily="a_FuturaRoundDemi" Height="32" RenderTransformOrigin="0.571,0.286" VerticalAlignment="Top" Margin="0,1,5,0" Tag="Close" Grid.Column="1"/>
+    </Grid>
+</local:OpenGlWin>

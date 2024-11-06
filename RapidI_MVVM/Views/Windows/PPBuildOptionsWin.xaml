@@ -1,0 +1,36 @@
+﻿<local:OpenGlWin
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Rapid.Windows"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="Rapid.Windows.PPBuildOptionsWin"
+	x:Name="BuildOptionsWin"
+	Title="BuildOptionsWindow"
+	Width="450" Height="400" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Background="{x:Null}" AllowsTransparency="True">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="32"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<GroupBox Header="Build Options" Margin="0,0,8,8" Grid.RowSpan="5" Style="{DynamicResource GB_ToolStyle_NoComboBox}" FontFamily="Arial Rounded MT Bold" FontSize="18.667" BorderBrush="{DynamicResource DroBackColor}" Foreground="{DynamicResource ContainerBorderBrush}" Background="{DynamicResource PanelBackground}">
+			
+		</GroupBox>
+		<DataGrid x:Name="BuildStepsDG" Grid.Row="1" Margin="10,10,20,70" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#FFADC1FF" AutoGenerateColumns="False" CanUserAddRows="False">
+			<DataGrid.Columns>
+			<DataGridTextColumn x:Name="SlNoCol" Binding="{Binding Path=SlNo}" Header="No." IsReadOnly="True"/>
+			<DataGridTextColumn x:Name="ShapeNameCol" Binding="{Binding Path=ShapeNameStr}" Header="Shape Name" IsReadOnly="True"  Width="80"/>
+			<DataGridTextColumn x:Name="StepNameCol" Binding="{Binding Path=NameStr}" Header="Step Name" IsReadOnly="True"  Width="150"/>
+			<DataGridTemplateColumn x:Name="CriticalStepChkBxCol" Header="Critical Step" Width="80">
+				<DataGridTemplateColumn.CellTemplate>
+        			<DataTemplate>
+        				<CheckBox Name="CriticalStpChkBx" IsChecked="{Binding Mode=TwoWay, UpdateSourceTrigger=PropertyChanged ,Path=IsCriticalStep}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        			</DataTemplate>
+    			</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+		</DataGrid.Columns>
+		</DataGrid>
+		<Button  x:Name="OkBtn" Content="OK" Grid.Row="4" Style="{DynamicResource NormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="18.667" ToolTip="OK" BorderThickness="2" Click="OkBtn_Click" FontWeight="Bold" Width="100" Height="40" HorizontalAlignment="Right" Margin="0,0,200,20.444" VerticalAlignment="Bottom"/>
+		<Button  x:Name="CancelBtn" Content="Cancel" Grid.Row="4" Style="{DynamicResource NormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="16" ToolTip="Cancel" BorderThickness="2" Click="CancelBtn_Click" FontWeight="Bold" Width="100" Height="40" HorizontalAlignment="Right" Margin="0,0,40,20.444" VerticalAlignment="Bottom"/>
+		<Button x:Name="btnClose" Content="X" HorizontalAlignment="Right" Width="28" Style="{DynamicResource UpperButtonStyle}" BorderBrush="{DynamicResource CloseButtonBrush_Border}" Foreground="White" FontSize="12" Padding="0" VerticalContentAlignment="Center" ToolTip="Close" Background="{DynamicResource CloseButtonBrush_BG}" FontFamily="a_FuturaRoundDemi" Height="28" RenderTransformOrigin="0.571,0.286" VerticalAlignment="Center" Margin="0,0,12,0" Tag="Close"/>		
+	</Grid>
+</local:OpenGlWin>

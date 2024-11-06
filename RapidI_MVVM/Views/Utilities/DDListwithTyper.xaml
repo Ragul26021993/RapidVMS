@@ -1,0 +1,37 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Rapid.Utilities.MagList"
+	x:Name="MainGrid"
+	d:DesignWidth="100" d:DesignHeight="30">
+
+    <Popup x:Name="_dropDown" IsOpen="{Binding IsChecked, ElementName=btnTg}" StaysOpen="false" PopupAnimation="Slide"  AllowsTransparency="True">
+        <Border x:Name="DropDownBorder" Width="{Binding Width, ElementName=MainGrid, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" CornerRadius="0,0,6,6" Background="{DynamicResource PanelBackground}" BorderThickness="1" BorderBrush="{DynamicResource ContainerBorderBrush}" Margin="5,2,5,5" d:IsHidden="True">
+        	<Border.Effect>
+        		<DropShadowEffect Opacity="0.6"/>
+        	</Border.Effect>
+                <Grid x:Name="gLBHolder" Margin="0,4,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90*"/>
+                        <RowDefinition Height="0"/>
+                    </Grid.RowDefinitions>
+
+                    <ListBox x:Name="lstDropDownItems"  FontWeight="Bold" ItemContainerStyle="{DynamicResource DropDownListBoxItem}" Height="Auto" Foreground="{DynamicResource DropDownListForeColor}" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="13.333" FontFamily="Arial Rounded MT Bold"/>
+
+                    <Grid x:Name="gridMagTyper" Height="40" HorizontalAlignment="Stretch" Visibility="Hidden" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60*"/>
+                            <ColumnDefinition Width="40*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtManualMagValue" Grid.Column="0" HorizontalAlignment="Stretch" TextAlignment="Right" Margin="4"/>
+                        <Button x:Name="SetMag" Grid.Column="1" Margin="4" Content="OK" Style="{DynamicResource ScrollToolbar_NormalButton2}" Click="SetMag_Click"/>
+                    </Grid>
+                </Grid>
+        </Border>
+    </Popup>
+    <ToggleButton x:Name="btnTg"  Template="{DynamicResource DropDownButtonStyle}" Background="{DynamicResource HeaderButton_BG}" BorderBrush="{x:Null}" Foreground="{DynamicResource GlowBorder}" BorderThickness="0" Content="{Binding SelectedItem, ElementName=lstDropDownItems,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="Bold" Style="{DynamicResource TabSelector2}" />
+    
+</Grid>

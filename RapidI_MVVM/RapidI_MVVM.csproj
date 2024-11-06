@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F404F29-577D-42C9-B0CE-1BAE0821CED3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rapid</RootNamespace>
+    <AssemblyName>Rapid-I</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>12.0.41212.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\x86\Debug\Rapid-I.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Rapid-I.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Builds\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\Builds\x64\Release\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <WarningLevel>3</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="ErrHandlerApp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\ErrHandlerApp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Effects, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.Expression.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Prototyping.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.Expression.Prototyping.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Prototyping.SketchControls, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.Expression.Prototyping.SketchControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Release\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SDK.Expression.Blend, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.SDK.Expression.Blend.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="rrm, Version=3.0.0.81, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Builds\x64\Debug\rrm.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ClassLibrary\RotaryMeasurementType.cs" />
+    <Compile Include="ClassLibrary\TISEnum.cs" />
+    <Compile Include="ClassLibrary\XML_Exim.cs" />
+    <Compile Include="Views\MainView_Delphi.cs" />
+    <Compile Include="Views\MainView_Hobchecker.cs" />
+    <Compile Include="Views\MainView_Init.cs" />
+    <Compile Include="Views\Tab Entities\Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Converters\ContentToPathConverter.cs" />
+    <Compile Include="Views\AttachedProperties\NumberRangeRule.cs" />
+    <Compile Include="Views\BottomPanels\ActionStatusWin.xaml.cs">
+      <DependentUpon>ActionStatusWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AttachedProperties\AttachedButtonName.cs" />
+    <Compile Include="Views\BottomPanels\CNCPanel.xaml.cs">
+      <DependentUpon>CNCPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\FdControl.xaml.cs">
+      <DependentUpon>FdControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\FixedGraphics.xaml.cs">
+      <DependentUpon>FixedGraphics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\MeasurementStatusWin.xaml.cs">
+      <DependentUpon>MeasurementStatusWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\PCDPanel.xaml.cs">
+      <DependentUpon>PCDPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\SAOI.xaml.cs">
+      <DependentUpon>SAOI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\ShapeStatusWin.xaml.cs">
+      <DependentUpon>ShapeStatusWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\ThreadPanel.xaml.cs">
+      <DependentUpon>ThreadPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BottomPanels\VBlockHolder.xaml.cs">
+      <DependentUpon>VBlockHolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DG Item Classes\ActionEntities.cs" />
+    <Compile Include="Views\DG Item Classes\PartProgramEntities.cs" />
+    <Compile Include="Views\DG Item Classes\PPBuildStepEntities.cs" />
+    <Compile Include="Views\DG Item Classes\ShapeEntities.cs" />
+    <Compile Include="Views\FileHandling\ReadWriteText.cs" />
+    <Compile Include="Views\GlobalSettings.cs" />
+    <Compile Include="Views\Help Window\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help Window\RapidiHelpWin.xaml.cs">
+      <DependentUpon>RapidiHelpWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interface\ISaveWindowsParameters.cs" />
+    <Compile Include="Views\Lighting Related Classes\Arc.cs" />
+    <Compile Include="Views\Lighting Related Classes\LightingClass.cs" />
+    <Compile Include="Views\Lighting Related Classes\LightingGrid.cs" />
+    <Compile Include="Views\BottomPanels\LightingPanel.xaml.cs">
+      <DependentUpon>LightingPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Lighting Related Classes\TextOnPathBase.cs" />
+    <Compile Include="Views\Lighting Related Classes\TextOnPathVisuals.cs" />
+    <Compile Include="Views\Settings\DBReader.cs" />
+    <Compile Include="Views\Tab Entities\VideoPanel.xaml.cs">
+      <DependentUpon>VideoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ButtonStateChangedEventArgs.cs" />
+    <Compile Include="Views\Utilities\CaptureScreen.cs" />
+    <Compile Include="Views\Utilities\ContentMenuObjects.cs" />
+    <Compile Include="Views\Utilities\ContextMenu.cs" />
+    <Compile Include="Views\Utilities\CustomButton.xaml.cs" />
+    <Compile Include="Views\Utilities\DrillChecker.xaml.cs" />
+    <Compile Include="Views\Utilities\DropDownWithTyper.xaml.cs">
+      <DependentUpon>DropDownWithTyper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\FormsHostPanel.cs" />
+    <Compile Include="Views\Utilities\FormsHostScrollablePanel.cs" />
+    <Compile Include="Views\Utilities\FourAxisChangerButton.xaml.cs">
+      <DependentUpon>FourAxisChangerButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ImageController.xaml.cs">
+      <DependentUpon>ImageController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox10.xaml.cs">
+      <DependentUpon>InfoBox10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox11.xaml.cs">
+      <DependentUpon>InfoBox11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox9.xaml.cs">
+      <DependentUpon>InfoBox9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox8.xaml.cs">
+      <DependentUpon>InfoBox8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox7.xaml.cs">
+      <DependentUpon>InfoBox7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox6.xaml.cs">
+      <DependentUpon>InfoBox6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox5.xaml.cs">
+      <DependentUpon>InfoBox5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\LastMeasurementDG.xaml.cs">
+      <DependentUpon>LastMeasurementDG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\RapidDropDownControl.xaml.cs">
+      <DependentUpon>RapidDropDownControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\RapidGrid.cs" />
+    <Compile Include="Views\Windows\AutoProbePathPropWin.xaml.cs">
+      <DependentUpon>AutoProbePathPropWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AxialRunOutWin.xaml.cs">
+      <DependentUpon>AxialRunOutWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\BestFitSurfacePropertiesWin.xaml.cs">
+      <DependentUpon>BestFitSurfacePropertiesWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CamProfileMeasurementWin.xaml.cs">
+      <DependentUpon>CamProfileMeasurementWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CamProfileShapeandMeasurementWin.xaml.cs">
+      <DependentUpon>CamProfileShapeandMeasurementWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CamProfileShapeWin.xaml.cs">
+      <DependentUpon>CamProfileShapeWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CamPropertiesWindow.xaml.cs">
+      <DependentUpon>CamPropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CalibInfoWin.xaml.cs">
+      <DependentUpon>CalibInfoWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CircularInterpolationPartProgWin.xaml.cs">
+      <DependentUpon>CircularInterpolationPartProgWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CircularInterpolationWin.xaml.cs">
+      <DependentUpon>CircularInterpolationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AutoProfileScanAndDxfDeviationWin.xaml.cs">
+      <DependentUpon>AutoProfileScanAndDxfDeviationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CircularRepeatedMeasurementWin.xaml.cs">
+      <DependentUpon>CircularRepeatedMeasurementWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CloudpointComparison.xaml.cs">
+      <DependentUpon>CloudpointComparison.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CloudPointMeasurement.xaml.cs">
+      <DependentUpon>CloudPointMeasurement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AutoFocusScanWin.xaml.cs">
+      <DependentUpon>AutoFocusScanWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ContourTracerCalibWin.xaml.cs">
+      <DependentUpon>ContourTracerCalibWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\Cross-HairAligner.xaml.cs">
+      <DependentUpon>Cross-HairAligner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CylinderRotationCalcWin.xaml.cs">
+      <DependentUpon>CylinderRotationCalcWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\DelfiRotaryContainerWindow.xaml.cs">
+      <DependentUpon>DelfiRotaryContainerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\GenericProb.xaml.cs">
+      <DependentUpon>GenericProb.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Windows\ImageDelayCaliberation.xaml.cs">
+      <DependentUpon>ImageDelayCaliberation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\OnlineSystemController.xaml.cs">
+      <DependentUpon>OnlineSystemController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ParallelRunoutWin.xaml.cs">
+      <DependentUpon>ParallelRunoutWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PointToCloudPointDeviation.xaml.cs">
+      <DependentUpon>PointToCloudPointDeviation.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Windows\PPLightControl.xaml.cs">
+      <DependentUpon>PPLightControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ProfileScanWidthWin.xaml.cs">
+      <DependentUpon>ProfileScanWidthWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ImageSuperImpose.xaml.cs">
+      <DependentUpon>ImageSuperImpose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ProfileScanningWin.xaml.cs">
+      <DependentUpon>ProfileScanningWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FilterLineTypeSelectionWin.xaml.cs">
+      <DependentUpon>FilterLineTypeSelectionWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ImageCaptureGridWin.xaml.cs">
+      <DependentUpon>ImageCaptureGridWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FormsHostWin.cs" />
+    <Compile Include="Views\Windows\LinearInterpolationWin.xaml.cs">
+      <DependentUpon>LinearInterpolationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PathInterpolationWin.xaml.cs">
+      <DependentUpon>PathInterpolationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PPImageViewer.xaml.cs">
+      <DependentUpon>PPImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\RepeatShapeAndMeasurementWin.xaml.cs">
+      <DependentUpon>RepeatShapeAndMeasurementWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\StarProbeAutoCalibWin.xaml.cs">
+      <DependentUpon>StarProbeAutoCalibWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FocusCalibrationWin.xaml.cs">
+      <DependentUpon>FocusCalibrationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ProbeStylusTypeSelectionWin.xaml.cs">
+      <DependentUpon>ProbeStylusTypeSelectionWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PPNudgeRotateWin.xaml.cs">
+      <DependentUpon>PPNudgeRotateWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\NudgeRotateWin.xaml.cs">
+      <DependentUpon>NudgeRotateWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FGandCldPtSizeWin.xaml.cs">
+      <DependentUpon>FGandCldPtSizeWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SurfaceFrameGrabWin.xaml.cs">
+      <DependentUpon>SurfaceFrameGrabWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\TIS_Control.xaml.cs">
+      <DependentUpon>TIS_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\TouchVisionCaliberationWin.xaml.cs">
+      <DependentUpon>TouchVisionCaliberationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\VBlockCalibrationWin.xaml.cs">
+      <DependentUpon>VBlockCalibrationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CylinderScanningWithProbeWin.xaml.cs">
+      <DependentUpon>CylinderScanningWithProbeWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\DriveSelectionWin.xaml.cs">
+      <DependentUpon>DriveSelectionWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FormsOpenGlWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Windows\LineArcPropertiesWin.xaml.cs">
+      <DependentUpon>LineArcPropertiesWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PPreviewWin.xaml.cs">
+      <DependentUpon>PPreviewWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ShapeInfoWin.xaml.cs">
+      <DependentUpon>ShapeInfoWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\DownTabWin.xaml.cs">
+      <DependentUpon>DownTabWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\LoginWin.xaml.cs">
+      <DependentUpon>LoginWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\LowerPanelWindow.xaml.cs">
+      <DependentUpon>LowerPanelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tab Entities\MyPartProgram.xaml.cs">
+      <DependentUpon>MyPartProgram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PictureViewer.xaml.cs">
+      <DependentUpon>PictureViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PPBuildWin.xaml.cs">
+      <DependentUpon>PPBuildWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\TransparencySettingWin.xaml.cs">
+      <DependentUpon>TransparencySettingWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ShapeRenameWin.xaml.cs">
+      <DependentUpon>ShapeRenameWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SurfaceFGEntitySelectWin.xaml.cs">
+      <DependentUpon>SurfaceFGEntitySelectWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ThreadNumWin.xaml.cs">
+      <DependentUpon>ThreadNumWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ToleranceEnteringWin.xaml.cs">
+      <DependentUpon>ToleranceEnteringWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\AboveVideoControl.xaml.cs">
+      <DependentUpon>AboveVideoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AttachedProperties\AttachedCorner.cs" />
+    <Compile Include="Views\AttachedProperties\AttachedDROProperties.cs" />
+    <Compile Include="Views\AttachedProperties\AttachedGrpTitle.cs" />
+    <Compile Include="Views\AttachedProperties\AttachedTextBoxBehaviour.cs" />
+    <Compile Include="Views\Windows\CalibrationWin.xaml.cs">
+      <DependentUpon>CalibrationWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DG Item Classes\MeasurementEntities.cs" />
+    <Compile Include="Views\Utilities\InfoBox4.xaml.cs">
+      <DependentUpon>InfoBox4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox3.xaml.cs">
+      <DependentUpon>InfoBox3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FontSizeWin.xaml.cs">
+      <DependentUpon>FontSizeWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\DropDownList.xaml.cs">
+      <DependentUpon>DropDownList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ExtendedSnapDropDown.xaml.cs">
+      <DependentUpon>ExtendedSnapDropDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FadeableWin.cs" />
+    <Compile Include="Views\Utilities\FocusBoxGrid.cs" />
+    <Compile Include="Views\Utilities\GraphicalCNCControl.xaml.cs">
+      <DependentUpon>GraphicalCNCControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox.xaml.cs">
+      <DependentUpon>InfoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\InfoBox2.xaml.cs">
+      <DependentUpon>InfoBox2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\MessageWin.xaml.cs">
+      <DependentUpon>MessageWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\NumericUpDown.xaml.cs">
+      <DependentUpon>NumericUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\OpenGlWin.cs" />
+    <Compile Include="Views\Utilities\RAxisRecordPanel.xaml.cs">
+      <DependentUpon>RAxisRecordPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ScrollablePanel.cs" />
+    <Compile Include="Views\Utilities\ScrollableShapeList.xaml.cs">
+      <DependentUpon>ScrollableShapeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ScrToolbar.xaml.cs">
+      <DependentUpon>ScrToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ToleranceControl.xaml.cs">
+      <DependentUpon>ToleranceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ToolbarWin.xaml.cs">
+      <DependentUpon>ToolbarWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\UCSControl.xaml.cs">
+      <DependentUpon>UCSControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsWin.xaml.cs">
+      <DependentUpon>SettingsWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\DrawDD.xaml.cs">
+      <DependentUpon>DrawDD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\DropDown.xaml.cs">
+      <DependentUpon>DropDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\BaseWindow.cs" />
+    <Compile Include="Views\Windows\FixtureCalibWindow.xaml.cs">
+      <DependentUpon>FixtureCalibWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\XYCorrection.xaml.cs">
+      <DependentUpon>XYCorrection.xaml</DependentUpon>
+    </Compile>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <Resource Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Resource>
+    <Resource Include="Resources\RIResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Views\Tab Entities\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemeRed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\ActionStatusWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\CNCPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\FdControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\FixedGraphics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\MeasurementStatusWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\LightingPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\PCDPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\SAOI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BottomPanels\ShapeStatusWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\ThreadPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BottomPanels\VBlockHolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help Window\HelpWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Help Window\RapidiHelpWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\CommandReference.cs" />
+    <Compile Include="Views\AttachedProperties\AttachedImage.cs" />
+    <Compile Include="Views\AttachedProperties\AttachedShortcut.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <AppDesigner Include="Properties\" />
+    <Page Include="Views\Tab Entities\VideoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\CustomButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\DrillChecker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\DropDownWithTyper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\FourAxisChangerButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\ImageController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox9.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox8.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox7.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\LastMeasurementDG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\RapidDropDownControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\AutoProbePathPropWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\AxialRunOutWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\BestFitSurfacePropertiesWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CamProfileMeasurementWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CamProfileShapeandMeasurementWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CamProfileShapeWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CamPropertiesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CalibInfoWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CircularInterpolationPartProgWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CircularInterpolationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\AutoProfileScanAndDxfDeviationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CircularRepeatedMeasurementWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CloudpointComparison.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CloudPointMeasurement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\AutoFocusScanWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ContourTracerCalibWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\Cross-HairAligner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CylinderRotationCalcWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\DelfiRotaryContainerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\GenericProb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ImageDelayCaliberation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\OnlineSystemController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ParallelRunoutWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\PointToCloudPointDeviation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\PPLightControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ProfileScanWidthWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ImageSuperImpose.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ProfileScanningWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\FilterLineTypeSelectionWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ImageCaptureGridWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\LinearInterpolationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\PathInterpolationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\PPImageViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\RepeatShapeAndMeasurementWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\StarProbeAutoCalibWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\FocusCalibrationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ProbeStylusTypeSelectionWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\PPNudgeRotateWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\NudgeRotateWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\FGandCldPtSizeWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\SurfaceFrameGrabWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\TIS_Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\TouchVisionCaliberationWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\VBlockCalibrationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CylinderScanningWithProbeWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\DriveSelectionWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\LineArcPropertiesWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\PPreviewWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ShapeInfoWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\DownTabWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\LoginWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\LowerPanelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tab Entities\MyPartProgram.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\PictureViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\PPBuildWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\TransparencySettingWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ShapeRenameWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\SurfaceFGEntitySelectWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ThreadNumWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ToleranceEnteringWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\AboveVideoControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\CalibrationWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\FontSizeWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\DropDownList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\ExtendedSnapDropDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\GraphicalCNCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\InfoBox2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\MessageWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\NumericUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\RAxisRecordPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\ScrollableShapeList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\ScrToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\ToleranceControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\ToolbarWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Utilities\UCSControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Rapid_I_SaphireBlueTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\SettingsWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\DrawDD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utilities\DropDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\FixtureCalibWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\XYCorrection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BlendEmbeddedFont Include="Fonts\AGENCYB.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>False</All>
+      <AutoFill>True</AutoFill>
+      <Characters>
+      </Characters>
+      <Uppercase>False</Uppercase>
+      <Lowercase>False</Lowercase>
+      <Numbers>False</Numbers>
+      <Punctuation>False</Punctuation>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\AGENCYR.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>False</All>
+      <AutoFill>True</AutoFill>
+      <Characters>
+      </Characters>
+      <Uppercase>False</Uppercase>
+      <Lowercase>False</Lowercase>
+      <Numbers>False</Numbers>
+      <Punctuation>False</Punctuation>
+    </BlendEmbeddedFont>
+    <Resource Include="Resources\Images\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="RWrapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rapid-I.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Rapid-I5_Header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Rapid-I.ico" />
+    <Resource Include="Views\Tile_BG_Rapid-IUI5-5-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cursors\cross24.cur" />
+    <Resource Include="Resources\Cursors\FGRect1.cur" />
+    <Resource Include="Resources\Cursors\FG_Arc.cur" />
+    <Resource Include="Resources\Cursors\FG_Circle.cur" />
+    <Resource Include="Resources\Cursors\FG_Rect2.ico" />
+    <Resource Include="Resources\Cursors\Hand-Grab-bed.ico" />
+    <Resource Include="Resources\Cursors\Hand-Grab.ico" />
+    <Resource Include="Resources\Cursors\tran.cur" />
+    <Resource Include="Resources\Cursors\Trimming.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Rapid-I_5_Restarter.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalibrationModule\CalibrationModule.vbproj">
+      <Project>{366f8b15-da20-496e-9af4-cdc290743ed4}</Project>
+      <Name>CalibrationModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelModule\ExcelModule.vbproj">
+      <Project>{8324d2ea-5c2e-46d4-88e2-c3efd4f97556}</Project>
+      <Name>ExcelModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LicensingModule\LicensingModule.vbproj">
+      <Project>{e47f8f53-2607-429b-810a-7bb1a97de079}</Project>
+      <Name>LicensingModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWrapper\RapidWrapper.vcxproj">
+      <Project>{e52bcfa5-46c1-4a79-b67d-a887f7293679}</Project>
+      <Name>RapidWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RCam3\RCam3.csproj">
+      <Project>{12cb292d-5d2d-46eb-bcb5-1e57dcff39c9}</Project>
+      <Name>RCam3</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!--<Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />  -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

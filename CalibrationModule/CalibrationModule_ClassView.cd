@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CalibrationModule.CreateControl">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAACAAAAIAAA=</HashCode>
+      <FileName>Friend Classes\Create Control Classes\CreateControl.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationModule.ControlProperties">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BBoAIFAAAAAQCAEAjAgIBAkAAAQFgAAAYBIAAAAIBAA=</HashCode>
+      <FileName>Friend Classes\Database Classes\ControlProp.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationModule.DB">
+    <Position X="0.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQBACAAEAEACAAAAACAiAIgAAAAIAKEAAAAAAAA=</HashCode>
+      <FileName>Friend Classes\Database Classes\DB.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.588" />
+  </Class>
+  <Class Name="CalibrationModule.Get_List_of_Controls">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgAAAABAAAAAAAAABAAEAAAAAAAAAAAAAAAAABCAAQA=</HashCode>
+      <FileName>Public Class\Get_List_of_Controls.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CalibrationModule.My.MySettings">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CalibrationModule.IDatabaseInterac">
+    <Position X="4" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQBAAAAEAEAAAAAAACACAAAAAAAAAIEAAAAAAAA=</HashCode>
+      <FileName>Friend Classes\Database Classes\IDatabaseInterac.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Module Name="CalibrationModule.ConstantValues">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="CalibrationModule.ConstantValues.UI_Main">
+        <TypeIdentifier>
+          <NewMemberFileName>Friend Classes\Module for Contants Values\ConstantValues.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CalibrationModule.ConstantValues.UI_Child">
+        <TypeIdentifier>
+          <NewMemberFileName>Friend Classes\Module for Contants Values\ConstantValues.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CalibrationModule.ConstantValues.UI_Predefined">
+        <TypeIdentifier>
+          <NewMemberFileName>Friend Classes\Module for Contants Values\ConstantValues.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CalibrationModule.ConstantValues.Set_Main">
+        <TypeIdentifier>
+          <NewMemberFileName>Friend Classes\Module for Contants Values\ConstantValues.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CalibrationModule.ConstantValues.Set_Child">
+        <TypeIdentifier>
+          <NewMemberFileName>Friend Classes\Module for Contants Values\ConstantValues.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CalibrationModule.ConstantValues.Set_Predefined">
+        <TypeIdentifier>
+          <NewMemberFileName>Friend Classes\Module for Contants Values\ConstantValues.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAQAACAAAAAAAAA=</HashCode>
+      <FileName>Friend Classes\Module for Contants Values\ConstantValues.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="CalibrationModule.My.Resources.Resources">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="CalibrationModule.My.MySettingsProperty">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

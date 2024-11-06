@@ -1,0 +1,33 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Rapid.Utilities" mc:Ignorable="d"
+	x:Class="Rapid.Windows.CalibInfoWin"
+	x:Name="Window"
+	Title="CalibInfoWin"
+	Width="400" SizeToContent="Height" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="200" WindowStartupLocation="CenterScreen" Height="200">
+	<Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">
+		<Grid x:Name="LayoutRoot">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition  Height="40"/>
+			</Grid.RowDefinitions>
+			<Button x:Name="CancelBtn" Content="Cancel" Grid.Row="1" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="CancelBtn_Click" Template="{DynamicResource Shiny_SpButton2}" Width="100" Height="25" HorizontalAlignment="Left" Margin="50,0,0,0" />
+			<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" x:Name="txtHeading" Text="Please enter the details below:" FontWeight="Bold" FontSize="10.667" Height="15.5" VerticalAlignment="Top" />
+			<Button x:Name="OKBtn" Content="OK" Grid.Row="1" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="OKBtn_Click" Template="{DynamicResource Shiny_SpButton2}" Width="100" Height="25" HorizontalAlignment="Right" d:LayoutOverrides="Width" Margin="0,0,50,0" />
+			<TextBlock HorizontalAlignment="Left" Margin="30,37,0,0" TextWrapping="Wrap" Text="Machine Number" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="35,67,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="15,97,0,0" TextWrapping="Wrap" Text="Verification Done By" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="97,127,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top"/>
+			<TextBox x:Name="McNumTxtBx" Height="20" Margin="130,35,20,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+			<TextBox x:Name="CustNameTxtBx" Margin="130,65,20,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top"/>
+			<TextBox x:Name="VerificationByTxtBx" Height="20" Margin="130,95,20,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+			<TextBox x:Name="DateTxtBx" Height="19.333" Margin="130,125,20,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+		</Grid>
+	</Border>
+</Window>

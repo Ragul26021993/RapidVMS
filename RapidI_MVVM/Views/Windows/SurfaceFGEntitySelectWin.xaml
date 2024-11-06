@@ -1,0 +1,29 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	xmlns:local="clr-namespace:Rapid.Utilities"
+	x:Class="Rapid.Windows.SurfaceFGEntityWin"
+	x:Name="Window"
+	Title="SurfaceFGEntityWin"
+	Width="340" SizeToContent="Height" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="115.333" WindowStartupLocation="Manual">
+	<Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">
+		<Grid x:Name="LayoutRoot">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+                <RowDefinition Height="41.333"/>
+				<RowDefinition Height="40"/>
+			</Grid.RowDefinitions>
+			<Button x:Name="btnOK" Content="OK" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Grid.Column="1" Template="{DynamicResource Shiny_SpButton2}" />
+			<Button x:Name="btnCancel" Content="Cancel" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnCancel_Click" Template="{DynamicResource Shiny_SpButton2}" />
+			<Button x:Name="SaveFGTypeBtn" Content="Save Type" Grid.Row="2" Grid.Column="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="SaveFGTypeBtn_Click" Template="{DynamicResource Shiny_SpButton2}" />
+			<local:ScrToolbar x:Name="EntityList" Margin="5,0" Height="40" BorderThickness="0" Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Bottom"/>
+            <TextBlock Grid.ColumnSpan="3" Height="18" HorizontalAlignment="Left" Margin="5" x:Name="txtHeading" Text="Please select the required entity :" VerticalAlignment="Center" FontWeight="Bold" FontSize="10.667" />
+        </Grid>
+	</Border>
+</Window>

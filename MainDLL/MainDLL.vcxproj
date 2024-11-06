@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6689086C-2B14-4ED4-A05B-42A3C6C2E18C}</ProjectGuid>
+    <RootNamespace>MainDLL</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\Builds\Debug</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\Builds\x64\Debug</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\Builds\Release</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\Builds\x64\Release</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\RapidMath2D;..\GridModule;..\EdgeDetectionClassSingleChannel;..\RapidMath3D;..\RapidGraphics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAINDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>RapidMath2D.lib;RapidMath3D.lib;RapidGraphics.lib;GridModule.lib;EdgeDetectionClassSingleChannel.lib;RapidCam.lib;RBF.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\Rapid-i\Sources\Build3600\lib;E:\Rapid-i\Sources\Build3600\Builds\Debug;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Graphics2D;..\RapidMath2D;..\Bestfit;..\HardwareCommunication;..\GraphicsDLL;..\GridModule;..\EdgeDetectionClassSingleChannel;..\RapidMath3D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAINDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;RapidGraphics.lib;RapidCam.lib;RBF.lib;RapidMath2D.lib;RapidMath3D.lib;GridModule.lib;EdgeDetectionClassSingleChannel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Builds\$(Platform)\$(Configuration)\;..\..\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\Graphics2D;..\RapidMath2D;..\GraphicsDLL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32;_NDEBUG;_WINDOWS;_USRDLL;MAINDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>RapidMath2D.lib;RapidMath3D.lib;RapidGraphics.lib;GridModule.lib;EdgeDetectionClassSingleChannel.lib;RapidCam.lib;RBF.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\Graphics2D;..\RapidMath2D;..\RapidGraphics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32;_NDEBUG;_WINDOWS;_USRDLL;MAINDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <OmitFramePointers>false</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;RapidGraphics.lib;RapidCam.lib;RBF.lib;RapidMath2D.lib;RapidMath3D.lib;GridModule.lib;EdgeDetectionClassSingleChannel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Builds\$(Platform)\$(Configuration)\;..\..\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Actions\AddDimAction.cpp" />
+    <ClCompile Include="Actions\AddImageAction.cpp" />
+    <ClCompile Include="Actions\AddPointAction.cpp" />
+    <ClCompile Include="Actions\AddProbePathAction.cpp" />
+    <ClCompile Include="Actions\AddThreadMeasureAction.cpp" />
+    <ClCompile Include="Actions\AddThreadPointAction.cpp" />
+    <ClCompile Include="Actions\AreaShapeAction.cpp" />
+    <ClCompile Include="Actions\AutoAlignAction.cpp" />
+    <ClCompile Include="Actions\Cad1Pt1LineAction.cpp" />
+    <ClCompile Include="Actions\Cad1PtAlignAction.cpp" />
+    <ClCompile Include="Actions\Cad2LineAction.cpp" />
+    <ClCompile Include="Actions\Cad2PtAlignAction.cpp" />
+    <ClCompile Include="Actions\ChangeUCSAction.cpp" />
+    <ClCompile Include="Actions\CircularInterPolationAction.cpp" />
+    <ClCompile Include="Actions\CloudComparisionAction.cpp" />
+    <ClCompile Include="Actions\CopyShapesAction.cpp" />
+    <ClCompile Include="Actions\DeviationAction.cpp" />
+    <ClCompile Include="Actions\DXF_DeviationAction.cpp" />
+    <ClCompile Include="Actions\EditCad1Pt1LineAction.cpp" />
+    <ClCompile Include="Actions\EditCad1PtAction.cpp" />
+    <ClCompile Include="Actions\EditCad2LineAction.cpp" />
+    <ClCompile Include="Actions\EditCad2PtAction.cpp" />
+    <ClCompile Include="Actions\EditCadAction.cpp" />
+    <ClCompile Include="Actions\LineArcAction.cpp" />
+    <ClCompile Include="Actions\LinearInterPolationAction.cpp" />
+    <ClCompile Include="Actions\LocalisedCorrectionAction.cpp" />
+    <ClCompile Include="Actions\MergeShapesAction.cpp" />
+    <ClCompile Include="Actions\PerimeterAction.cpp" />
+    <ClCompile Include="Actions\ProfileScanAction.cpp" />
+    <ClCompile Include="Actions\ReflectionAction.cpp" />
+    <ClCompile Include="Actions\RotationAction.cpp" />
+    <ClCompile Include="Actions\TranslationAction.cpp" />
+    <ClCompile Include="Actions\TrimShapeAction.cpp" />
+    <ClCompile Include="Actions\AddShapePointsAction.cpp" />
+    <ClCompile Include="Engine\FocusFunctions.cpp" />
+    <ClCompile Include="Engine\ImageDelayCalibration.cpp" />
+    <ClCompile Include="Engine\RepeatShapeMeasure.cpp" />
+    <ClCompile Include="Handlers\CircleInvoluteHandler.cpp" />
+    <ClCompile Include="Handlers\SphereFrameGrabHandler.cpp" />
+    <ClCompile Include="Handlers\TwoPointAlignmentHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PlanePerpendicular2LineHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\ProjectedCircleHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\ImageAnalysisFrameGrabeHander.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\RotationScanHandler.cpp" />
+    <ClCompile Include="Handlers_Measurement\CloudPointMeasurementsHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Arc_ArcMeasureWidth.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Arc_PointMeasureWidth.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Line_ArcMeasureWidth.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Line_LineWidthMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_PointAngleMeasurementHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Point_LineWidthMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_RunoutMeasurementHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\CopyShape2PtAlign.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Program1Line1PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Program1PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Program2PtHandler.cpp" />
+    <ClCompile Include="Measurement\DimArc2ArcWidthMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimLine2ArcWidthMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimPoint2ArcWidthMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimProfile.cpp" />
+    <ClCompile Include="Measurement\DimRunOutMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimTruePosition3D.cpp" />
+    <ClCompile Include="Measurement\DimTruePosition3DPoint.cpp" />
+    <ClCompile Include="Measurement\DimTruePositionPoint.cpp" />
+    <ClCompile Include="Shapes\AutoContourLine.cpp" />
+    <ClCompile Include="Shapes\AutoScanSurface.cpp" />
+    <ClCompile Include="Shapes\CamProfile.cpp" />
+    <ClCompile Include="Shapes\CircleInvolute.cpp" />
+    <ClCompile Include="DXF\DXFExpose.cpp" />
+    <ClCompile Include="DXF\IGESReader.cpp" />
+    <ClCompile Include="DXF\IGESWriter.cpp" />
+    <ClCompile Include="DXF\StepReader.cpp" />
+    <ClCompile Include="DXF\STLReader.cpp" />
+    <ClCompile Include="DXF\STLWriter.cpp" />
+    <ClCompile Include="Engine\CalibrationCalculation.cpp" />
+    <ClCompile Include="Engine\IsectPtCollection.cpp" />
+    <ClCompile Include="Engine\OverlapImgWin.cpp" />
+    <ClCompile Include="Engine\PartProgramFunctions.cpp" />
+    <ClCompile Include="Engine\PointCollection.cpp" />
+    <ClCompile Include="Engine\SnapPointCollection.cpp" />
+    <ClCompile Include="Engine\SuperImposeImage.cpp" />
+    <ClCompile Include="Engine\ThreadCalcFunctions.cpp" />
+    <ClCompile Include="Engine\TriangulationCalc.cpp" />
+    <ClCompile Include="FixedTool\CalibrationText.cpp" />
+    <ClCompile Include="Handlers\AutoContourScanHandler.cpp" />
+    <ClCompile Include="Handlers\AutoFocusScanHandler.cpp" />
+    <ClCompile Include="Handlers\CloudComparisionHandler.cpp" />
+    <ClCompile Include="Handlers\CloudPoints3DStitching.cpp" />
+    <ClCompile Include="Handlers\DeviationHandler.cpp" />
+    <ClCompile Include="Handlers\DummyHandler.cpp" />
+    <ClCompile Include="Handlers\DXFDeviationHandler.cpp" />
+    <ClCompile Include="Handlers\GroupShapeHandler.cpp" />
+    <ClCompile Include="Handlers\IntersectionShapeHandler.cpp" />
+    <ClCompile Include="Handlers\LineArcFGHandler.cpp" />
+    <ClCompile Include="Handlers\PointFromShapeHandler.cpp" />
+    <ClCompile Include="Handlers\ProbeHandler.cpp" />
+    <ClCompile Include="Handlers\ProfileScanHandler.cpp" />
+    <ClCompile Include="Handlers\ReflectionHandler.cpp" />
+    <ClCompile Include="Handlers\RotateShapeHandler.cpp" />
+    <ClCompile Include="Handlers\SplineHandler.cpp" />
+    <ClCompile Include="Handlers\TranslateShapeHandler.cpp" />
+    <ClCompile Include="Handlers\UCSPlaneHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\ArcArcHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\ArcTanToLineHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleAtConeSphereIntersection.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleInsideATraingle.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineArcLineHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineParallelToLine3D.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LinePerpendicular2LineOnPlane.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LinePerpendicularToLine3D.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\NearestPointHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\MidPointHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PCDHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PCDHandler3D.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PlaneParallel2Plane.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PlanePerpendicular2Plane.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PlaneThrough2Lines3D.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PointOnCircle.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\PointOnLine.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\ProjectionHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\ContourScan_FG.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FlexibleCrossHairHandler.cpp" />
+    <ClCompile Include="Actions\AddShapeAction.cpp" />
+    <ClCompile Include="Actions\AddUCSAction.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineAngleBisector.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineOnePointAngle.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineOnePointOffsetDist.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineParallel2Line.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineParallelTangent.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LinePerpendicular2Line.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LinePerpendicularTangent.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineTangent2Circle.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineTangentOn2Circles.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineTangentThruPoint.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FocusDepthMultiBoxHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FocusOnRightClickHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabAngularRect.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabArc.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabCircle.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabEdgeMouseClick.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabFixedRectangle.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabIdAndOd.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\FrameGrabRectangle.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\LiveScanModeHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\ScanModeHandler.cpp" />
+    <ClCompile Include="Handlers_FrameGrab\SelectPointHandler.cpp" />
+    <ClCompile Include="Handlers_Measurement\ThreadLineArcHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_AngleMeasureWithYAxis.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_AutoGrooveMeasurementHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Chamfer_ArcMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_Chamfer_LineMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_GrooveMeasurement.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_LineArcFGHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_SplineMeasurementHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\AutoAlignHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad1LineHandler3D.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad1Pt1LineHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad1Pt1LineHandler3D.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad1PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad2LineHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad2PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\Cad3PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\CadAlignHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_DiameterMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_AngleMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_AngleMeasureWithXAxis.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleTangent2Circle.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleTangent2LineCircle.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleTangent2TwoCircle1.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleTangent2TwoCircle2.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\CircleTangent2TwoLine.cpp" />
+    <ClCompile Include="Handlers_Measurement\DMMHandler.cpp" />
+    <ClCompile Include="Handlers_Measurement\DXFAreaHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\FilletHandler.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\LineParallelTangent2Circle.cpp" />
+    <ClCompile Include="Handlers_Measurement\PCDMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_RadiusMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_Measurement\RotaryDimensionHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\EditCad1Pt1LineHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\EditCad1PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\EditCad2LineHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\EditCad2PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\PP1Pt1LineHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\PP1PtHandler.cpp" />
+    <ClCompile Include="Hanlders_CadAlignment\PP2PtHandler.cpp" />
+    <ClCompile Include="Measurement\DimAngle3D.cpp" />
+    <ClCompile Include="Measurement\DimAngularity.cpp" />
+    <ClCompile Include="Measurement\DimArcAngle.cpp" />
+    <ClCompile Include="Measurement\DimAreaMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimAxisLength.cpp" />
+    <ClCompile Include="Measurement\DimChildMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimCircle3DtoCircle3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimCircle3DToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimCircleDeviationMeasure.cpp" />
+    <ClCompile Include="Measurement\DimCircleToCircleDistance.cpp" />
+    <ClCompile Include="Measurement\DimCircleToLineDistance.cpp" />
+    <ClCompile Include="Measurement\DimCircularity.cpp" />
+    <ClCompile Include="Measurement\DimCloudPointDepth.cpp" />
+    <ClCompile Include="Measurement\DimConcentricity.cpp" />
+    <ClCompile Include="Measurement\DimConeAngularity.cpp" />
+    <ClCompile Include="Measurement\DimConeToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimConeToConics3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimCylinderAngularity.cpp" />
+    <ClCompile Include="Measurement\DimCylinderToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimCylinderToConics3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimCylinderToCylinderDistance.cpp" />
+    <ClCompile Include="Measurement\DimCylinderToSphereDistance.cpp" />
+    <ClCompile Include="Measurement\DimCylindricity.cpp" />
+    <ClCompile Include="Measurement\DimDepth.cpp" />
+    <ClCompile Include="Measurement\DimDiameter2D.cpp" />
+    <ClCompile Include="Measurement\DimDiameter3D.cpp" />
+    <ClCompile Include="Measurement\DimDigitalMicrometer.cpp" />
+    <ClCompile Include="Measurement\DimFlatness.cpp" />
+    <ClCompile Include="Measurement\DimGrooveMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimIntersectionShapeToPlaneDistance.cpp" />
+    <ClCompile Include="Measurement\DimLine3D.cpp" />
+    <ClCompile Include="Measurement\DimLine3DAngularity.cpp" />
+    <ClCompile Include="Measurement\DimLineToCircle3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimLineToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimLineToConics3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimLineToCylinderDistance.cpp" />
+    <ClCompile Include="Measurement\DimLineToLineDistance3D.cpp" />
+    <ClCompile Include="Measurement\DimLineToPlaneDistance.cpp" />
+    <ClCompile Include="Measurement\DimLineToSphereDistance.cpp" />
+    <ClCompile Include="Measurement\DimOrdinate.cpp" />
+    <ClCompile Include="Measurement\DimPCDAngle.cpp" />
+    <ClCompile Include="Measurement\DimPCDOffset.cpp" />
+    <ClCompile Include="Measurement\DimPerimeter_Diameter.cpp" />
+    <ClCompile Include="Measurement\DimPlaneAngularity.cpp" />
+    <ClCompile Include="Measurement\DimPlaneToCircle3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimPlaneToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimPlaneToConics3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimPlaneToCylinderDistance.cpp" />
+    <ClCompile Include="Measurement\DimPlaneToPlaneDistance.cpp" />
+    <ClCompile Include="Measurement\DimPlaneToSphereDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToCircle3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToConics3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToCylinderDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToLineDistance3D.cpp" />
+    <ClCompile Include="Measurement\DimPointToPlaneDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToPointDistance3D.cpp" />
+    <ClCompile Include="Measurement\DimPointCoordinate.cpp" />
+    <ClCompile Include="Measurement\DimPointToCircleDistance.cpp" />
+    <ClCompile Include="Measurement\DimPointToPointDistLAngle.cpp" />
+    <ClCompile Include="Measurement\DimPointToSphereDistance.cpp" />
+    <ClCompile Include="Measurement\DimRadius2D.cpp" />
+    <ClCompile Include="Measurement\DimRadius3D.cpp" />
+    <ClCompile Include="Handlers\ArcHandler.cpp" />
+    <ClCompile Include="Engine\BaseItem.cpp" />
+    <ClCompile Include="Measurement\DimRotaryAngleMeasure.cpp" />
+    <ClCompile Include="Measurement\DimSphereToCircle3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimSphereToConeDistance.cpp" />
+    <ClCompile Include="Measurement\DimSphereToConics3DDistance.cpp" />
+    <ClCompile Include="Measurement\DimSphereToSphereDistance.cpp" />
+    <ClCompile Include="Measurement\DimSphericity.cpp" />
+    <ClCompile Include="Measurement\DimSplineMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimSurfaceRoughnessMeasurement.cpp" />
+    <ClCompile Include="Measurement\DimTotalLength.cpp" />
+    <ClCompile Include="Measurement\DimTruePosition.cpp" />
+    <ClCompile Include="Engine\RepeatAutoMeasurement.cpp" />
+    <ClCompile Include="Shapes\AreaShape.cpp" />
+    <ClCompile Include="Shapes\Circle.cpp" />
+    <ClCompile Include="Handlers\CircleHandlers.cpp" />
+    <ClCompile Include="Shapes\CloudPoints.cpp" />
+    <ClCompile Include="Shapes\Cone.cpp" />
+    <ClCompile Include="Shapes\Conics3D.cpp" />
+    <ClCompile Include="Shapes\Cylinder.cpp" />
+    <ClCompile Include="Handlers\DefaultHandler.cpp" />
+    <ClCompile Include="Actions\DeleteMeasureAction.cpp" />
+    <ClCompile Include="Actions\DeleteShapesAction.cpp" />
+    <ClCompile Include="Actions\DeleteUCSAction.cpp" />
+    <ClCompile Include="Measurement\DimLineToLineDistance.cpp" />
+    <ClCompile Include="Measurement\DimBase.cpp" />
+    <ClCompile Include="Measurement\DimPointToLineDistance.cpp" />
+    <ClCompile Include="Handlers_Measurement\DimensionHandler.cpp" />
+    <ClCompile Include="Measurement\DimLine.cpp" />
+    <ClCompile Include="Measurement\DimPointToPointDistance.cpp" />
+    <ClCompile Include="Measurement\DimThread.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Shapes\DepthShape.cpp" />
+    <ClCompile Include="Shapes\DotsCount.cpp" />
+    <ClCompile Include="Shapes\DummyShape.cpp" />
+    <ClCompile Include="DXF\DXFCollection.cpp" />
+    <ClCompile Include="DXF\DXFReader.cpp" />
+    <ClCompile Include="DXF\DXFWriter.cpp" />
+    <ClCompile Include="Shapes\FrameGrabShape.cpp" />
+    <ClCompile Include="Shapes\IntersectionShape.cpp" />
+    <ClCompile Include="Shapes\PCDCircle.cpp" />
+    <ClCompile Include="Shapes\SinglePoint.cpp" />
+    <ClCompile Include="FixedTool\FixedCircle.cpp" />
+    <ClCompile Include="FixedTool\FixedLine.cpp" />
+    <ClCompile Include="FixedTool\FixedShape.cpp" />
+    <ClCompile Include="FixedTool\FixedText.cpp" />
+    <ClCompile Include="FrameGrab\FramegrabBase.cpp" />
+    <ClCompile Include="Handlers\FTHandler.cpp" />
+    <ClCompile Include="Engine\IsectPt.cpp" />
+    <ClCompile Include="Shapes\Line.cpp" />
+    <ClCompile Include="Handlers\LineHandlers.cpp" />
+    <ClCompile Include="Engine\Listenable.cpp" />
+    <ClCompile Include="Engine\ListenableItem.cpp" />
+    <ClCompile Include="Handlers\MouseHandler.cpp" />
+    <ClCompile Include="Handlers\MoveShapeHandler.cpp" />
+    <ClCompile Include="Actions\MoveShapesAction.cpp" />
+    <ClCompile Include="Handlers_DerivedShapes\ParrallelArc.cpp" />
+    <ClCompile Include="Shapes\Perimeter.cpp" />
+    <ClCompile Include="Handlers_Measurement\PerimeterHandler.cpp" />
+    <ClCompile Include="Shapes\Plane.cpp" />
+    <ClCompile Include="Shapes\Pline.cpp" />
+    <ClCompile Include="Handlers\PointHandler.cpp" />
+    <ClCompile Include="Actions\RAction.cpp" />
+    <ClCompile Include="Engine\RCadApp.cpp" />
+    <ClCompile Include="Engine\RCollectionBase.cpp" />
+    <ClCompile Include="Shapes\RelatedShape.cpp" />
+    <ClCompile Include="Shapes\RPoint.cpp" />
+    <ClCompile Include="Handlers\ZoomInOutHandler.cpp" />
+    <ClCompile Include="Shapes\RText.cpp" />
+    <ClCompile Include="Handlers\RTextHandler.cpp" />
+    <ClCompile Include="Engine\RWindow.cpp" />
+    <ClCompile Include="Handlers\SelectionHandler.cpp" />
+    <ClCompile Include="Shapes\Shape.cpp" />
+    <ClCompile Include="Shapes\ShapeWithList.cpp" />
+    <ClCompile Include="Engine\SnapPoint.cpp" />
+    <ClCompile Include="Engine\SnapPtManager.cpp" />
+    <ClCompile Include="FixedTool\FixedToolCollection.cpp" />
+    <ClCompile Include="Shapes\Sphere.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_RakeAngleMeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_SL1MeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_SL2MeasureHandler.cpp" />
+    <ClCompile Include="Handlers_SmartMeasures\SM_SL3MeasureHandler.cpp" />
+    <ClCompile Include="Shapes\Spline.cpp" />
+    <ClCompile Include="Shapes\Torus.cpp" />
+    <ClCompile Include="Shapes\TriangularSurface.cpp" />
+    <ClCompile Include="Shapes\TwoArc.cpp" />
+    <ClCompile Include="Shapes\TwoLine.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Handlers\TrimmingHandler.cpp" />
+    <ClCompile Include="Engine\UCS.cpp" />
+    <ClCompile Include="Handlers\UCSLineHandler.cpp" />
+    <ClCompile Include="Handlers\UCSPointHandle.cpp" />
+    <ClCompile Include="Helper\Helper.cpp" />
+    <ClCompile Include="Shapes\Vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actions\ActionHeaders.h" />
+    <ClInclude Include="Actions\AddDimAction.h" />
+    <ClInclude Include="Actions\AddImageAction.h" />
+    <ClInclude Include="Actions\AddPointAction.h" />
+    <ClInclude Include="Actions\AddProbePathAction.h" />
+    <ClInclude Include="Actions\AddThreadMeasureAction.h" />
+    <ClInclude Include="Actions\AddThreadPointAction.h" />
+    <ClInclude Include="Actions\AreaShapeAction.h" />
+    <ClInclude Include="Actions\AutoAlignAction.h" />
+    <ClInclude Include="Actions\Cad1Pt1LineAction.h" />
+    <ClInclude Include="Actions\Cad1PtAlignAction.h" />
+    <ClInclude Include="Actions\Cad2LineAction.h" />
+    <ClInclude Include="actions\cad2ptalignaction.h" />
+    <ClInclude Include="Actions\ChangeUCSAction.h" />
+    <ClInclude Include="Actions\CircularInterPolationAction.h" />
+    <ClInclude Include="Actions\CloudComparisionAction.h" />
+    <ClInclude Include="actions\CopyShapesAction.h" />
+    <ClInclude Include="Actions\DeviationAction.h" />
+    <ClInclude Include="Actions\DXF_DeviationAction.h" />
+    <ClInclude Include="Actions\EditCad1Pt1LineAction.h" />
+    <ClInclude Include="Actions\EditCad1PtAction.h" />
+    <ClInclude Include="Actions\EditCad2LineAction.h" />
+    <ClInclude Include="Actions\EditCad2PtAction.h" />
+    <ClInclude Include="Actions\EditCadAction.h" />
+    <ClInclude Include="Actions\LineArcAction.h" />
+    <ClInclude Include="Actions\LinearInterPolationAction.h" />
+    <ClInclude Include="Actions\LocalisedCorrectionAction.h" />
+    <ClInclude Include="Actions\MergeShapesAction.h" />
+    <ClInclude Include="actions\perimeteraction.h" />
+    <ClInclude Include="Actions\ProfileScanAction.h" />
+    <ClInclude Include="Actions\ReflectionAction.h" />
+    <ClInclude Include="Actions\RotationAction.h" />
+    <ClInclude Include="Actions\TranslationAction.h" />
+    <ClInclude Include="Actions\TrimShapeAction.h" />
+    <ClInclude Include="Actions\AddShapePointsAction.h" />
+    <ClInclude Include="BestFit\RapidCamControl.h" />
+    <ClInclude Include="Engine\ImageDelayCalibration.h" />
+    <ClInclude Include="Engine\RepeatShapeMeasure.h" />
+    <ClInclude Include="Handlers\CircleInvoluteHandler.h" />
+    <ClInclude Include="Handlers\SphereFrameGrabHandler.h" />
+    <ClInclude Include="Handlers\TwoPointAlignmentHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PlanePerpendicular2LineHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\ProjectedCircleHandler.h" />
+    <ClInclude Include="Handlers_FrameGrab\ImageAnalysisFrameGrabeHander.h" />
+    <ClInclude Include="Handlers_FrameGrab\RotationScanHandler.h" />
+    <ClInclude Include="Handlers_Measurement\CloudPointMeasurementsHandler.h" />
+    <ClInclude Include="handlers_smartmeasures\sm_arc_arcmeasurewidth.h" />
+    <ClInclude Include="handlers_smartmeasures\sm_arc_pointmeasurewidth.h" />
+    <ClInclude Include="handlers_smartmeasures\sm_line_arcmeasurewidth.h" />
+    <ClInclude Include="handlers_smartmeasures\sm_line_linewidthmeasurehandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_PointAngleMeasurementHandler.h" />
+    <ClInclude Include="handlers_smartmeasures\sm_point_linewidthmeasurehandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_RunoutMeasurementHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\CopyShape2PtAlign.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Program1Line1PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Program1PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Program2PtHandler.h" />
+    <ClInclude Include="Measurement\DimArc2ArcWidthMeasurement.h" />
+    <ClInclude Include="Measurement\DimLine2ArcWidthMeasurement.h" />
+    <ClInclude Include="Measurement\DimPoint2ArcWidthMeasurement.h" />
+    <ClInclude Include="Measurement\DimProfile.h" />
+    <ClInclude Include="measurement\dimrunoutmeasurement.h" />
+    <ClInclude Include="Measurement\DimTruePosition3D.h" />
+    <ClInclude Include="Measurement\DimTruePosition3DPoint.h" />
+    <ClInclude Include="Measurement\DimTruePositionPoint.h" />
+    <ClInclude Include="Shapes\AutoContourLine.h" />
+    <ClInclude Include="Shapes\AutoScanSurface.h" />
+    <ClInclude Include="Shapes\CamProfile.h" />
+    <ClInclude Include="Shapes\CircleInvolute.h" />
+    <ClInclude Include="DXF\DXFExpose.h" />
+    <ClInclude Include="DXF\DXFHeaders.h" />
+    <ClInclude Include="DXF\IGESReader.h" />
+    <ClInclude Include="DXF\IGESWriter.h" />
+    <ClInclude Include="DXF\StepReader.h" />
+    <ClInclude Include="DXF\STLReader.h" />
+    <ClInclude Include="DXF\STLWriter.h" />
+    <ClInclude Include="Engine\CalibrationCalculation.h" />
+    <ClInclude Include="Engine\FocusFunctions.h" />
+    <ClInclude Include="Engine\IsectPtCollection.h" />
+    <ClInclude Include="Engine\OverlapImgWin.h" />
+    <ClInclude Include="Engine\PartProgramFunctions.h" />
+    <ClInclude Include="Engine\PointCollection.h" />
+    <ClInclude Include="Engine\RapidEnums.h" />
+    <ClInclude Include="Engine\SnapPointCollection.h" />
+    <ClInclude Include="Engine\SuperImposeImage.h" />
+    <ClInclude Include="Engine\ThreadCalcFunctions.h" />
+    <ClInclude Include="Engine\TriangulationCalc.h" />
+    <ClInclude Include="fixedtool\calibrationtext.h" />
+    <ClInclude Include="FixedTool\FixedHeaders.h" />
+    <ClInclude Include="Handlers\AutoContourScanHandler.h" />
+    <ClInclude Include="Handlers\AutoFocusScanHandler.h" />
+    <ClInclude Include="Handlers\CloudComparisionHandler.h" />
+    <ClInclude Include="Handlers\CloudPoints3DStitching.h" />
+    <ClInclude Include="Handlers\DeviationHandler.h" />
+    <ClInclude Include="handlers\dummyhandler.h" />
+    <ClInclude Include="Handlers\DXFDeviationHandler.h" />
+    <ClInclude Include="Handlers\GroupShapeHandler.h" />
+    <ClInclude Include="handlers\intersectionshapehandler.h" />
+    <ClInclude Include="Handlers\LineArcFGHandler.h" />
+    <ClInclude Include="Handlers\PointFromShapeHandler.h" />
+    <ClInclude Include="Handlers\ProbeHandler.h" />
+    <ClInclude Include="Handlers\ProfileScanHandler.h" />
+    <ClInclude Include="Handlers\ReflectionHandler.h" />
+    <ClInclude Include="Handlers\RotateShapeHandler.h" />
+    <ClInclude Include="Handlers\SplineHandler.h" />
+    <ClInclude Include="Handlers\TranslateShapeHandler.h" />
+    <ClInclude Include="Handlers\UCSPlaneHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\ArcArcHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\ArcTanToLineHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleAtConeSphereIntersection.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleInsideATraingle.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineArcLineHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineParallelToLine3D.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LinePerpendicular2LineOnPlane.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LinePerpendicularToLine3D.h" />
+    <ClInclude Include="Handlers_DerivedShapes\NearestPointHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\MidPointHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PCDHandler.h" />
+    <ClInclude Include="handlers_derivedshapes\pcdhandler3d.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PlaneParallel2Plane.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PlanePerpendicular2Plane.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PlaneThrough2Lines3D.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PointOnCircle.h" />
+    <ClInclude Include="Handlers_DerivedShapes\PointOnLine.h" />
+    <ClInclude Include="Handlers_DerivedShapes\ProjectionHandler.h" />
+    <ClInclude Include="Handlers_FrameGrab\ContourScan_FG.h" />
+    <ClInclude Include="Handlers_FrameGrab\FlexibleCrossHairHandler.h" />
+    <ClInclude Include="Actions\AddShapeAction.h" />
+    <ClInclude Include="Actions\AddUCSAction.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineAngleBisector.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineOnePointAngle.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineOnePointOffsetDist.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineParallel2Line.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineParallelTangent.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LinePerpendicular2Line.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LinePerpendicularTangent.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineTangent2Circle.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineTangentOn2Circles.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineTangentThruPoint.h" />
+    <ClInclude Include="Handlers_FrameGrab\FocusDepthMultiBoxHandler.h" />
+    <ClInclude Include="handlers_framegrab\focusonrightclickhandler.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabAngularRect.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabArc.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabCircle.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabEdgeMouseClick.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabFixedRectangle.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabHandler.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabHandlerHeaders.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabIdAndOd.h" />
+    <ClInclude Include="Handlers_FrameGrab\FrameGrabRectangle.h" />
+    <ClInclude Include="Handlers_FrameGrab\LiveScanModeHandler.h" />
+    <ClInclude Include="Handlers_FrameGrab\ScanModeHandler.h" />
+    <ClInclude Include="Handlers_FrameGrab\SelectPointHandler.h" />
+    <ClInclude Include="Handlers_Measurement\MeasureHandlerHeaders.h" />
+    <ClInclude Include="Handlers_Measurement\ThreadLineArcHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_AngleMeasureWithYAxis.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_AutoGrooveMeasurementHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_Chamfer_ArcMeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_Chamfer_LineMeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_GrooveMeasurement.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_LineArcFGHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_SplineMeasurementHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\AutoAlignHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad1LineHandler3D.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad1Pt1LineHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad1Pt1LineHandler3D.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad1PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad2LineHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad2PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\Cad3PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\CadAlignHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\DerivedShapeHeaders.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_AngleMeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_AngleMeasureWithXAxis.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleTangent2Circle.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleTangent2LineCircle.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleTangent2TwoCircle1.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleTangent2TwoCircle2.h" />
+    <ClInclude Include="Handlers_DerivedShapes\CircleTangent2TwoLine.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_DiameterMeasureHandler.h" />
+    <ClInclude Include="Handlers_Measurement\DMMHandler.h" />
+    <ClInclude Include="Handlers_Measurement\DXFAreaHandler.h" />
+    <ClInclude Include="Handlers_DerivedShapes\FilletHandler.h" />
+    <ClInclude Include="Handlers\HandlerHeaders.h" />
+    <ClInclude Include="Handlers_DerivedShapes\LineParallelTangent2Circle.h" />
+    <ClInclude Include="Handlers_Measurement\PCDMeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_HandlerHeaders.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_RadiusMeasureHandler.h" />
+    <ClInclude Include="Handlers_Measurement\RotaryDimensionHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\CadHandlerHeaders.h" />
+    <ClInclude Include="Hanlders_CadAlignment\EditCad1Pt1LineHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\EditCad1PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\EditCad2LineHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\EditCad2PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\PP1Pt1LineHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\PP1PtHandler.h" />
+    <ClInclude Include="Hanlders_CadAlignment\PP2PtHandler.h" />
+    <ClInclude Include="Measurement\DimAngle3D.h" />
+    <ClInclude Include="Measurement\DimAngularity.h" />
+    <ClInclude Include="Measurement\DimArcAngle.h" />
+    <ClInclude Include="Measurement\DimAreaMeasurement.h" />
+    <ClInclude Include="Measurement\DimAxisLength.h" />
+    <ClInclude Include="Measurement\DimChildMeasurement.h" />
+    <ClInclude Include="Measurement\DimCircle3DToCircle3DDistance.h" />
+    <ClInclude Include="Measurement\DImCircle3DToConeDistance.h" />
+    <ClInclude Include="Measurement\DimCircleDeviationMeasure.h" />
+    <ClInclude Include="Measurement\DimCircleToCircleDistance.h" />
+    <ClInclude Include="Measurement\DimCircleToLineDistance.h" />
+    <ClInclude Include="Measurement\DimCircularity.h" />
+    <ClInclude Include="Measurement\DimCloudPointDepth.h" />
+    <ClInclude Include="Measurement\DimConcentricity.h" />
+    <ClInclude Include="Measurement\DimConeAngularity.h" />
+    <ClInclude Include="Measurement\DimConeToConeDistance.h" />
+    <ClInclude Include="Measurement\DimConeToConics3DDistance.h" />
+    <ClInclude Include="Measurement\DimCylinderAngularity.h" />
+    <ClInclude Include="Measurement\DimCylinderToConeDistance.h" />
+    <ClInclude Include="Measurement\DimCylinderToConics3DDistance.h" />
+    <ClInclude Include="Measurement\DimCylinderToCylinderDistance.h" />
+    <ClInclude Include="Measurement\DimCylinderToSphereDistance.h" />
+    <ClInclude Include="Measurement\DimCylindricity.h" />
+    <ClInclude Include="Measurement\DimDepth.h" />
+    <ClInclude Include="Measurement\DimDiameter2D.h" />
+    <ClInclude Include="Measurement\DimDiameter3D.h" />
+    <ClInclude Include="Measurement\DimDigitalMicrometer.h" />
+    <ClInclude Include="Measurement\DimFlatness.h" />
+    <ClInclude Include="Measurement\DimGrooveMeasurement.h" />
+    <ClInclude Include="Measurement\DimIntersectionShapeToPlaneDistance.h" />
+    <ClInclude Include="Measurement\DimLine3D.h" />
+    <ClInclude Include="Measurement\DimLine3DAngularity.h" />
+    <ClInclude Include="Measurement\DimLineToCircle3DDistance.h" />
+    <ClInclude Include="Measurement\DimLineToConeDistance.h" />
+    <ClInclude Include="Measurement\DimLineToConics3DDistance.h" />
+    <ClInclude Include="Measurement\DimLineToCylinderDistance.h" />
+    <ClInclude Include="Measurement\DimLineToLineDistance3D.h" />
+    <ClInclude Include="Measurement\DimLineToPlaneDistance.h" />
+    <ClInclude Include="Measurement\DimLineToSphereDistance.h" />
+    <ClInclude Include="Measurement\DimOrdinate.h" />
+    <ClInclude Include="Measurement\DimPCDAngle.h" />
+    <ClInclude Include="Measurement\DimPCDOffset.h" />
+    <ClInclude Include="Measurement\DimPerimeter_Diameter.h" />
+    <ClInclude Include="Measurement\DimPlaneAngularity.h" />
+    <ClInclude Include="Measurement\DImPlaneToCircle3DDistance.h" />
+    <ClInclude Include="Measurement\DimPlaneToConeDistance.h" />
+    <ClInclude Include="Measurement\DimPlaneToConics3DDistance.h" />
+    <ClInclude Include="Measurement\DimPlaneToCylinderDistance.h" />
+    <ClInclude Include="Measurement\DimPlaneToPlaneDistance.h" />
+    <ClInclude Include="Measurement\DimPlaneToSphereDistance.h" />
+    <ClInclude Include="Measurement\DimPointToCircle3DDistance.h" />
+    <ClInclude Include="Measurement\DimPointToConeDistance.h" />
+    <ClInclude Include="Measurement\DimPointToConics3DDistance.h" />
+    <ClInclude Include="Measurement\DimPointToCylinderDistance.h" />
+    <ClInclude Include="Measurement\DimPointToLineDistance3D.h" />
+    <ClInclude Include="Measurement\DimPointToPlaneDistance.h" />
+    <ClInclude Include="Measurement\DimPointToPointDistance3D.h" />
+    <ClInclude Include="Measurement\DimPointCoordinate.h" />
+    <ClInclude Include="Measurement\DimPointToCircleDistance.h" />
+    <ClInclude Include="Measurement\DimPointToPointDistLAngle.h" />
+    <ClInclude Include="Measurement\DimPointToSphereDistance.h" />
+    <ClInclude Include="Measurement\DimRadius2D.h" />
+    <ClInclude Include="Measurement\DimRadius3D.h" />
+    <ClInclude Include="Handlers\ArcHandler.h" />
+    <ClInclude Include="Engine\BaseItem.h" />
+    <ClInclude Include="Measurement\DimRotaryAngleMeasure.h" />
+    <ClInclude Include="Measurement\DimSphereToCircle3DDistance.h" />
+    <ClInclude Include="Measurement\DimSphereToConeDistance.h" />
+    <ClInclude Include="Measurement\DimSphereToConics3DDistance.h" />
+    <ClInclude Include="Measurement\DimSphereToSphereDistance.h" />
+    <ClInclude Include="Measurement\DimSphericity.h" />
+    <ClInclude Include="Measurement\DimSplineMeasurement.h" />
+    <ClInclude Include="measurement\dimsurfaceroughnessmeasurement.h" />
+    <ClInclude Include="Measurement\DimTotalLength.h" />
+    <ClInclude Include="Measurement\DimTruePosition.h" />
+    <ClInclude Include="Measurement\MeasurementHeaders.h" />
+    <ClInclude Include="Engine\RepeatAutoMeasurement.h" />
+    <ClInclude Include="Shapes\AreaShape.h" />
+    <ClInclude Include="Shapes\Circle.h" />
+    <ClInclude Include="Handlers\CircleHandlers.h" />
+    <ClInclude Include="Shapes\CloudPoints.h" />
+    <ClInclude Include="Engine\CollectionListener.h" />
+    <ClInclude Include="Shapes\Cone.h" />
+    <ClInclude Include="Shapes\Conics3D.h" />
+    <ClInclude Include="Shapes\Cylinder.h" />
+    <ClInclude Include="Handlers\DefaultHandler.h" />
+    <ClInclude Include="Actions\DeleteMeasureAction.h" />
+    <ClInclude Include="Actions\DeleteShapesAction.h" />
+    <ClInclude Include="Actions\DeleteUCSAction.h" />
+    <ClInclude Include="Measurement\DimLineToLineDistance.h" />
+    <ClInclude Include="Measurement\DimBase.h" />
+    <ClInclude Include="Measurement\DimPointToLineDistance.h" />
+    <ClInclude Include="Handlers_Measurement\DimensionHandler.h" />
+    <ClInclude Include="Measurement\DimLine.h" />
+    <ClInclude Include="Measurement\DimPointToPointDistance.h" />
+    <ClInclude Include="Measurement\DimThread.h" />
+    <ClInclude Include="Shapes\DepthShape.h" />
+    <ClInclude Include="Shapes\DotsCount.h" />
+    <ClInclude Include="Shapes\DummyShape.h" />
+    <ClInclude Include="DXF\DXFCollection.h" />
+    <ClInclude Include="DXF\DXFReader.h" />
+    <ClInclude Include="DXF\DXFWriter.h" />
+    <ClInclude Include="Shapes\FrameGrabShape.h" />
+    <ClInclude Include="Shapes\IntersectionShape.h" />
+    <ClInclude Include="Shapes\PCDCircle.h" />
+    <ClInclude Include="Shapes\ShapeHeaders.h" />
+    <ClInclude Include="Shapes\SinglePoint.h" />
+    <ClInclude Include="FixedTool\FixedCircle.h" />
+    <ClInclude Include="FixedTool\FixedLine.h" />
+    <ClInclude Include="FixedTool\FixedShape.h" />
+    <ClInclude Include="FixedTool\FixedText.h" />
+    <ClInclude Include="FrameGrab\FramegrabBase.h" />
+    <ClInclude Include="Handlers\FTHandler.h" />
+    <ClInclude Include="Helper\General.h" />
+    <ClInclude Include="Engine\IsectPt.h" />
+    <ClInclude Include="Engine\ItemListener.h" />
+    <ClInclude Include="Shapes\Line.h" />
+    <ClInclude Include="Handlers\LineHandlers.h" />
+    <ClInclude Include="Engine\Listenable.h" />
+    <ClInclude Include="Engine\ListenableItem.h" />
+    <ClInclude Include="MainDLL.h" />
+    <ClInclude Include="Handlers\MouseHandler.h" />
+    <ClInclude Include="Handlers\MoveShapeHandler.h" />
+    <ClInclude Include="Actions\MoveShapesAction.h" />
+    <ClInclude Include="Handlers_DerivedShapes\ParrallelArc.h" />
+    <ClInclude Include="Shapes\Perimeter.h" />
+    <ClInclude Include="Handlers_Measurement\PerimeterHandler.h" />
+    <ClInclude Include="Shapes\Plane.h" />
+    <ClInclude Include="Shapes\Pline.h" />
+    <ClInclude Include="Handlers\PointHandler.h" />
+    <ClInclude Include="Actions\RAction.h" />
+    <ClInclude Include="BestFit\RBF.h" />
+    <ClInclude Include="Engine\RCadApp.h" />
+    <ClInclude Include="Engine\RCollectionBase.h" />
+    <ClInclude Include="Shapes\RelatedShape.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Shapes\RPoint.h" />
+    <ClInclude Include="Handlers\ZoomInOutHandler.h" />
+    <ClInclude Include="Shapes\RText.h" />
+    <ClInclude Include="Handlers\RTextHandler.h" />
+    <ClInclude Include="Engine\RWindow.h" />
+    <ClInclude Include="Handlers\SelectionHandler.h" />
+    <ClInclude Include="Shapes\Shape.h" />
+    <ClInclude Include="Shapes\ShapeWithList.h" />
+    <ClInclude Include="Engine\SnapPoint.h" />
+    <ClInclude Include="Engine\SnapPtManager.h" />
+    <ClInclude Include="FixedTool\FixedToolCollection.h" />
+    <ClInclude Include="Shapes\Sphere.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_RakeAngleMeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_SL1MeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_SL2MeasureHandler.h" />
+    <ClInclude Include="Handlers_SmartMeasures\SM_SL3MeasureHandler.h" />
+    <ClInclude Include="Shapes\Spline.h" />
+    <ClInclude Include="Shapes\Torus.h" />
+    <ClInclude Include="Shapes\TriangularSurface.h" />
+    <ClInclude Include="Shapes\TwoArc.h" />
+    <ClInclude Include="Shapes\TwoLine.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Handlers\TrimmingHandler.h" />
+    <ClInclude Include="Engine\UCS.h" />
+    <ClInclude Include="Handlers\UCSLineHandler.h" />
+    <ClInclude Include="Handlers\UCSPointHandle.h" />
+    <ClInclude Include="Helper\Helper.h" />
+    <ClInclude Include="Shapes\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MainDLL.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram31.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdgeDetectionClassSingleChannel\EdgeDetectionClassSingleChannel.vcxproj">
+      <Project>{fb4db1d6-480d-4153-ad5b-511b971c9dce}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidMath2D\RapidMath2D.vcxproj">
+      <Project>{20b8b017-197a-4a8c-9410-c6ccdc6b4c42}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidMath3D\RapidMath3D.vcxproj">
+      <Project>{f60b86df-3cb8-40dc-80d7-22f6181ca7a4}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|x64">
+      <Configuration>Template</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProjectName>RapidWrapper</ProjectName>
+    <ProjectGuid>{E52BCFA5-46C1-4A79-B67D-A887F7293679}</ProjectGuid>
+    <RootNamespace>NewRapidVision</RootNamespace>
+    <Keyword>ManagedCProj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\Builds\x64\Debug</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\Builds\x64\Release</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ReferencePath>$(VC_ReferencesPath_x64);E:\CTPL\Sources\Build3600\Builds\x64\Debug</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ReferencePath>$(VC_ReferencesPath_x64);E:\CTPL\Sources\Build3600\Builds\x64\Release</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
+    <OutDir>..\..\Builds\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\RapidMath2D;..\MainDLL;..\HardwareCommunication;..\RapidGraphics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <CompileAsManaged>true</CompileAsManaged>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ErrorReporting>Queue</ErrorReporting>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>HardwareCommunication.lib;MainDLL.lib;RapidGraphics.Lib;RapidMath2D.lib;RapidMath3D.lib;RBF.lib;EdgeDetectionClassSingleChannel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <MinimumRequiredVersion />
+      <LargeAddressAware>true</LargeAddressAware>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\RapidMath2D;..\Graphics2D;..\MainDLL;..\RapidGraphics;..\HardwareCommunication;..\GridModule;..\EdgeDetectionClassSingleChannel;..\RapidMath3D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <OmitFramePointers>false</OmitFramePointers>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ErrorReporting>Queue</ErrorReporting>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>HardwareCommunication.lib;MainDLL.lib;RapidGraphics.Lib;RapidMath2D.lib;RapidMath3D.lib;RBF.lib;EdgeDetectionClassSingleChannel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib;..\..\Builds\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <FullProgramDatabaseFile>true</FullProgramDatabaseFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\RapidMath2D;..\Graphics2D;..\MainDLL;..\RapidGraphics;..\HardwareCommunication;..\GridModule;..\EdgeDetectionClassSingleChannel;..\RapidMath3D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32;_NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <ErrorReporting>Queue</ErrorReporting>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>HardwareCommunication.lib;MainDLL.lib;RapidGraphics.Lib;RapidMath2D.lib;RapidMath3D.lib;RBF.lib;EdgeDetectionClassSingleChannel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AssemblyDebug>false</AssemblyDebug>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <MinimumRequiredVersion />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\MainDLL;..\RapidMath2D;..\Graphics2D;..\RapidGraphics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32;_NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ErrorReporting>Queue</ErrorReporting>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>HardwareCommunication.lib;MainDLL.lib;RapidGraphics.Lib;RapidMath2D.lib;RapidMath3D.lib;RBF.lib;EdgeDetectionClassSingleChannel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib;..\..\Builds\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <LinkErrorReporting>QueueForNextLogin</LinkErrorReporting>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>..\..\lib;..\..\Builds\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\CorrectionZone.h" />
+    <ClInclude Include="Engine\OglLighting.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Engine\ProbePathEntity.h" />
+    <ClInclude Include="Engine\RapidActionListener.h" />
+    <ClInclude Include="Engine\RW_ActionParameter.h" />
+    <ClInclude Include="Engine\RW_AutoCalibration.h" />
+    <ClInclude Include="Engine\RW_AutoProfileScanMeasure.h" />
+    <ClInclude Include="engine\rw_circularinterpolation.h" />
+    <ClInclude Include="Engine\RW_CNC.h" />
+    <ClInclude Include="Engine\RW_CorrectionParams.h" />
+    <ClInclude Include="engine\rw_ct_spherecallibration.h" />
+    <ClInclude Include="Engine\RW_DelphiCamModule.h" />
+    <ClInclude Include="Engine\RW_DrawGraphicsText.h" />
+    <ClInclude Include="Engine\RW_DRO.h" />
+    <ClInclude Include="Engine\RapidDxfListener.h" />
+    <ClInclude Include="Engine\RW_Enum.h" />
+    <ClInclude Include="Engine\RW_FixedGraph.h" />
+    <ClInclude Include="Engine\RW_FixtureCalibration.h" />
+    <ClInclude Include="Engine\RW_FocusDepth.h" />
+    <ClInclude Include="Engine\RW_ImageDelayCalibration.h" />
+    <ClInclude Include="engine\rw_imagegridprogram.h" />
+    <ClInclude Include="Engine\RW_LBlock.h" />
+    <ClInclude Include="Engine\RW_LCParams.h" />
+    <ClInclude Include="Engine\RW_LinearInterPolation.h" />
+    <ClInclude Include="Engine\RW_MeasureParameter.h" />
+    <ClInclude Include="Engine\RW_OverlapImgWin.h" />
+    <ClInclude Include="Engine\RW_PartProgram.h" />
+    <ClInclude Include="Engine\RW_PCD.h" />
+    <ClInclude Include="Engine\RW_LaserComm.h" />
+    <ClInclude Include="Engine\RapidDimListener.h" />
+    <ClInclude Include="Engine\RW_DBSettings.h" />
+    <ClInclude Include="Engine\RapidShapeListener.h" />
+    <ClInclude Include="Engine\RapidUcsListener.h" />
+    <ClInclude Include="Engine\RW_MainInterface.h" />
+    <ClInclude Include="Engine\RW_RepeatShapeMeasure.h" />
+    <ClInclude Include="Engine\RW_SAOI.h" />
+    <ClInclude Include="Engine\RW_ShapeParameter.h" />
+    <ClInclude Include="Engine\RW_SphereCalibration.h" />
+    <ClInclude Include="Engine\RW_SuperImposeImage.h" />
+    <ClInclude Include="Engine\RW_Thread.h" />
+    <ClInclude Include="Engine\RW_TIS_Control.h" />
+    <ClInclude Include="Engine\RW_UCSParameter.h" />
+    <ClInclude Include="engine\rw_vblockcallibration.h" />
+    <ClInclude Include="Engine\LC_Multiplier.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Engine\RW_RepeatAutoMeasure.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RapidWrapper.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\OglLighting.cpp" />
+    <ClCompile Include="Engine\RapidActionListener.cpp" />
+    <ClCompile Include="Engine\RW_ActionParameter.cpp" />
+    <ClCompile Include="Engine\RW_AutoCalibration.cpp" />
+    <ClCompile Include="Engine\RW_AutoProfileScanMeasure.cpp" />
+    <ClCompile Include="Engine\RW_CircularInterPolation.cpp" />
+    <ClCompile Include="Engine\RW_CNC.cpp" />
+    <ClCompile Include="Engine\RW_CT_SphereCallibration.cpp" />
+    <ClCompile Include="Engine\RW_DelphiCamModule.cpp" />
+    <ClCompile Include="Engine\RW_DrawGraphicsText.cpp" />
+    <ClCompile Include="Engine\RW_DRO.cpp" />
+    <ClCompile Include="Engine\RapidDxfListener.cpp" />
+    <ClCompile Include="Engine\RW_FixedGraph.cpp" />
+    <ClCompile Include="Engine\RW_FixtureCalibration.cpp" />
+    <ClCompile Include="Engine\RW_FocusDepth.cpp" />
+    <ClCompile Include="Engine\RW_ImageDelayCalibration.cpp" />
+    <ClCompile Include="Engine\RW_ImageGridProgram.cpp" />
+    <ClCompile Include="Engine\RW_LBlock.cpp" />
+    <ClCompile Include="Engine\RW_LCParams.cpp" />
+    <ClCompile Include="Engine\RW_LinearInterPolation.cpp" />
+    <ClCompile Include="Engine\RW_MeasureParameter.cpp" />
+    <ClCompile Include="Engine\RW_OverlapImgWin.cpp" />
+    <ClCompile Include="Engine\RW_PartProgram.cpp" />
+    <ClCompile Include="Engine\RW_PCD.cpp" />
+    <ClCompile Include="Engine\RW_LaserComm.cpp" />
+    <ClCompile Include="Engine\RapidDimListener.cpp" />
+    <ClCompile Include="Engine\RW_DBSettings.cpp" />
+    <ClCompile Include="Engine\RapidShapeListener.cpp" />
+    <ClCompile Include="Engine\RapidUcsListener.cpp" />
+    <ClCompile Include="Engine\RW_MainInterface.cpp" />
+    <ClCompile Include="Engine\RW_RepeatShapeMeasure.cpp" />
+    <ClCompile Include="Engine\RW_SAOI.cpp" />
+    <ClCompile Include="Engine\RW_ShapeParameter.cpp" />
+    <ClCompile Include="Engine\RW_SphereCalibration.cpp" />
+    <ClCompile Include="Engine\RW_SuperImposeImage.cpp" />
+    <ClCompile Include="Engine\RW_Thread.cpp" />
+    <ClCompile Include="Engine\RW_TIS_Control.cpp" />
+    <ClCompile Include="Engine\RW_UCSParameter.cpp" />
+    <ClCompile Include="Engine\RW_VBlockCallibration.cpp" />
+    <ClCompile Include="Engine\RW_RepeatAutoMeasure.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Engine\OglLighting.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalibrationModule\CalibrationModule.vbproj">
+      <Project>{366f8b15-da20-496e-9af4-cdc290743ed4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorHandlerApp\ErrHandlerApp.vbproj">
+      <Project>{38571114-a1fe-432e-b71f-ad1122ee489e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\LicensingModule\LicensingModule.vbproj">
+      <Project>{e47f8f53-2607-429b-810a-7bb1a97de079}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="app.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

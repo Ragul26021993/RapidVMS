@@ -1,0 +1,39 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:RapidI_MVVM_Views_Lighting="clr-namespace:Rapid.LightingControl"
+	mc:Ignorable="d"
+    xmlns:localUtil="clr-namespace:Rapid.Utilities"
+	x:Class="Rapid.Panels.LightingPanel"
+	x:Name="MainPanel" Width="340">
+    <Grid.RowDefinitions>
+        <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="214*"/>
+        <ColumnDefinition Width="128"/>
+    </Grid.ColumnDefinitions>
+    <Button x:Name="btnONOFF" Click="btnONOFF_Click"  Content="OFF" Margin="0"  Style="{DynamicResource CircularGlassButton}" Background="{DynamicResource CloseButtonBrush_BG}" Foreground="Black" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" Height="60" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" BorderBrush="{DynamicResource CloseButtonBrush_Border}" BorderThickness="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    <RapidI_MVVM_Views_Lighting:LightingGrid x:Name="MyLighting"  Margin="0" ShapeThickness="32" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TotalCircles="2" OuterShapeType="Flat"/>
+    <Button x:Name="btnLock" Tag="Lock" Click="btnLock_Click" FontSize="13.333" FontWeight="Bold" Foreground="White" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ButtonBorderColor}" BorderThickness="1" Padding="0" Height="40" VerticalAlignment="Bottom" Margin="0,0,8,8" Grid.Column="1" Template="{DynamicResource Shiny_SpButton2}" Content="Lock" Width="40" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+        <!--<Image x:Name="imgLockUnlock" Source="/Rapid-I;component/Resources/Images/lock.png" RenderTransformOrigin="0.457,0.429" VerticalAlignment="Bottom"/>-->
+    </Button>
+    <Button x:Name="btnSave"  FontWeight="Bold" FontSize="16" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" BorderThickness="1" Margin="-1,85,8,0" Height="40" Width="40" Template="{DynamicResource Shiny_SpButton2}" Content="Save" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+    <Button x:Name="btnPPLightingControl"  FontWeight="Bold" FontSize="16" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" BorderThickness="1" Margin="-1,130,8,0" Height="40" Width="40" Template="{DynamicResource Shiny_SpButton2}" Content="Save" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+    <Button x:Name="btnDelete"  FontSize="16" FontWeight="Bold" Background="{DynamicResource ButtonBackcolor}" BorderBrush="{DynamicResource ButtonBorderColor}" Foreground="White" BorderThickness="1" Margin="0,40,8,0" Template="{DynamicResource Shiny_SpButton2}" Content="Delete" Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
+    <ComboBox x:Name="LightingSettingsCBx" Height="25" Margin="0,8,8,0" VerticalAlignment="Top" Style="{DynamicResource MenuScroller_2}" Template="{DynamicResource ComboBoxEditableTemplate}" IsEditable="True" Background="{DynamicResource BorderBrush_Title}" BorderBrush="{DynamicResource HeaderButton_BG}" Grid.Column="1" Grid.ColumnSpan="2" Width="120" HorizontalAlignment="Right"/>
+    <ComboBox x:Name="LightingChannelCbx" Grid.Column="1" Height="25" Margin="10,145,8,0" VerticalAlignment="Top" Style="{DynamicResource MenuScroller_2}" Template="{DynamicResource ComboBoxEditableTemplate}" IsEditable="True" Background="{DynamicResource BorderBrush_Title}" BorderBrush="{DynamicResource HeaderButton_BG}" Width="70" Visibility="Hidden"/>
+    <Grid x:Name="gLightControl" Grid.Column ="1" Margin="0,0, 8,0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="110" Height="100" VerticalAlignment="Center" Visibility="Hidden" Background="{DynamicResource PanelBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnOK" Content="OK" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Template="{DynamicResource Shiny_SpButton2}" Width="80" Click="btnOK_Click" />
+        <localUtil:NumericUpDown x:Name="nud_Surface" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="110" Tag="Surface :" Height="24" Minimum="-20" Maximum="20" FontSize="12"/>
+        <localUtil:NumericUpDown x:Name="nud_Profile" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="110" Tag="  Profile :" Height="24" Minimum="-20" Maximum="20" FontSize="12"/>
+    </Grid>
+
+</Grid>

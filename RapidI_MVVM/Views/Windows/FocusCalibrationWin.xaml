@@ -1,0 +1,92 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" mc:Ignorable="d"
+	xmlns:Text_Box_Prop="clr-namespace:Rapid.AttachedProperties"
+	xmlns:Validate="clr-namespace:Rapid.Windows.AttachedProperties"
+    x:Class="Rapid.Windows.FocusCalibrationWin"
+	x:Name="Window"    
+	Title="Rapid-I Focus Calibration"
+	MinWidth="300" MaxWidth="800" MaxHeight="500" Width="610" Height="300" ResizeMode="NoResize">
+	<Grid x:Name="LayoutRoot" Background="{DynamicResource PanelBackground}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>                  
+		</Grid.ColumnDefinitions>
+		<TextBlock TextWrapping="Wrap" Text="Enter the required values" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.ColumnSpan="2"/>
+		<TextBlock x:Name="MaxAllowedCellsTxtbx" TextWrapping="Wrap" Text="Maximum cells allowed= " VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" Grid.ColumnSpan="2" Grid.Column="2"/>
+		<TextBox x:Name="MoveInXTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="1" Margin="3,0,3,10" VerticalAlignment="Bottom" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+		<TextBox x:Name="MoveInYTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="1" Margin="3,0,3,10" VerticalAlignment="Bottom" Grid.Column="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+		<TextBox x:Name="MoveInZTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="1" Margin="3,0,3,10" VerticalAlignment="Bottom" Grid.Column="2" Text="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+		<TextBox x:Name="SpeedTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="2" Margin="3,0,3,20" VerticalAlignment="Bottom" Grid.Column="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+		<TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Move In X" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+		<TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Move In Y" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Column="1"/>
+		<TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Move In Z" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Column="2"/>
+		<TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Speed" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Column="3"/>
+		
+		<TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Number Of Rows" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+        <TextBox x:Name="NumOfRowsTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="2" Margin="3,0,3,20" VerticalAlignment="Bottom" 
+				Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger"
+				Text_Box_Prop:AttachedTextBoxBehaviour.MaximumValue="{Binding MaxAllowedRow, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" 
+				Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="NumberOfRows" RelativeSource="{RelativeSource AncestorType=Window, Mode=FindAncestor}" Mode="TwoWay" NotifyOnValidationError="True">
+                    
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+		<TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Maximum Rows :" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+		<TextBlock x:Name="MaxRowsAllowedTxtbx" Grid.Row="2" TextWrapping="Wrap" Text="{Binding MaxAllowedRow, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="105,10,0,0" Foreground="Red"/>
+		
+        <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Number Of Columns" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Column="1"/>
+        <TextBox x:Name="NumOfColumnsTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="2" Margin="3,0,3,20" VerticalAlignment="Bottom" Grid.Column="1" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger"
+				Text_Box_Prop:AttachedTextBoxBehaviour.MaximumValue="{Binding MaxAllowedColumn, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" 
+				Text_Box_Prop:AttachedTextBoxBehaviour.MinimumValue="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="NumberofColumns" RelativeSource="{RelativeSource AncestorType=Window, Mode=FindAncestor}" Mode="TwoWay" NotifyOnValidationError="True">                    
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+		<TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Maximum Columns :" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Column="1"/>
+		<TextBlock x:Name="MaxColumnsAllowedTxtbx" Grid.Row="2" TextWrapping="Wrap" Text="{Binding MaxAllowedColumn, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="122,10,0,0" Foreground="Red" Grid.Column="1"/>
+		
+        <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Gap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Column="2"/>
+        <TextBox x:Name="GapTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="2" Margin="3,0,3,20" VerticalAlignment="Bottom" Grid.Column="2" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="Gap" RelativeSource="{RelativeSource AncestorType=Window, Mode=FindAncestor}" Mode="TwoWay" NotifyOnValidationError="True"/> 
+            </TextBox.Text>
+        </TextBox>
+        
+        <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="Cell Height" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Column="0"/>
+        <TextBox x:Name="RowHeightTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="3" Margin="3,0,3,10" VerticalAlignment="Bottom" Grid.Column="0"  Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveDecimal" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" >
+            <TextBox.Text>
+                <Binding Path="RowHeight" RelativeSource="{RelativeSource AncestorType=Window, Mode=FindAncestor}" Mode="TwoWay" NotifyOnValidationError="True"/>
+            </TextBox.Text>
+        </TextBox>
+		<TextBlock Grid.Row="3" TextWrapping="Wrap" Text="Cell Width" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Column="1"/>
+        <TextBox x:Name="ColWidthTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="3" Margin="3,0,3,10" VerticalAlignment="Bottom" Grid.Column="1" Text_Box_Prop:AttachedTextBoxBehaviour.Mask="PositiveInteger" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" >
+            <TextBox.Text>
+                <Binding Path="ColumnWidth" RelativeSource="{RelativeSource AncestorType=Window, Mode=FindAncestor}" Mode="TwoWay" NotifyOnValidationError="True"/>
+            </TextBox.Text>
+        </TextBox>
+		<TextBlock Grid.Row="3" TextWrapping="Wrap" Text="Span" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Column="2"/>
+        <TextBox x:Name="SpanTxtBx" Height="22" TextWrapping="Wrap" Width="100" Grid.Row="3" Margin="3,0,3,10" VerticalAlignment="Bottom" Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="Span" RelativeSource="{RelativeSource AncestorType=Window, Mode=FindAncestor}" Mode="TwoWay" NotifyOnValidationError="True"/>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button  x:Name="CalibrateBtn" Content="Calibrate" Grid.Row="4" Click="CalibrateBtn_Click" Style="{DynamicResource SimpleNormalButton}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0"/>		
+		<Button  x:Name="CancelBtn" Content="Cancel" Grid.Row="4" Click="CancelBtn_Click" Style="{DynamicResource SimpleNormalButton}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0" Grid.Column="1"/>
+        <Button  x:Name="SaveCorrection" Content="Correction" Grid.Row="4" Click="XCorrectionBtn_Click" Style="{DynamicResource SimpleNormalButton}" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="35" VerticalAlignment="Center" FontWeight="Normal" Margin="5,0" Grid.Column="2"/>		
+       </Grid>
+</Window>

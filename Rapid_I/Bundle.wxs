@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="Rapid_I" Version="1.0.0.0" Manufacturer="Customised Technologies (P) Ltd." UpgradeCode="0a5f5415-3ed1-4327-8234-72fe4d0f565d">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+
+		<Chain>
+			<!-- TODO: Define the list of chained packages. -->
+			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+			<MsiPackage Id="Rapid_I" SourceFile="$(var.Rapid-I.TargetPath)"/>
+		</Chain>
+	</Bundle>
+	<Fragment>
+		<PackageGroup Id="VC_redist.x64">
+			<ExePackage Id="VC_redist.x64"
+						DisplayName="VC_redist.x64"
+						Cache="yes"
+						Compressed="yes"
+						PerMachine="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\VC_redist.x64.exe"
+						InstallCommand="/passive /norestart"
+						/>
+		</PackageGroup>
+		<PackageGroup Id="AccessDatabaseEngine_X64">
+			<ExePackage Id="AccessDatabaseEngine_X64"
+						DisplayName="AccessDatabaseEngine_X64"
+						Cache="yes"
+						Compressed="yes"
+						PerMachine="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\AccessDatabaseEngine_X64.exe"
+						InstallCommand="/passive /norestart"
+						/>
+		</PackageGroup>
+	</Fragment>
+</Wix>

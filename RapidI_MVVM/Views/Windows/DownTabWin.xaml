@@ -1,0 +1,13 @@
+﻿<local:FadeableWin
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:local="clr-namespace:Rapid.Windows"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+        x:Class="Rapid.Windows.DownTabWin"
+        Title="DownPopupWindow" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True"
+        Background="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}" Width="454" Height="254" ShowInTaskbar="False" >
+    <Grid>
+        <TabControl x:Name="MainTab" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+    </Grid>
+</local:FadeableWin>

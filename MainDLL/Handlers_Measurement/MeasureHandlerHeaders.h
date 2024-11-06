@@ -1,0 +1,8 @@
+#include "DimensionHandler.h"
+#include "DMMHandler.h"
+#include "RotaryDimensionHandler.h"
+#include "PerimeterHandler.h"
+#include "PCDMeasureHandler.h"
+#include "DXFAreaHandler.h"
+#include "ThreadLineArcHandler.h"
+#include "CloudPointMeasurementsHandler.h"

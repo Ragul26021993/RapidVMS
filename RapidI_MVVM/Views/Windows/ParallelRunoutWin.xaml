@@ -1,0 +1,44 @@
+﻿<Window x:Class="Rapid.Windows.ParallelRunoutWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="ParallelRunoutWin" Height="140" Width="330"
+		SizeToContent="Height" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">
+        <Grid x:Name="LayoutRoot">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnOK" Content="OK" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Grid.Column="1" Template="{DynamicResource Shiny_SpButton2}" />
+            <Button x:Name="btnCancel" Content="Cancel" Grid.Row="2" Margin="5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnCancel_Click" Template="{DynamicResource Shiny_SpButton2}" />
+            <Border  x:Name="bdrContent" BorderThickness="1" Grid.ColumnSpan="2" Margin="4,0,4,5" Grid.Row="1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="txtStatus" DockPanel.Dock="Top" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="13.333" Text="Enter the No. of Flutes" HorizontalAlignment="Left" Grid.Row="1"/>
+                    <CheckBox x:Name="Parallelchbk" DockPanel.Dock="Right" Content="Parallel Runout" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <CheckBox x:Name="IsGeometricchbk" DockPanel.Dock="Right" Content="Is Geometric" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Visibility="{Binding IsChecked, ElementName=Parallelchbk, Converter={StaticResource BooleanToVisibilityConverter} }"/>
+                    <TextBox  x:Name="txtValue" DockPanel.Dock="Bottom" Margin="0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" Height="30" VerticalContentAlignment="Center"/>
+                </Grid>
+            </Border>
+            <TextBlock Grid.ColumnSpan="2" Height="18" HorizontalAlignment="Left" Margin="5" x:Name="txtHeading" Text="Please enter the value :" VerticalAlignment="Center" FontWeight="Bold" FontSize="10.667" />
+            <TextBlock Height="18" HorizontalAlignment="Right"  x:Name="txtUnitType" Text="" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Width="34" Margin="0,0,-2,3" />
+        </Grid>
+    </Border>
+</Window>

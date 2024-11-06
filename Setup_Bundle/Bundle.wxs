@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="Rapid-I" Version="1.0.0.0" Manufacturer="Customised Technologies [P] LTD" UpgradeCode="c72748a6-e3af-4a7d-934e-3dd5ef9f5b05">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+
+		<Chain>
+			<!-- TODO: Define the list of chained packages. -->
+			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+			<PackageGroupRef Id="AccessDatabaseEngine_X64"/>
+			<PackageGroupRef Id="VC_redist.x64"/>
+			<!--<PackageGroupRef Id="CP210xVCPInstaller_x64"/>-->
+			<PackageGroupRef Id="Setup_RapidI"/>
+		</Chain>
+	</Bundle>
+	<Fragment>
+		<PackageGroup Id="Setup_RapidI">
+			<MsiPackage Id="Setup_RapidI"
+						SourceFile="$(var.Setup_RapidI.TargetPath)"/>
+		</PackageGroup>
+		<PackageGroup Id="VC_redist.x64">
+			<ExePackage Id="VC_redist.x64"
+						DisplayName="VC_redist.x64"
+						Cache="yes"
+						Compressed="yes"
+						
+						PerMachine="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\VC_redist.x64.exe"
+						InstallCommand="/passive /norestart"/>
+		</PackageGroup>
+		<PackageGroup Id="AccessDatabaseEngine_X64">
+			<ExePackage Id="AccessDatabaseEngine_X64"
+						DisplayName="AccessDatabaseEngine_X64"
+						Cache="yes"
+						Compressed="yes"
+						PerMachine="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\AccessDatabaseEngine_X64.exe"
+						InstallCommand="/passive /norestart"/>
+		</PackageGroup>
+		<!--<PackageGroup Id="CP210xVCPInstaller_x64">
+			<ExePackage Id="CP210xVCPInstaller_x64"
+						DisplayName="CP210xVCPInstaller_x64"
+						Cache="yes"
+						Compressed="yes"
+						PerMachine="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\CP210xVCPInstaller_x64.exe"
+						InstallCommand="/passive /norestart"/>
+		</PackageGroup>-->
+
+	<PackageGroup Id="RapidI">
+			<MsiPackage Id="RapidI"
+						DisplayName="RapidI"
+						Cache="yes"
+						Compressed="yes"
+						Permanent="yes"
+						Vital="yes"
+						SourceFile=".\AccessDatabaseEngine_X64.exe"
+						/>
+		</PackageGroup>
+	</Fragment>
+</Wix>
+

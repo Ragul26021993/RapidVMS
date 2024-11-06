@@ -1,0 +1,38 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="Rapid.Windows.ToleranceEnteringWin"
+	x:Name="Window"
+	Title="ToleranceEnteringWin"
+	Width="341.833" SizeToContent="Height" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" ShowInTaskbar="false" d:DesignHeight="171.667">
+	<Border BorderThickness="2"   CornerRadius="10"   Background="{DynamicResource PanelBackground}">
+		<Grid x:Name="LayoutRoot">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.33*"/>
+				<ColumnDefinition Width="0.34*"/>
+				<ColumnDefinition Width="0.33*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+                <RowDefinition Height="51"/>
+                <RowDefinition/>
+                <RowDefinition Height="48.334"/>
+			</Grid.RowDefinitions>
+			<Button x:Name="btnOK" Content="OK" Grid.Row="3" Margin="-30,2.5,0,5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnOK_Click" Grid.Column="2" Template="{DynamicResource Shiny_SpButton2}" Width="100" Height="30" HorizontalAlignment="Left" />
+			<Button x:Name="btnCancel" Content="Cancel" Grid.Row="3" Margin="0,2.5,-30,5" Style="{DynamicResource SimpleNormalButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="btnCancel_Click" Template="{DynamicResource Shiny_SpButton2}" Width="100" Height="30" HorizontalAlignment="Right" />
+            <TextBlock Height="18" HorizontalAlignment="Left" Margin="5,5,0,5" x:Name="txtHeading" Text="Please enter the values:" VerticalAlignment="Center" FontWeight="Bold" FontSize="10.667" Grid.ColumnSpan="2" />
+            <TextBlock Height="18" HorizontalAlignment="Right"  x:Name="txtUnitType" Text="" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1" Width="34" Margin="0,0,-2,3" />
+            <TextBlock Margin="5,0" Grid.Row="1" TextWrapping="Wrap" Text="Nominal" VerticalAlignment="Top"/>
+            <TextBlock Margin="5,0" Grid.Row="1" TextWrapping="Wrap" Text="Upper Tolerance" VerticalAlignment="Top" Grid.Column="1"/>
+            <TextBlock Margin="5,0" Grid.Row="1" TextWrapping="Wrap" Text="Lower Tolerance" Grid.Column="2" VerticalAlignment="Top"/>
+            <TextBox x:Name="NomTxtBx" Margin="5,22,5,8" Grid.Row="1" TextWrapping="Wrap" HorizontalContentAlignment="Right" Text="0"/>
+            <TextBox x:Name="UpTolTxtBx" Margin="5,22,5,8" Grid.Row="1" TextWrapping="Wrap" Grid.Column="1" HorizontalContentAlignment="Right" Text="0"/>
+            <TextBox x:Name="LoTolTxtBx" Margin="5,22,5,8" Grid.Row="1" TextWrapping="Wrap" Grid.Column="2" HorizontalContentAlignment="Right" Text="0"/>
+            <CheckBox x:Name="SymmetricTolChkBx" Content="Symmetric Tolerance" Grid.Column="2" Margin="-30,8,12.833,4"/>
+            <RadioButton x:Name="Deg_Min_SecRBtn" Content="Deg-Min-Sec" Margin="5,8,11,8" Grid.Row="2"/>
+            <RadioButton x:Name="DecimalDegreeRBtn" Content="Decimal Degree" Margin="5,8,8,8" Grid.Row="2" Grid.Column="1"/>
+            <RadioButton x:Name="RadianRBtn" Content="Radians" Margin="5,8,11,8" Grid.Row="2" Grid.Column="2"/>
+        </Grid>
+	</Border>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Grid
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Rapid.Panels.ShapeStatusWin"
+	xmlns:local="clr-namespace:Rapid.Utilities" 
+	x:Name="MainPanel">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.333*"/>
+        <ColumnDefinition Width="0.281*"/>
+        <ColumnDefinition Width="0.053*"/>
+        <ColumnDefinition Width="0.333*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <!--<RowDefinition Height="58"/>
+		<RowDefinition Height="0.773*"/>-->
+        <RowDefinition/>
+        <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Border Grid.ColumnSpan="4" Name="ScrollBarBorber" Margin="4,4,4,2" d:LayoutOverrides="Width" BorderThickness="1" Background="{DynamicResource PanelBackground}" BorderBrush="{DynamicResource ToolbarBorderColor}" CornerRadius="5">
+        <local:ScrToolbar x:Name="ButtonsPanel" Margin="4"/>
+    </Border>
+    <DataGrid x:Name="ShapesDG" Margin="4,4,2,4" FontSize="12" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="White" HeadersVisibility="Column" Background="{DynamicResource DG_Background}" RowHeight="30" Grid.ColumnSpan="2" Grid.Row="1" BorderBrush="Blue" AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn x:Name="NameCol" Binding="{Binding Path=NameStr, Mode=TwoWay}" Header="Name" IsReadOnly="False"/>
+            <DataGridTextColumn x:Name="TypeCol" Binding="{Binding Path=TypeStr}" Header="Type" IsReadOnly="True"/>
+            <DataGridTextColumn x:Name="Param1Col" Binding="{Binding Path=Param1Str}" Header="Param 1" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param2Col" Binding="{Binding Path=Param2Str}" Header="Param 2" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param3Col" Binding="{Binding Path=Param3Str}" Header="Param 3" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param4Col" Binding="{Binding Path=Param4Str}" Header="Param 4" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param5Col" Binding="{Binding Path=Param5Str}" Header="Param 5" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param6Col" Binding="{Binding Path=Param6Str}" Header="Param 6" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param7Col" Binding="{Binding Path=Param7Str}" Header="Param 7" IsReadOnly="True" Visibility="Collapsed"/>
+            <DataGridTextColumn x:Name="Param8Col" Binding="{Binding Path=Param8Str}" Header="Param 8" IsReadOnly="True" Visibility="Collapsed"/>
+        </DataGrid.Columns>
+        <DataGrid.RowStyle>
+            <Style TargetType="{x:Type DataGridRow}">
+                <Setter Property="Background" Value="{DynamicResource RowBackground_DG}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsHiddenShape, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource SnapOrangeStyle}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </DataGrid.RowStyle>
+    </DataGrid>
+    <DataGrid x:Name="ShapePointsDG" Margin="2,4,4,4" FontSize="12" IsReadOnly="True" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="White" HeadersVisibility="Column" Background="{DynamicResource DG_Background}" AlternatingRowBackground="{DynamicResource AlternatingRowBackground_DG}" RowBackground="{DynamicResource RowBackground_DG}" RowHeight="30" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="1" BorderBrush="Blue"/>
+</Grid>
